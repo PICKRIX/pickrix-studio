@@ -26,13 +26,15 @@ export function shortLeague(l){
   /premier/i.test(t)?'Premier League':/la ?liga/i.test(t)?'LaLiga':/liga mx/i.test(t)?'Liga MX':/serie a/i.test(t)?'Serie A':
   /bundesliga/i.test(t)?'Bundesliga':/ligue 1/i.test(t)?'Ligue 1':t.replace(/^[^·]*·\s*/,'');
 }
-const leagueSpoken=l=>{const n=shortLeague(l);return /^(Champions|Europa League|Conference League|Premier League|Liga MX|Serie A|Bundesliga|Ligue 1)$/.test(n)?'la '+n.replace(' League',''):n;};
+const leagueSpoken=l=>{const n=shortLeague(l);return /^(Champions|Europa League|Conference League|Premier League|Liga MX|Serie A|Bundesliga|Ligue 1)$/.test(n)?'la '+(n==='Champions'||n==='Premier League'?n.replace(' League',''):n):n;};
 /** Nombre corto del equipo para decirlo (la tarjeta muestra el nombre completo). */
 /** Cómo se DICEN los equipos en México (la tarjeta muestra el nombre oficial). */
 const SPOKEN={'club brugge kv':'Brujas','club brugge':'Brujas','bayern münchen':'Bayern','bayern munich':'Bayern','club america':'América','america':'América',
  'vfb stuttgart':'Stuttgart','paris saint germain':'PSG','manchester united':'Manchester United','manchester city':'Manchester City',
  'borussia dortmund':'Dortmund','atletico madrid':'Atlético de Madrid','inter':'Inter','ac milan':'Milan','guadalajara':'Chivas',
- 'u.n.a.m. - pumas':'Pumas','pumas unam':'Pumas','tigres uanl':'Tigres','cruz azul':'Cruz Azul','sporting cp':'Sporting de Lisboa','fc porto':'Porto'};
+ 'u.n.a.m. - pumas':'Pumas','pumas unam':'Pumas','tigres uanl':'Tigres','cruz azul':'Cruz Azul','sporting cp':'Sporting de Lisboa','fc porto':'Porto',
+ 'olympiakos piraeus':'Olympiakos','guadalajara chivas':'Chivas','cf pachuca':'Pachuca','leon':'León','club leon':'León','club queretaro':'Querétaro',
+ 'atletico san luis':'Atlético de San Luis','santos laguna':'Santos','fc juarez':'Juárez','mazatlán':'Mazatlán','plzen':'Plzen','omonia nicosia':'Omonia'};
 export const shortTeam=t=>SPOKEN[String(t).toLowerCase()]||String(t).replace(/^(FC|CF|AC|AS|SS|SC|CD|Club|Real Club)\s+/i,'').replace(/\s+(FC|CF|SC|KV)$/i,'');
 const nWord=n=>['ninguno','uno','dos','tres','cuatro','cinco'][n]??String(n);
 

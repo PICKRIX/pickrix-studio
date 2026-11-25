@@ -67,8 +67,15 @@ def main():
         segs, _ = model.transcribe(decode(audio), language='es', word_timestamps=True, initial_prompt=text, vad_filter=False)
         rec = [{'w': w.word.strip(), 's': w.start, 'e': w.end} for s in segs for w in (s.words or []) if w.word.strip()]
         words = align(text, rec)
-        matched = sum(1 for _ in rec)
-        result[ident] = {'words': words, 'recognized': ' '.join(w['w'] for w in rec)}
+        rn = [norm(w['w']) for w in rec]
+        hits = sum(b.size for b in SequenceMatcher(a=[norm(t) for t in tokens(text)], b=rn, autojunk=False).get_matching_blocks())
+        ratio = hits / max(1, len(words))
+        if ratio < 0.8:
+            # El audio NO dice el texto esperado: los subtítulos usan lo que realmente se oye.
+            print(f'⚠ {ident}: el audio no coincide con el guion ({ratio:.0%}); se usa la transcripción real')
+            words = [{'w': w['w'], 's': round(w['s'], 3), 'e': round(w['e'], 3)} for w in rec]
+        matched = len(rec)
+        result[ident] = {'words': words, 'match': round(ratio, 3), 'recognized': ' '.join(w['w'] for w in rec)}
         print(f'✓ {ident}: {len(words)} palabras del guion · {matched} reconocidas')
     with open(out, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=1)
