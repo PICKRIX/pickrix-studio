@@ -49,6 +49,13 @@ def align(expected_text, recognized):
         i = j
     return [{'w': exp[k], 's': round(times[k][0], 3), 'e': round(times[k][1], 3)} for k in range(n)]
 
+def decode(path):
+    """Audio → muestras float32 a 16 kHz con ffmpeg (evita depender de la versión de PyAV)."""
+    import subprocess, numpy as np
+    raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', path, '-f', 's16le', '-ac', '1', '-ar', '16000', '-'],
+                         check=True, capture_output=True).stdout
+    return np.frombuffer(raw, np.int16).astype(np.float32) / 32768.0
+
 def main():
     out = sys.argv[1]
     from faster_whisper import WhisperModel
@@ -57,7 +64,7 @@ def main():
     for arg in sys.argv[2:]:
         ident, rest = arg.split('=', 1)
         audio, text = rest.split('::', 1)
-        segs, _ = model.transcribe(audio, language='es', word_timestamps=True, initial_prompt=text, vad_filter=False)
+        segs, _ = model.transcribe(decode(audio), language='es', word_timestamps=True, initial_prompt=text, vad_filter=False)
         rec = [{'w': w.word.strip(), 's': w.start, 'e': w.end} for s in segs for w in (s.words or []) if w.word.strip()]
         words = align(text, rec)
         matched = sum(1 for _ in rec)
