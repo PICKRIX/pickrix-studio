@@ -76,22 +76,46 @@ export function chunks(text,frames,maxWords=5){
  const total=out.reduce((n,c)=>n+c.length+4,0)||1;let from=0;
  return out.map((c,i)=>{const len=i===out.length-1?Math.max(1,frames-from):Math.max(10,Math.round(frames*(c.length+4)/total));const r={text:c,from,dur:len};from+=len;return r;});
 }
-const Subtitles=({text,frames,highlights=[],top=1560})=>{
- const f=useCurrentFrame();
- const c=chunks(text,frames).find(x=>f>=x.from&&f<x.from+x.dur);if(!c)return null;
- const s=spring({frame:f-c.from,fps:FPS,config:{damping:14,mass:.5}});
+/** §18: agrupa palabras con tiempos reales en bloques de ≤5 palabras (máx. 2 líneas). */
+export function wordGroups(words,maxWords=5){
+ const out=[];
+ for(let i=0;i<words.length;){let j=Math.min(words.length,i+maxWords);for(let k=i+2;k<j;k++)if(/[.,:;!?…]$/.test(words[k-1].w)){j=k;break;}
+  const g=words.slice(i,j);out.push({words:g,s:g[0].s,e:g[g.length-1].e,text:g.map(x=>x.w).join(' ')});i=j;}
+ return out;
+}
+/** Bloque visible en el segundo t: aparece con la 1.ª palabra y se va con la última (o con el siguiente bloque). */
+export function activeGroup(groups,t){
+ return groups.find((g,i)=>t>=g.s-0.05&&t<Math.min(g.e+0.25,groups[i+1]?groups[i+1].s-0.05:Infinity))||null;
+}
+const Subtitles=({text,words,frames,highlights=[],top=1560})=>{
+ const f=useCurrentFrame(),t=f/FPS;
  const keys=highlights.map(h=>String(h).toLowerCase());
  const hot=w=>/\d+\s?%|^\d/.test(w)||/pickrix/i.test(w)||keys.some(k=>k&&(k.includes(w.toLowerCase().replace(/[.,:;!?¡¿]/g,''))&&w.length>2));
+ const box={position:'absolute',left:60,right:60,top,display:'flex',flexWrap:'wrap',justifyContent:'center',gap:'0 16px',
+  fontFamily:FONT,fontWeight:900,fontSize:58,lineHeight:1.15,textAlign:'center',textTransform:'uppercase'};
+ const stroke={WebkitTextStroke:'2px #000',textShadow:'0 5px 0 rgba(0,0,0,.7),0 0 22px rgba(0,0,0,.85)'};
+ if(words&&words.length){
+  const g=activeGroup(wordGroups(words),t);if(!g)return null;
+  const s=spring({frame:f-Math.round(g.s*FPS),fps:FPS,config:{damping:14,mass:.5}});
+  return (
+   <div style={{...box,transform:`translateY(${(1-s)*18}px)`,opacity:Math.min(1,s*1.4)}}>
+    {g.words.map((x,i)=>{const on=t>=x.s&&t<x.e,said=t>=x.s;
+     return <span key={i} style={{...stroke,display:'inline-block',color:on||hot(x.w)&&said?C.lime:said?C.white:'rgba(255,255,255,.55)',
+      transform:`scale(${on?1.12:1})`}}>{x.w}</span>;})}
+   </div>
+  );
+ }
+ const c=chunks(text,frames).find(x=>f>=x.from&&f<x.from+x.dur);if(!c)return null;
+ const s=spring({frame:f-c.from,fps:FPS,config:{damping:14,mass:.5}});
  return (
-  <div style={{position:'absolute',left:60,right:60,top,display:'flex',flexWrap:'wrap',justifyContent:'center',gap:'0 16px',
-   transform:`translateY(${(1-s)*18}px)`,opacity:s,fontFamily:FONT,fontWeight:900,fontSize:58,lineHeight:1.15,textAlign:'center',textTransform:'uppercase'}}>
-   {c.text.split(/\s+/).map((w,i)=><span key={i} style={{color:hot(w)?C.lime:C.white,WebkitTextStroke:'2px #000',textShadow:'0 5px 0 rgba(0,0,0,.7),0 0 22px rgba(0,0,0,.85)'}}>{w}</span>)}
+  <div style={{...box,transform:`translateY(${(1-s)*18}px)`,opacity:s}}>
+   {c.text.split(/\s+/).map((w,i)=><span key={i} style={{...stroke,color:hot(w)?C.lime:C.white}}>{w}</span>)}
   </div>
  );
 };
 
 /* ---------- Bloques ---------- */
-const Presenter=({clip,text})=>{
+const Presenter=({clip,text,words})=>{
  const frames=Math.round(clip.seconds*FPS);
  return (
   <AbsoluteFill style={{background:C.black}}>
@@ -101,7 +125,7 @@ const Presenter=({clip,text})=>{
      <div style={{position:'absolute',top:120,fontFamily:FONT,fontWeight:900,fontSize:34,color:C.black,background:C.lime,padding:'8px 20px',borderRadius:30}}>VIDEO DE SALUDO PENDIENTE</div>
     </AbsoluteFill>}
    {clip.audio&&<Audio src={staticFile(clip.audio)}/>}
-   <Subtitles text={text} frames={frames} highlights={['PICKRIX','pickrixapp']} top={1430}/>
+   <Subtitles text={text} words={words} frames={frames} highlights={['PICKRIX','pickrixapp']} top={1430}/>
   </AbsoluteFill>
  );
 };
@@ -157,7 +181,7 @@ const FormChips=({rec})=>(
 const Analysis=({m,seg,index,total})=>{
  const f=useCurrentFrame(),th=theme(m);
  const frames=Math.round(seg.seconds*FPS)+T.pad;
- const cs=chunks(seg.text,frames),cur=cs.find(x=>f>=x.from&&f<x.from+x.dur)?.text?.toLowerCase()||'';
+ const cur=(seg.words?.length?activeGroup(wordGroups(seg.words),f/FPS)?.text:chunks(seg.text,frames).find(x=>f>=x.from&&f<x.from+x.dur)?.text)?.toLowerCase()||'';
  const short=t=>String(t).replace(/^(FC|CF|AC|AS|SS|SC|CD|Club)\s+/i,'').replace(/^Borussia /,'').toLowerCase().split(' ')[0];
  const glowH=cur.includes(short(m.home))?1:0,glowA=cur.includes(short(m.away))?1:0,glowP=/%/.test(cur)?1:0;
  const p=m.oneXtwo,rows=[[m.home,p.home],['Empate',p.draw],[m.away,p.away]];
@@ -214,7 +238,7 @@ const Analysis=({m,seg,index,total})=>{
      <div style={{fontFamily:FONT,fontWeight:900,fontSize:40,color:C.white}}>{Math.round(trend[1])}%</div></div>}
    </div>
    {seg.audio&&<Audio src={staticFile(seg.audio)}/>}
-   <Subtitles text={seg.text} frames={frames} highlights={seg.highlights} top={1585}/>
+   <Subtitles text={seg.text} words={seg.words} frames={frames} highlights={seg.highlights} top={1585}/>
    <div style={{position:'absolute',bottom:34,left:0,right:0,textAlign:'center',fontFamily:FONT,fontWeight:700,fontSize:22,color:C.muted}}>Estimaciones estadísticas de PICKRIX · no son garantías · 18+</div>
   </AbsoluteFill>
  );
@@ -258,7 +282,7 @@ export const PickrixDaily=(p)=>{
  const {at}=dailyTimeline(p);
  return (
   <AbsoluteFill style={{background:C.black,fontFamily:FONT}}>
-   <Sequence from={at.saludo[0]} durationInFrames={at.saludo[1]} name="saludo"><Presenter clip={p.saludo} text={p.saludoText}/></Sequence>
+   <Sequence from={at.saludo[0]} durationInFrames={at.saludo[1]} name="saludo"><Presenter clip={p.saludo} text={p.saludoText} words={p.saludoWords}/></Sequence>
    <Sequence from={at.transition[0]} durationInFrames={at.transition[1]} name="transicion">
     <LogoTransition/>{p.sfx&&<Audio src={staticFile(p.sfx)} volume={0.6}/>}
    </Sequence>
@@ -269,7 +293,7 @@ export const PickrixDaily=(p)=>{
      <Sequence durationInFrames={T.wipe}><Wipe/>{p.sfx&&<Audio src={staticFile(p.sfx)} volume={0.4}/>}</Sequence>
     </Sequence>
    ))}
-   <Sequence from={at.despedida[0]} durationInFrames={at.despedida[1]} name="despedida"><Presenter clip={p.despedida} text={p.despedidaText}/></Sequence>
+   <Sequence from={at.despedida[0]} durationInFrames={at.despedida[1]} name="despedida"><Presenter clip={p.despedida} text={p.despedidaText} words={p.despedidaWords}/></Sequence>
    <Sequence from={at.end[0]} durationInFrames={at.end[1]} name="final"><EndScreen/>{p.sfx&&<Audio src={staticFile(p.sfx)} volume={0.5}/>}</Sequence>
    {p.music&&<Audio src={staticFile(p.music)} volume={0.12} loop/>}
    {p.sample&&<AbsoluteFill style={{alignItems:'center',justifyContent:'flex-end',paddingBottom:80,pointerEvents:'none'}}>
