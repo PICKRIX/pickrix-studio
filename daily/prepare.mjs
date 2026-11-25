@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+/** PICKRIX DAILY — paso 1: partidos + guion (sin voz). Escribe muestras/<fecha>/daily.json y guion. */
+import {writeFile,mkdir} from 'node:fs/promises';
+import {resolve,dirname} from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {selectTop,dayString} from './select.mjs';
+import {buildDaily,validateDaily} from './script.mjs';
+
+const here=dirname(fileURLToPath(import.meta.url));
+const date=process.env.PICKRIX_DATE||dayString(Number(process.env.PICKRIX_DAY||0));
+const out=resolve(here,'../muestras',date);await mkdir(out,{recursive:true});
+const matches=await selectTop({date});
+const daily=buildDaily({date,matches});
+const check=validateDaily(daily);
+await writeFile(resolve(out,'daily.json'),JSON.stringify({...daily,matches,check},null,1));
+await writeFile(resolve(out,'GUION_COMPLETO.txt'),[`PICKRIX DAILY ${date} · saludo/despedida: ${daily.greeting}`,'',`SALUDO: ${daily.saludo}`,'',...daily.segments.map((s,i)=>`PARTIDO ${i+1}: ${s.text}`),'',`DESPEDIDA: ${daily.despedida}`].join('\n')+'\n');
+// Escudos oficiales del proveedor (para la imagen de partidos y cada análisis).
+await mkdir(resolve(out,'escudos'),{recursive:true});
+for(const m of matches)for(const side of ['home','away']){
+ const url=m[side+'Logo'];if(!/^https:\/\/media\.api-sports\.io\/football\/teams\/\d+\.png$/.test(String(url||'')))continue;
+ try{const r=await fetch(url,{signal:AbortSignal.timeout(15000)});if(r.ok)await writeFile(resolve(out,'escudos',`${m.id}-${side}.png`),Buffer.from(await r.arrayBuffer()));}catch{}
+}
+console.log(`✓ ${matches.length} partidos · ${daily.greeting} · guion ${check.ok?'OK':'REVISAR '+check.problems.join(',')}`);
+for(const m of matches)console.log(`  - ${m.league}: ${m.home} vs ${m.away} (${m.date})`);

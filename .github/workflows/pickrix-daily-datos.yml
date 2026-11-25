@@ -1,0 +1,52 @@
+name: PICKRIX DAILY · datos y voz
+
+# Elige los 5 partidos del día en pickrixapp.com (datos públicos), escribe los análisis,
+# descarga escudos y genera la voz en off gratuita (Piper es_MX). Guarda todo en
+# muestras/<fecha>/ para armar el video. No publica en redes.
+on:
+  workflow_dispatch:
+    inputs:
+      day:
+        description: '0 = hoy, 1 = mañana'
+        default: '0'
+  push:
+    branches: [main]
+    paths: ['daily/**', '.github/workflows/pickrix-daily-datos.yml']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pickrix-daily-datos
+  cancel-in-progress: false
+
+jobs:
+  datos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Partidos, análisis y escudos
+        id: prep
+        env:
+          PICKRIX_DAY: ${{ github.event.inputs.day || '1' }}
+        run: |
+          node daily/prepare.mjs | tee prep.log
+          echo "dir=$(ls -d muestras/*/ | sort | tail -1)" >> "$GITHUB_OUTPUT"
+      - name: Voz gratuita (Piper es_MX)
+        run: |
+          sudo apt-get install -y -qq ffmpeg >/dev/null
+          python3 -m venv "$RUNNER_TEMP/pv"
+          "$RUNNER_TEMP/pv/bin/pip" install -q piper-tts==1.8.0
+          "$RUNNER_TEMP/pv/bin/python" -m piper.download_voices es_MX-ald-medium --data-dir "$RUNNER_TEMP/piper"
+          bash daily/voice.sh "${{ steps.prep.outputs.dir }}" "$RUNNER_TEMP/pv/bin/piper" "$RUNNER_TEMP/piper/es_MX-ald-medium.onnx"
+      - name: Guardar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add muestras
+          git commit -m "PICKRIX DAILY: datos y voz $(basename ${{ steps.prep.outputs.dir }})" || exit 0
+          git pull --rebase -q && git push
