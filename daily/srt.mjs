@@ -8,7 +8,7 @@ const FPS=30,T={transition:30,lineup:84,pad:14}; // = src/PickrixDaily.jsx
 const [,,propsPath,out]=process.argv;
 const p=JSON.parse(await readFile(propsPath,'utf8'));
 const groups=(words,max=5)=>{const o=[];for(let i=0;i<words.length;){let j=Math.min(words.length,i+max);
- for(let k=i+2;k<j;k++)if(/[.,:;!?…]$/.test(words[k-1].w)){j=k;break;}const g=words.slice(i,j);o.push({s:g[0].s,e:g[g.length-1].e,text:g.map(x=>x.w).join(' ')});i=j;}return o;};
+ for(let k=i+1;k<j;k++){const w=words[k-1].w;if(/[.!?…]$/.test(w)||(/[,:;]$/.test(w)&&k-i>=3)){j=k;break;}}const g=words.slice(i,j);o.push({s:g[0].s,e:g[g.length-1].e,text:g.map(x=>x.w).join(' ')});i=j;}return o;};
 const blocks=[];let t=0;
 const add=(words,offset)=>{const g=groups(words||[]);g.forEach((x,i)=>blocks.push({s:offset+x.s,e:offset+Math.min(x.e+0.25,g[i+1]?g[i+1].s-0.05:Infinity),text:x.text}));};
 add(p.saludoWords,t);t+=Math.round(p.saludo.seconds*FPS)/FPS;

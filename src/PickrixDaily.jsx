@@ -79,7 +79,7 @@ export function chunks(text,frames,maxWords=5){
 /** §18: agrupa palabras con tiempos reales en bloques de ≤5 palabras (máx. 2 líneas). */
 export function wordGroups(words,maxWords=5){
  const out=[];
- for(let i=0;i<words.length;){let j=Math.min(words.length,i+maxWords);for(let k=i+2;k<j;k++)if(/[.,:;!?…]$/.test(words[k-1].w)){j=k;break;}
+ for(let i=0;i<words.length;){let j=Math.min(words.length,i+maxWords);for(let k=i+1;k<j;k++){const w=words[k-1].w;if(/[.!?…]$/.test(w)||(/[,:;]$/.test(w)&&k-i>=3)){j=k;break;}}
   const g=words.slice(i,j);out.push({words:g,s:g[0].s,e:g[g.length-1].e,text:g.map(x=>x.w).join(' ')});i=j;}
  return out;
 }
@@ -101,7 +101,7 @@ const Subtitles=({text,words,frames,highlights=[],top=1560})=>{
    <div style={{...box,transform:`translateY(${(1-s)*18}px)`,opacity:Math.min(1,s*1.4)}}>
     {g.words.map((x,i)=>{const on=t>=x.s&&t<x.e,said=t>=x.s;
      return <span key={i} style={{...stroke,display:'inline-block',color:on||hot(x.w)&&said?C.lime:said?C.white:'rgba(255,255,255,.55)',
-      transform:`scale(${on?1.12:1})`}}>{x.w}</span>;})}
+      transform:`scale(${on?1.06:1})`,margin:'0 6px'}}>{x.w}</span>;})}
    </div>
   );
  }
