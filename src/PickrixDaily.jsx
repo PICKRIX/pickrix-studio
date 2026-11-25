@@ -167,7 +167,7 @@ const Lineup=({matches,date})=>{
       <Crest name={m.away} file={m.awayCrest} size={78}/>
      </div>);})}
    </div>
-   <div style={{position:'absolute',bottom:60,left:0,right:0,textAlign:'center',fontFamily:FONT,fontWeight:700,fontSize:24,color:C.muted}}>Horario del centro de México · Estimaciones estadísticas, no garantías · 18+</div>
+   <div style={{position:'absolute',bottom:60,left:0,right:0,textAlign:'center',fontFamily:FONT,fontWeight:700,fontSize:24,color:C.muted}}>Horario del centro de México</div>
   </AbsoluteFill>
  );
 };
@@ -239,7 +239,6 @@ const Analysis=({m,seg,index,total})=>{
    </div>
    {seg.audio&&<Audio src={staticFile(seg.audio)}/>}
    <Subtitles text={seg.text} words={seg.words} frames={frames} highlights={seg.highlights} top={1585}/>
-   <div style={{position:'absolute',bottom:34,left:0,right:0,textAlign:'center',fontFamily:FONT,fontWeight:700,fontSize:22,color:C.muted}}>Estimaciones estadísticas de PICKRIX · no son garantías · 18+</div>
   </AbsoluteFill>
  );
 };
