@@ -1,0 +1,814 @@
+{
+ "date": "2026-11-26",
+ "greeting": "CRACKS",
+ "saludo": "¡Qué onda, cracks! Ustedes ponen la pasión, nosotros ponemos los números. Hoy tenemos cinco partidazos bajo la lupa. ¡Esto es PICKRIX y arrancamos!",
+ "despedida": "¡Y listo, cracks! Ya tienen los números, ahora toca disfrutar los partidazos. Encuentren más análisis en pickrixapp punto com. Nos vemos mañana y recuerden… ¡No adivinen, analicen!",
+ "segments": [
+  {
+   "id": "match-1",
+   "matchIndex": 0,
+   "text": "Arrancamos con un partidazo en la Europa: Olympiakos Piraeus contra Milan. PICKRIX ve favorito a Olympiakos Piraeus, con 54 %. Dato clave: entre los dos suman 24 goles en sus últimos cinco. Y ojo: el Over 2.5 sale con 66 %.",
+   "highlights": [
+    "Olympiakos Piraeus",
+    "Milan",
+    "54 %",
+    "Over 2.5"
+   ],
+   "analysis": {
+    "facts": [
+     "PICKRIX ve favorito a Olympiakos Piraeus, con 54 %.",
+     "Dato clave: entre los dos suman 24 goles en sus últimos cinco.",
+     "Y ojo: el Over 2.5 sale con 66 %."
+    ],
+    "highlights": [
+     "Olympiakos Piraeus",
+     "Milan",
+     "54 %",
+     "Over 2.5"
+    ],
+    "favorite": "Olympiakos Piraeus",
+    "top": {
+     "key": "home",
+     "p": 54
+    },
+    "xgTotal": 3.4
+   }
+  },
+  {
+   "id": "match-2",
+   "matchIndex": 1,
+   "text": "Seguimos en la Europa: Plzen contra Benfica. Duelo parejo: 37 % para Plzen, 23 % de empate y 41 % para Benfica. Dato clave: entre los dos suman 28 goles en sus últimos cinco. Y ojo: el Over 2.5 sale con 67 %.",
+   "highlights": [
+    "Plzen",
+    "Benfica",
+    "37 %",
+    "41 %",
+    "Over 2.5"
+   ],
+   "analysis": {
+    "facts": [
+     "Duelo parejo: 37 % para Plzen, 23 % de empate y 41 % para Benfica.",
+     "Dato clave: entre los dos suman 28 goles en sus últimos cinco.",
+     "Y ojo: el Over 2.5 sale con 67 %."
+    ],
+    "highlights": [
+     "Plzen",
+     "Benfica",
+     "37 %",
+     "41 %",
+     "Over 2.5"
+    ],
+    "favorite": "Benfica",
+    "top": {
+     "key": "away",
+     "p": 41
+    },
+    "xgTotal": 3.4
+   }
+  },
+  {
+   "id": "match-3",
+   "matchIndex": 2,
+   "text": "Ojo con este duelo en la Europa: Juventus contra Omonia Nicosia. PICKRIX ve favorito a Juventus, con 48 %. Dato clave: entre los dos suman 16 goles en sus últimos cinco. Y ojo: el Over 2.5 sale con 58 %.",
+   "highlights": [
+    "Juventus",
+    "Omonia Nicosia",
+    "48 %",
+    "Over 2.5"
+   ],
+   "analysis": {
+    "facts": [
+     "PICKRIX ve favorito a Juventus, con 48 %.",
+     "Dato clave: entre los dos suman 16 goles en sus últimos cinco.",
+     "Y ojo: el Over 2.5 sale con 58 %."
+    ],
+    "highlights": [
+     "Juventus",
+     "Omonia Nicosia",
+     "48 %",
+     "Over 2.5"
+    ],
+    "favorite": "Juventus",
+    "top": {
+     "key": "home",
+     "p": 48
+    },
+    "xgTotal": 3
+   }
+  },
+  {
+   "id": "match-4",
+   "matchIndex": 3,
+   "text": "Aquí los números se ponen interesantes en la Liga MX: Pachuca contra Guadalajara Chivas. PICKRIX ve favorito a Pachuca, con 48 %. Dato clave: entre los dos suman 20 goles en sus últimos cinco.",
+   "highlights": [
+    "Pachuca",
+    "Guadalajara Chivas",
+    "48 %"
+   ],
+   "analysis": {
+    "facts": [
+     "PICKRIX ve favorito a Pachuca, con 48 %.",
+     "Dato clave: entre los dos suman 20 goles en sus últimos cinco."
+    ],
+    "highlights": [
+     "Pachuca",
+     "Guadalajara Chivas",
+     "48 %"
+    ],
+    "favorite": "Pachuca",
+    "top": {
+     "key": "home",
+     "p": 48
+    },
+    "xgTotal": 2.8
+   }
+  },
+  {
+   "id": "match-5",
+   "matchIndex": 4,
+   "text": "Y cerramos con todo en la Liga MX: Leon contra Cruz Azul. Duelo parejo: 38 % para Leon, 24 % de empate y 39 % para Cruz Azul. La clave: Cruz Azul ganó cuatro de sus últimos cinco; Leon, dos. Y ojo: el Over 2.5 sale con 60 %.",
+   "highlights": [
+    "Leon",
+    "Cruz Azul",
+    "38 %",
+    "39 %",
+    "Over 2.5"
+   ],
+   "analysis": {
+    "facts": [
+     "Duelo parejo: 38 % para Leon, 24 % de empate y 39 % para Cruz Azul.",
+     "La clave: Cruz Azul ganó cuatro de sus últimos cinco; Leon, dos.",
+     "Y ojo: el Over 2.5 sale con 60 %."
+    ],
+    "highlights": [
+     "Leon",
+     "Cruz Azul",
+     "38 %",
+     "39 %",
+     "Over 2.5"
+    ],
+    "favorite": "Cruz Azul",
+    "top": {
+     "key": "away",
+     "p": 39
+    },
+    "xgTotal": 3.1
+   }
+  }
+ ],
+ "matches": [
+  {
+   "id": "1636307",
+   "date": "2026-11-26T11:45:00-06:00",
+   "league": "Europa League",
+   "code": "3",
+   "home": "Olympiakos Piraeus",
+   "away": "AC Milan",
+   "homeLogo": "https://media.api-sports.io/football/teams/553.png",
+   "awayLogo": "https://media.api-sports.io/football/teams/489.png",
+   "importance": 92,
+   "oneXtwo": {
+    "home": 54.4,
+    "draw": 21.15,
+    "away": 24.45
+   },
+   "markets": {
+    "over15": 85.41,
+    "under15": 14.59,
+    "over25": 66.18,
+    "under25": 33.82,
+    "over35": 44.34,
+    "under35": 55.66,
+    "btts_yes": 64.44,
+    "btts_no": 35.56,
+    "bo_yes_over": 55.27,
+    "bo_no_under": 24.65,
+    "bo_no_over": 10.91,
+    "bo_yes_under": 9.16
+   },
+   "expectedGoals": {
+    "home": 2.07,
+    "away": 1.34
+   },
+   "homeRecent": [
+    {
+     "date": "2026-11-22T17:00:00+00:00",
+     "opponent": "Iraklis 1908",
+     "atHome": true,
+     "goalsFor": 6,
+     "goalsAgainst": 2,
+     "outcome": "G",
+     "score": "6–2"
+    },
+    {
+     "date": "2026-11-08T19:00:00+00:00",
+     "opponent": "PAOK",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 1,
+     "outcome": "E",
+     "score": "1–1"
+    },
+    {
+     "date": "2026-11-04T15:30:00+00:00",
+     "opponent": "Rennes",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 0,
+     "outcome": "E",
+     "score": "0–0"
+    },
+    {
+     "date": "2026-10-31T17:00:00+00:00",
+     "opponent": "Kifisia",
+     "atHome": false,
+     "goalsFor": 3,
+     "goalsAgainst": 2,
+     "outcome": "G",
+     "score": "2–3"
+    },
+    {
+     "date": "2026-10-28T13:00:00+00:00",
+     "opponent": "Marko",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "0–2"
+    }
+   ],
+   "awayRecent": [
+    {
+     "date": "2026-11-22T17:00:00+00:00",
+     "opponent": "Frosinone",
+     "atHome": true,
+     "goalsFor": 5,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "5–1"
+    },
+    {
+     "date": "2026-11-08T14:00:00+00:00",
+     "opponent": "Genoa",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "1–2"
+    },
+    {
+     "date": "2026-11-05T17:45:00+00:00",
+     "opponent": "Ferencvarosi TC",
+     "atHome": true,
+     "goalsFor": 0,
+     "goalsAgainst": 2,
+     "outcome": "P",
+     "score": "0–2"
+    },
+    {
+     "date": "2026-10-31T19:45:00+00:00",
+     "opponent": "Inter",
+     "atHome": true,
+     "goalsFor": 3,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "3–1"
+    },
+    {
+     "date": "2026-10-28T17:30:00+00:00",
+     "opponent": "Bologna",
+     "atHome": true,
+     "goalsFor": 2,
+     "goalsAgainst": 4,
+     "outcome": "P",
+     "score": "2–4"
+    }
+   ],
+   "quality": "exploratory"
+  },
+  {
+   "id": "1636315",
+   "date": "2026-11-26T11:45:00-06:00",
+   "league": "Europa League",
+   "code": "3",
+   "home": "Plzen",
+   "away": "Benfica",
+   "homeLogo": "https://media.api-sports.io/football/teams/567.png",
+   "awayLogo": "https://media.api-sports.io/football/teams/211.png",
+   "importance": 92,
+   "oneXtwo": {
+    "home": 36.63,
+    "draw": 22.51,
+    "away": 40.86
+   },
+   "markets": {
+    "over15": 85.63,
+    "under15": 14.37,
+    "over25": 66.57,
+    "under25": 33.43,
+    "over35": 44.78,
+    "under35": 55.22,
+    "btts_yes": 67.17,
+    "btts_no": 32.83,
+    "bo_yes_over": 57.65,
+    "bo_no_under": 23.91,
+    "bo_no_over": 8.92,
+    "bo_yes_under": 9.52
+   },
+   "expectedGoals": {
+    "home": 1.66,
+    "away": 1.77
+   },
+   "homeRecent": [
+    {
+     "date": "2026-11-21T17:00:00+00:00",
+     "opponent": "Bohemians 1905",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "1–2"
+    },
+    {
+     "date": "2026-11-08T17:00:00+00:00",
+     "opponent": "Sparta Praha",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 1,
+     "outcome": "E",
+     "score": "1–1"
+    },
+    {
+     "date": "2026-11-05T17:45:00+00:00",
+     "opponent": "Lillestrom",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "0–1"
+    },
+    {
+     "date": "2026-11-01T14:00:00+00:00",
+     "opponent": "Baník Ostrava",
+     "atHome": false,
+     "goalsFor": 4,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "0–4"
+    },
+    {
+     "date": "2026-10-28T13:00:00+00:00",
+     "opponent": "Vysočina Jihlava",
+     "atHome": false,
+     "goalsFor": 6,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "1–6"
+    }
+   ],
+   "awayRecent": [
+    {
+     "date": "2026-11-22T20:45:00+00:00",
+     "opponent": "Torreense",
+     "atHome": false,
+     "goalsFor": 3,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "1–3"
+    },
+    {
+     "date": "2026-11-08T20:30:00+00:00",
+     "opponent": "Estrela",
+     "atHome": false,
+     "goalsFor": 3,
+     "goalsAgainst": 2,
+     "outcome": "G",
+     "score": "2–3"
+    },
+    {
+     "date": "2026-11-05T20:00:00+00:00",
+     "opponent": "Lech Poznan",
+     "atHome": true,
+     "goalsFor": 3,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "3–1"
+    },
+    {
+     "date": "2026-11-02T20:15:00+00:00",
+     "opponent": "Alverca",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "1–0"
+    },
+    {
+     "date": "2026-10-29T20:45:00+00:00",
+     "opponent": "GIL Vicente",
+     "atHome": true,
+     "goalsFor": 4,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "4–1"
+    }
+   ],
+   "quality": "exploratory"
+  },
+  {
+   "id": "1636277",
+   "date": "2026-11-26T14:00:00-06:00",
+   "league": "Europa League",
+   "code": "3",
+   "home": "Juventus",
+   "away": "Omonia Nicosia",
+   "homeLogo": "https://media.api-sports.io/football/teams/496.png",
+   "awayLogo": "https://media.api-sports.io/football/teams/3402.png",
+   "importance": 92,
+   "oneXtwo": {
+    "home": 48.49,
+    "draw": 23.51,
+    "away": 28
+   },
+   "markets": {
+    "over15": 80.33,
+    "under15": 19.67,
+    "over25": 58.05,
+    "under25": 41.95,
+    "over35": 35.65,
+    "under35": 64.35,
+    "btts_yes": 59.41,
+    "btts_no": 40.59,
+    "bo_yes_over": 48.54,
+    "bo_no_under": 31.08,
+    "bo_no_over": 9.51,
+    "bo_yes_under": 10.87
+   },
+   "expectedGoals": {
+    "home": 1.74,
+    "away": 1.27
+   },
+   "homeRecent": [
+    {
+     "date": "2026-11-22T11:30:00+00:00",
+     "opponent": "Venezia",
+     "atHome": true,
+     "goalsFor": 4,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "4–0"
+    },
+    {
+     "date": "2026-11-08T19:45:00+00:00",
+     "opponent": "Fiorentina",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 2,
+     "outcome": "E",
+     "score": "2–2"
+    },
+    {
+     "date": "2026-11-05T20:00:00+00:00",
+     "opponent": "AZ Alkmaar",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "1–2"
+    },
+    {
+     "date": "2026-11-01T19:45:00+00:00",
+     "opponent": "Napoli",
+     "atHome": true,
+     "goalsFor": 2,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "2–0"
+    },
+    {
+     "date": "2026-10-28T19:45:00+00:00",
+     "opponent": "Genoa",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 2,
+     "outcome": "P",
+     "score": "2–0"
+    }
+   ],
+   "awayRecent": [
+    {
+     "date": "2026-11-21T15:00:00+00:00",
+     "opponent": "Apoel Nicosia",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 1,
+     "outcome": "E",
+     "score": "1–1"
+    },
+    {
+     "date": "2026-11-08T14:00:00+00:00",
+     "opponent": "Anorthosis",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "0–2"
+    },
+    {
+     "date": "2026-11-05T17:45:00+00:00",
+     "opponent": "NEC Nijmegen",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 3,
+     "outcome": "P",
+     "score": "3–1"
+    },
+    {
+     "date": "2026-10-31T17:00:00+00:00",
+     "opponent": "AEL",
+     "atHome": true,
+     "goalsFor": 2,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "2–0"
+    },
+    {
+     "date": "2026-10-26T17:00:00+00:00",
+     "opponent": "AEK Larnaca",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 2,
+     "outcome": "P",
+     "score": "2–0"
+    }
+   ],
+   "quality": "exploratory"
+  },
+  {
+   "id": "1651504",
+   "date": "2026-11-26T19:00:00-06:00",
+   "league": "Liga MX",
+   "code": "262",
+   "home": "CF Pachuca",
+   "away": "Guadalajara Chivas",
+   "homeLogo": "https://media.api-sports.io/football/teams/2292.png",
+   "awayLogo": "https://media.api-sports.io/football/teams/2278.png",
+   "importance": 106,
+   "oneXtwo": {
+    "home": 47.81,
+    "draw": 24.77,
+    "away": 27.42
+   },
+   "markets": {
+    "over15": 76.17,
+    "under15": 23.83,
+    "over25": 52.05,
+    "under25": 47.95,
+    "over35": 29.88,
+    "under35": 70.12,
+    "btts_yes": 54.7,
+    "btts_no": 45.3,
+    "bo_yes_over": 42.96,
+    "bo_no_under": 36.21,
+    "bo_no_over": 9.09,
+    "bo_yes_under": 11.74
+   },
+   "expectedGoals": {
+    "home": 1.6,
+    "away": 1.15
+   },
+   "homeRecent": [
+    {
+     "date": "2026-11-21T22:50:00+00:00",
+     "opponent": "Toluca",
+     "atHome": true,
+     "goalsFor": 2,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "2–0"
+    },
+    {
+     "date": "2026-11-07T23:00:00+00:00",
+     "opponent": "Atlas",
+     "atHome": false,
+     "goalsFor": 4,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "1–4"
+    },
+    {
+     "date": "2026-10-31T23:00:00+00:00",
+     "opponent": "Tigres UANL",
+     "atHome": true,
+     "goalsFor": 3,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "3–0"
+    },
+    {
+     "date": "2026-10-26T01:05:00+00:00",
+     "opponent": "Club America",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "1–2"
+    },
+    {
+     "date": "2026-10-22T03:10:00+00:00",
+     "opponent": "Cruz Azul",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 2,
+     "outcome": "P",
+     "score": "1–2"
+    }
+   ],
+   "awayRecent": [
+    {
+     "date": "2026-11-22T23:07:00+00:00",
+     "opponent": "Cruz Azul",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "1–0"
+    },
+    {
+     "date": "2026-11-09T02:10:00+00:00",
+     "opponent": "Leon",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 1,
+     "outcome": "E",
+     "score": "1–1"
+    },
+    {
+     "date": "2026-11-01T01:07:00+00:00",
+     "opponent": "Atlante FC",
+     "atHome": true,
+     "goalsFor": 4,
+     "goalsAgainst": 2,
+     "outcome": "G",
+     "score": "4–2"
+    },
+    {
+     "date": "2026-10-25T00:00:00+00:00",
+     "opponent": "Monterrey",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "0–1"
+    },
+    {
+     "date": "2026-10-21T00:07:00+00:00",
+     "opponent": "Necaxa",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "1–0"
+    }
+   ],
+   "quality": "exploratory"
+  },
+  {
+   "id": "1651502",
+   "date": "2026-11-26T21:10:00-06:00",
+   "league": "Liga MX",
+   "code": "262",
+   "home": "Leon",
+   "away": "Cruz Azul",
+   "homeLogo": "https://media.api-sports.io/football/teams/2289.png",
+   "awayLogo": "https://media.api-sports.io/football/teams/2295.png",
+   "importance": 130,
+   "oneXtwo": {
+    "home": 37.57,
+    "draw": 23.88,
+    "away": 38.55
+   },
+   "markets": {
+    "over15": 81.42,
+    "under15": 18.58,
+    "over25": 59.72,
+    "under25": 40.28,
+    "over35": 37.35,
+    "under35": 62.65,
+    "btts_yes": 61.93,
+    "btts_no": 38.07,
+    "bo_yes_over": 51.07,
+    "bo_no_under": 29.43,
+    "bo_no_over": 8.65,
+    "bo_yes_under": 10.85
+   },
+   "expectedGoals": {
+    "home": 1.53,
+    "away": 1.56
+   },
+   "homeRecent": [
+    {
+     "date": "2026-11-21T23:00:00+00:00",
+     "opponent": "Santos Laguna",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "1–2"
+    },
+    {
+     "date": "2026-11-09T02:10:00+00:00",
+     "opponent": "Guadalajara Chivas",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 1,
+     "outcome": "E",
+     "score": "1–1"
+    },
+    {
+     "date": "2026-11-02T01:10:00+00:00",
+     "opponent": "Cruz Azul",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 2,
+     "outcome": "P",
+     "score": "2–1"
+    },
+    {
+     "date": "2026-10-24T23:00:00+00:00",
+     "opponent": "Toluca",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 1,
+     "outcome": "E",
+     "score": "1–1"
+    },
+    {
+     "date": "2026-10-21T03:00:00+00:00",
+     "opponent": "Tigres UANL",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "0–2"
+    }
+   ],
+   "awayRecent": [
+    {
+     "date": "2026-11-22T23:07:00+00:00",
+     "opponent": "Guadalajara Chivas",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 1,
+     "outcome": "P",
+     "score": "1–0"
+    },
+    {
+     "date": "2026-11-08T01:00:00+00:00",
+     "opponent": "Tigres UANL",
+     "atHome": false,
+     "goalsFor": 3,
+     "goalsAgainst": 2,
+     "outcome": "G",
+     "score": "2–3"
+    },
+    {
+     "date": "2026-11-02T01:10:00+00:00",
+     "opponent": "Leon",
+     "atHome": true,
+     "goalsFor": 2,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "2–1"
+    },
+    {
+     "date": "2026-10-26T01:00:00+00:00",
+     "opponent": "Club Queretaro",
+     "atHome": false,
+     "goalsFor": 3,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "1–3"
+    },
+    {
+     "date": "2026-10-22T03:10:00+00:00",
+     "opponent": "CF Pachuca",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "1–2"
+    }
+   ],
+   "quality": "exploratory"
+  }
+ ],
+ "check": {
+  "ok": false,
+  "problems": [
+   "long:match-1",
+   "long:match-2",
+   "long:match-5"
+  ]
+ }
+}
