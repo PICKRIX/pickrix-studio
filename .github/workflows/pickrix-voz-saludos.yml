@@ -24,7 +24,7 @@ jobs:
           "$RUNNER_TEMP/pv/bin/python" -m piper.download_voices es_MX-ald-medium --data-dir "$RUNNER_TEMP/piper"
       - name: Generar los 6 audios
         run: |
-          sudo apt-get install -y -qq ffmpeg >/dev/null
+          sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq ffmpeg >/dev/null
           mkdir -p tools/voz-saludos/audios
           while IFS=$'\t' read -r name text; do
             [ -z "$name" ] && continue

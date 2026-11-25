@@ -42,7 +42,7 @@ jobs:
           echo "dir=muestras/$(cat muestras/ULTIMA.txt)" >> "$GITHUB_OUTPUT"
       - name: Voz gratuita (Piper es_MX)
         run: |
-          sudo apt-get install -y -qq ffmpeg >/dev/null
+          sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq ffmpeg >/dev/null
           python3 -m venv "$RUNNER_TEMP/pv"
           "$RUNNER_TEMP/pv/bin/pip" install -q piper-tts==1.8.0
           "$RUNNER_TEMP/pv/bin/python" -m piper.download_voices es_MX-ald-medium --data-dir "$RUNNER_TEMP/piper"
