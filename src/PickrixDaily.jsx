@@ -4,7 +4,15 @@
  * 5 análisis con voz en off (sin presentador) → despedida (video original) → pantalla final.
  * Diseño por competición, cifras y nombres como capas de texto (nunca dentro de imágenes).
  */
-import {AbsoluteFill,Sequence,Img,OffthreadVideo,Audio,staticFile,useCurrentFrame,useVideoConfig,interpolate,spring} from 'remotion';
+import {AbsoluteFill,Sequence,Img,OffthreadVideo,Audio,staticFile,useCurrentFrame,useVideoConfig,interpolate,spring,delayRender,continueRender} from 'remotion';
+
+/* Tipografía deportiva (Barlow Condensed, licencia SIL OFL) */
+const SPORT='"PickrixSport","Barlow Condensed","Arial Narrow",sans-serif';
+if(typeof document!=='undefined'&&typeof FontFace!=='undefined'){
+ const h=delayRender('fuente PICKRIX');
+ Promise.all([600,800,900].map(w=>new FontFace('PickrixSport',`url(${staticFile(`fonts/barlow-condensed-latin-${w}-italic.woff2`)})`,{weight:String(w),style:'italic'}).load().then(ff=>document.fonts.add(ff))))
+  .then(()=>continueRender(h)).catch(()=>continueRender(h));
+}
 
 const FPS=30;
 const C={black:'#030504',lime:'#b8ff2c',white:'#f4f7f2',graphite:'#1b211d',muted:'#a9b6a5'};
@@ -146,60 +154,98 @@ const when=(iso,zone='America/Mexico_City')=>new Intl.DateTimeFormat('es-MX',{ti
 const longDate=d=>new Intl.DateTimeFormat('es-MX',{timeZone:'UTC',weekday:'long',day:'numeric',month:'long'}).format(new Date(d+'T12:00:00Z')).toUpperCase();
 
 /** Portada / alineación del día (también se exporta como PORTADA.jpg). */
-const Lineup=({matches,date,cover})=>{
+const BrandMark=({size=120})=>(
+ <div style={{display:'flex',alignItems:'flex-end',gap:size*.12}}>
+  <div style={{display:'flex',alignItems:'flex-end',gap:size*.05,paddingBottom:size*.1}}>
+   {[.28,.46,.64,.82].map((h,i)=><div key={i} style={{width:size*.11,height:size*h,background:C.lime,transform:'skewX(-18deg)',boxShadow:'0 0 18px rgba(184,255,44,.6)'}}/>)}
+  </div>
+  <div style={{fontFamily:SPORT,fontStyle:'italic',fontWeight:900,fontSize:size,lineHeight:.9,color:C.white,letterSpacing:1,textShadow:'0 6px 0 rgba(0,0,0,.5)'}}>
+   PICK<span style={{color:C.lime,textShadow:'0 0 30px rgba(184,255,44,.55)'}}>RIX</span></div>
+ </div>
+);
+const Stadium=()=>{
  const f=useCurrentFrame();
- const head=spring({frame:f,fps:FPS,config:{damping:13}});
- const fav=m=>{const p=m.oneXtwo||{},e=[[m.homeShort||m.home,p.home],['Empate',p.draw],[m.awayShort||m.away,p.away]].sort((x,y)=>y[1]-x[1]);
-  return e[0][1]-e[1][1]>=8?{label:e[0][0],p:e[0][1]}:{label:'Parejo',p:null};};
+ const lights=(side)=>Array.from({length:3},(_,r)=>Array.from({length:9},(_,k)=>{
+  const x=side<0?40+k*34+r*18:1080-40-k*34-r*18,y=360+r*26-k*9*side*-0+(side<0?k*-6:k*-6);
+  return <div key={`${r}-${k}`} style={{position:'absolute',left:x,top:y,width:10,height:10,borderRadius:'50%',background:'#fff',
+   boxShadow:'0 0 14px #fff,0 0 34px rgba(220,255,190,.9)',opacity:.55+.45*Math.abs(Math.sin((f+k*7+r*11)/18))}}/>;}));
  return (
   <AbsoluteFill style={{background:C.black,overflow:'hidden'}}>
-   {/* Fondo de estadio: haces de luz, cancha y partículas */}
-   <AbsoluteFill style={{background:`radial-gradient(1100px 900px at 50% 0%,#1f4a12 0%,#0b1a08 45%,${C.black} 75%)`}}/>
-   {[-1,1].map(side=>(<div key={side} style={{position:'absolute',top:-200,left:side<0?-260:undefined,right:side>0?-260:undefined,width:700,height:1500,
-    background:'linear-gradient(180deg,rgba(220,255,170,.20),transparent 70%)',transform:`rotate(${side*(-24+Math.sin(f/40)*3)}deg)`,transformOrigin:'50% 0',filter:'blur(30px)'}}/>))}
-   <div style={{position:'absolute',left:-300,right:-300,top:380,height:1000,transform:'perspective(900px) rotateX(62deg)',transformOrigin:'50% 0',
-    backgroundImage:'linear-gradient(rgba(184,255,44,.10) 3px,transparent 3px),linear-gradient(90deg,rgba(184,255,44,.08) 3px,transparent 3px)',backgroundSize:'160px 160px',
-    maskImage:'linear-gradient(to bottom,transparent,#000 30%,transparent 90%)'}}/>
-   <Particles count={34}/>
-   {/* Presentador al pie */}
-   {cover&&<div style={{position:'absolute',left:0,right:0,bottom:0,height:900,overflow:'hidden'}}>
-    <Img src={staticFile(cover)} style={{position:'absolute',left:90,width:900,top:-110,transform:`scale(${1.02+f*0.0006})`,transformOrigin:'50% 40%'}}/>
-    <AbsoluteFill style={{background:`linear-gradient(90deg,${C.black} 8%,transparent 22%,transparent 78%,${C.black} 92%)`}}/>
-    <AbsoluteFill style={{background:`linear-gradient(180deg,${C.black} 0%,rgba(3,5,4,.55) 22%,transparent 45%,transparent 80%,rgba(3,5,4,.8) 100%)`}}/>
-   </div>}
-   {/* Encabezado */}
-   <div style={{position:'absolute',top:96,left:0,right:0,display:'flex',flexDirection:'column',alignItems:'center',gap:14,opacity:head,transform:`scale(${.9+.1*head})`}}>
-    <Logo size={60} glow/>
-    <div style={{fontFamily:FONT,fontWeight:900,fontSize:92,color:C.white,textAlign:'center',lineHeight:.98,textShadow:'0 8px 0 rgba(0,0,0,.6)'}}>
-     LOS <span style={{color:C.lime,textShadow:`0 0 40px rgba(184,255,44,.6)`}}>5 PARTIDAZOS</span><br/>DEL DÍA</div>
-    <div style={{fontFamily:FONT,fontWeight:900,fontSize:30,color:C.black,background:C.lime,letterSpacing:2,padding:'8px 26px',borderRadius:40,marginTop:6}}>{longDate(date)}</div>
+   <AbsoluteFill style={{background:`radial-gradient(900px 600px at 50% 420px,rgba(120,200,60,.25),transparent 70%),linear-gradient(180deg,#071007 0%,#0b1a0b 35%,#050a05 60%,#08160a 100%)`}}/>
+   {/* gradas */}
+   <div style={{position:'absolute',left:0,right:0,top:420,height:560,background:'repeating-linear-gradient(180deg,rgba(255,255,255,.035) 0 6px,transparent 6px 22px)',
+    maskImage:'linear-gradient(180deg,transparent,#000 30%,#000 60%,transparent)'}}/>
+   {/* reflectores */}
+   {[-1,1].map(side=>(<div key={side}>
+    <div style={{position:'absolute',top:250,left:side<0?-120:undefined,right:side>0?-120:undefined,width:560,height:300,borderRadius:'50%',
+     background:'radial-gradient(closest-side,rgba(230,255,200,.45),transparent)',filter:'blur(10px)'}}/>
+    {lights(side)}
+    <div style={{position:'absolute',top:380,left:side<0?120:undefined,right:side>0?120:undefined,width:520,height:1300,
+     background:'linear-gradient(180deg,rgba(230,255,200,.16),transparent 65%)',transform:`rotate(${side*-28}deg)`,transformOrigin:'50% 0',filter:'blur(24px)'}}/>
+   </div>))}
+   {/* cancha */}
+   <div style={{position:'absolute',left:-500,right:-500,top:1430,height:900,transform:'perspective(700px) rotateX(58deg)',transformOrigin:'50% 0',
+    background:'repeating-linear-gradient(90deg,#0f3a12 0 120px,#0c3010 120px 240px)',boxShadow:'inset 0 0 200px #000'}}>
+    <div style={{position:'absolute',left:'50%',top:0,bottom:0,width:6,background:'rgba(255,255,255,.35)'}}/>
+    <div style={{position:'absolute',left:'50%',top:170,width:360,height:360,marginLeft:-180,borderRadius:'50%',border:'6px solid rgba(255,255,255,.3)'}}/>
    </div>
-   {/* Partidos */}
-   <div style={{position:'absolute',top:470,left:44,right:44,display:'grid',gap:16}}>
-    {matches.map((m,i)=>{const s=spring({frame:f-8-i*5,fps:FPS,config:{damping:14}}),th=theme(m),fv=fav(m);return (
-     <div key={i} style={{opacity:s,transform:`translateX(${(1-s)*(i%2?140:-140)}px)`,position:'relative',display:'flex',alignItems:'center',gap:16,
-      background:`linear-gradient(90deg,${th.accent}2e,rgba(10,18,12,.94) 30%,rgba(10,18,12,.94) 70%,${th.accent}2e)`,
-      border:`2px solid ${th.accent}88`,borderRadius:26,padding:'16px 20px 16px 62px',boxShadow:'0 14px 40px rgba(0,0,0,.55)'}}>
-      <div style={{position:'absolute',left:-6,top:'50%',transform:'translateY(-50%)',width:54,height:54,borderRadius:16,background:C.lime,color:C.black,
-       display:'grid',placeItems:'center',fontFamily:FONT,fontWeight:900,fontSize:32,boxShadow:'0 0 24px rgba(184,255,44,.6)'}}>{i+1}</div>
-      <Crest name={m.home} file={m.homeCrest} size={84}/>
-      <div style={{flex:1,minWidth:0,textAlign:'center'}}>
-       <div style={{fontFamily:FONT,fontWeight:900,fontSize:38,color:C.white,whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis',textTransform:'uppercase'}}>
-        {m.homeShort||m.home} <span style={{color:C.lime}}>vs</span> {m.awayShort||m.away}</div>
-       <div style={{display:'flex',justifyContent:'center',gap:10,marginTop:8,fontFamily:FONT,fontWeight:800,fontSize:22}}>
-        <span style={{color:th.accent===C.lime?C.lime:C.white,background:`${th.accent}44`,padding:'3px 12px',borderRadius:12}}>{th.name}</span>
-        <span style={{color:C.white,background:'rgba(255,255,255,.1)',padding:'3px 12px',borderRadius:12}}>🕒 {when(m.date)} h</span>
-        <span style={{color:C.black,background:C.lime,padding:'3px 12px',borderRadius:12}}>{fv.p?`${String(fv.label).toUpperCase()} ${Math.round(fv.p)}%`:'DUELO PAREJO'}</span>
+   <AbsoluteFill style={{background:'linear-gradient(180deg,transparent 70%,rgba(0,0,0,.65) 100%)'}}/>
+   <Particles count={24}/>
+   {/* cortes diagonales lima */}
+   {[[-70,-60,0],[1000,1720,0]].map(([x,y],i)=>(<div key={i} style={{position:'absolute',left:x,top:y,transform:'rotate(-38deg)'}}>
+    {[0,1,2].map(k=><div key={k} style={{width:340-k*90,height:22-k*5,marginTop:14,background:C.lime,opacity:1-k*.25,boxShadow:'0 0 30px rgba(184,255,44,.7)'}}/>)}
+   </div>))}
+  </AbsoluteFill>
+ );
+};
+const Lineup=({matches,date})=>{
+ const f=useCurrentFrame();
+ const head=spring({frame:f,fps:FPS,config:{damping:13}}),rib=spring({frame:f-6,fps:FPS,config:{damping:14}});
+ const dateTxt=new Intl.DateTimeFormat('es-MX',{timeZone:'UTC',weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(new Date(date+'T12:00:00Z')).replace(/,/g,'').toUpperCase();
+ const nm={fontFamily:SPORT,fontStyle:'italic',fontWeight:900,fontSize:56,lineHeight:.95,color:C.white,textTransform:'uppercase',textAlign:'center',
+  textShadow:'0 4px 0 rgba(0,0,0,.6)',width:290,display:'flex',alignItems:'center',justifyContent:'center'};
+ return (
+  <AbsoluteFill>
+   <Stadium/>
+   <div style={{position:'absolute',top:80,left:0,right:0,display:'flex',flexDirection:'column',alignItems:'center',opacity:head,transform:`translateY(${(1-head)*-40}px)`}}>
+    <BrandMark size={128}/>
+    <div style={{fontFamily:SPORT,fontStyle:'italic',fontWeight:600,fontSize:30,letterSpacing:10,color:C.white,marginTop:8}}>INTELIGENCIA DEPORTIVA</div>
+    <div style={{fontFamily:SPORT,fontStyle:'italic',fontWeight:900,fontSize:126,lineHeight:1,color:C.white,marginTop:26,textShadow:'0 8px 0 rgba(0,0,0,.55)'}}>
+     PARTIDAZOS <span style={{color:C.lime,textShadow:'0 0 36px rgba(184,255,44,.5)'}}>DEL DÍA</span></div>
+   </div>
+   <div style={{position:'absolute',top:428,left:0,right:0,display:'flex',justifyContent:'center'}}>
+    <div style={{transform:`skewX(-14deg) scaleX(${rib})`,background:C.lime,padding:'12px 46px',boxShadow:'0 0 40px rgba(184,255,44,.55)'}}>
+     <div style={{transform:'skewX(14deg)',display:'flex',alignItems:'center',gap:18,fontFamily:SPORT,fontStyle:'italic',fontWeight:900,fontSize:50,color:C.black}}>
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke={C.black} strokeWidth="2.4"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+      {dateTxt}</div>
+    </div>
+   </div>
+   <div style={{position:'absolute',top:580,left:40,right:40,display:'grid',gap:26}}>
+    {matches.map((m,i)=>{const s=spring({frame:f-10-i*5,fps:FPS,config:{damping:14}}),th=theme(m),
+     crest=(file,name)=>file?<Img src={staticFile(file)} style={{width:150,height:150,objectFit:'contain',filter:'drop-shadow(0 0 10px rgba(255,255,255,.35)) drop-shadow(0 10px 14px rgba(0,0,0,.7))'}}/>:<Crest name={name} size={130}/>;
+     return (
+     <div key={i} style={{opacity:s,transform:`translateX(${(1-s)*(i%2?160:-160)}px)`,position:'relative',height:150,borderRadius:26,
+      background:'linear-gradient(180deg,rgba(18,28,18,.92),rgba(6,10,6,.95))',border:'2px solid rgba(184,255,44,.35)',
+      boxShadow:'0 0 0 1px rgba(0,0,0,.6),0 10px 0 -4px rgba(184,255,44,.55),0 18px 40px rgba(0,0,0,.6)',display:'flex',alignItems:'center',justifyContent:'space-between',padding:'0 6px'}}>
+      <div style={{marginLeft:-26}}>{crest(m.homeCrest,m.home)}</div>
+      <div style={{flex:1,display:'flex',flexDirection:'column',alignItems:'center'}}>
+       <div style={{display:'flex',alignItems:'center',gap:14}}>
+        <div style={nm}>{m.homeShort||m.home}</div>
+        <div style={{transform:`skewX(-14deg) scale(${spring({frame:f-18-i*5,fps:FPS,config:{damping:9}})})`,background:C.lime,padding:'4px 16px',boxShadow:'0 0 22px rgba(184,255,44,.6)'}}>
+         <div style={{transform:'skewX(14deg)',fontFamily:SPORT,fontStyle:'italic',fontWeight:900,fontSize:44,color:C.black,lineHeight:1}}>VS</div></div>
+        <div style={nm}>{m.awayShort||m.away}</div>
        </div>
+       <div style={{fontFamily:SPORT,fontStyle:'italic',fontWeight:800,fontSize:26,letterSpacing:2,color:C.muted,marginTop:6}}>
+        {th.name} · <span style={{color:C.lime}}>{when(m.date)} H</span></div>
       </div>
-      <Crest name={m.away} file={m.awayCrest} size={84}/>
+      <div style={{marginRight:-26}}>{crest(m.awayCrest,m.away)}</div>
      </div>);})}
    </div>
-   {/* Cierre de portada */}
-   <div style={{position:'absolute',bottom:70,left:0,right:0,display:'flex',flexDirection:'column',alignItems:'center',gap:10}}>
-    <div style={{fontFamily:FONT,fontWeight:900,fontSize:58,color:C.white,textShadow:'0 6px 0 rgba(0,0,0,.8),0 0 30px rgba(0,0,0,.9)',WebkitTextStroke:'2px #000'}}>
+   <div style={{position:'absolute',top:1520,left:0,right:0,display:'flex',flexDirection:'column',alignItems:'center',gap:8}}>
+    <div style={{fontFamily:SPORT,fontStyle:'italic',fontWeight:900,fontSize:84,color:C.white,textShadow:'0 6px 0 rgba(0,0,0,.7),0 0 30px rgba(0,0,0,.9)'}}>
      NO ADIVINES. <span style={{color:C.lime}}>ANALIZA.</span></div>
-    <div style={{fontFamily:FONT,fontWeight:700,fontSize:22,color:C.muted,textShadow:'0 2px 8px #000'}}>Horario del centro de México</div>
+    <div style={{fontFamily:SPORT,fontStyle:'italic',fontWeight:800,fontSize:40,letterSpacing:4,color:C.white,background:'rgba(0,0,0,.55)',padding:'4px 22px',borderRadius:10}}>PICKRIXAPP.COM</div>
+    <div style={{fontFamily:SPORT,fontStyle:'italic',fontWeight:600,fontSize:26,color:C.muted,marginTop:6}}>Horario del centro de México</div>
    </div>
   </AbsoluteFill>
  );
@@ -318,7 +364,7 @@ export const PickrixDaily=(p)=>{
    <Sequence from={at.transition[0]} durationInFrames={at.transition[1]} name="transicion">
     <LogoTransition/>{p.sfx&&<Audio src={staticFile(p.sfx)} volume={0.6}/>}
    </Sequence>
-   <Sequence from={at.lineup[0]} durationInFrames={at.lineup[1]} name="partidos"><Lineup matches={p.matches} date={p.date} cover={p.cover}/></Sequence>
+   <Sequence from={at.lineup[0]} durationInFrames={at.lineup[1]} name="partidos"><Lineup matches={p.matches} date={p.date}/></Sequence>
    {p.segments.map((s,i)=>(
     <Sequence key={s.id} from={at.segments[i][0]} durationInFrames={at.segments[i][1]} name={s.id}>
      <Analysis m={p.matches[s.matchIndex]} seg={s} index={i} total={p.segments.length}/>
