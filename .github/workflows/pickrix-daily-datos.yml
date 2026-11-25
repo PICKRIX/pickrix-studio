@@ -49,7 +49,7 @@ jobs:
           bash daily/voice.sh "${{ steps.prep.outputs.dir }}" "$RUNNER_TEMP/pv/bin/piper" "$RUNNER_TEMP/piper/es_MX-ald-medium.onnx"
       - name: Tiempos reales de cada palabra (subtítulos §18, faster-whisper)
         run: |
-          "$RUNNER_TEMP/pv/bin/pip" install -q faster-whisper==1.1.1
+          "$RUNNER_TEMP/pv/bin/pip" install -q faster-whisper==1.1.1 requests
           D="${{ steps.prep.outputs.dir }}"
           args=()
           while IFS=$'\t' read -r id text; do args+=("$id=$D/voz/$id.mp3::$text"); done < "$D/voz/textos.tsv"

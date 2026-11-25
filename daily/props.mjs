@@ -16,6 +16,10 @@ const date=process.argv[2];if(!date)throw Error('Uso: node daily/props.mjs AAAA-
 const src=resolve(root,'muestras',date),pub=resolve(root,'public');
 const d=JSON.parse(await readFile(resolve(src,'daily.json'),'utf8'));
 const dur=JSON.parse(await readFile(resolve(src,'voz/duraciones.json'),'utf8'));
+// §18: tiempos reales de cada palabra (faster-whisper). Sin ellos, el render estima.
+const words=existsSync(resolve(src,'voz/palabras.json'))?JSON.parse(await readFile(resolve(src,'voz/palabras.json'),'utf8')):{};
+const dialogos=JSON.parse(await readFile(resolve(here,'dialogos.json'),'utf8'));
+const W=id=>words[id]?.words||null;
 await mkdir(resolve(pub,'daily'),{recursive:true});
 await cp(src,resolve(pub,'daily',date),{recursive:true});
 const rel=p=>`daily/${date}/${p}`;
@@ -28,9 +32,14 @@ const clip=kind=>{
 const matches=d.matches.map(m=>({...m,
  homeCrest:existsSync(resolve(src,'escudos',`${m.id}-home.png`))?rel(`escudos/${m.id}-home.png`):null,
  awayCrest:existsSync(resolve(src,'escudos',`${m.id}-away.png`))?rel(`escudos/${m.id}-away.png`):null}));
-const props={date,sample:process.argv.includes('--sample'),greeting:d.greeting,saludo:clip('SALUDO'),despedida:clip('DESPEDIDA'),
- saludoText:d.saludo,despedidaText:d.despedida,matches,
- segments:d.segments.map(s=>({...s,audio:rel(`voz/${s.id}.mp3`),seconds:Math.round((dur[s.id]||12)*100)/100})),
+const saludo=clip('SALUDO'),despedida=clip('DESPEDIDA');
+// Con video del presentador, el texto y los tiempos son los del diálogo oficial de ese video.
+const pres=(kind,c,fallbackId,fallbackText)=>c.video?{text:dialogos[`${kind}_${d.greeting}`]||fallbackText,words:W(`${kind}_${d.greeting}`)}:{text:fallbackText,words:W(fallbackId)};
+const ps=pres('SALUDO',saludo,'saludo',d.saludo),pd=pres('DESPEDIDA',despedida,'despedida',d.despedida);
+const props={date,sample:process.argv.includes('--sample'),greeting:d.greeting,saludo,despedida,
+ saludoText:ps.text,saludoWords:ps.words,despedidaText:pd.text,despedidaWords:pd.words,matches,
+ segments:d.segments.map(s=>({...s,words:W(s.id),audio:rel(`voz/${s.id}.mp3`),seconds:Math.round((dur[s.id]||12)*100)/100})),
  sfx:existsSync(resolve(pub,'sfx/whoosh.wav'))?'sfx/whoosh.wav':null,music:existsSync(resolve(pub,'musica/pista.mp3'))?'musica/pista.mp3':null};
 await writeFile(resolve(pub,'daily/props.json'),JSON.stringify(props));
-console.log(`✓ props ${date}: ${props.segments.length} análisis · saludo ${props.saludo.video?'video':'voz'} · despedida ${props.despedida.video?'video':'voz'}`);
+const synced=[props.saludoWords,props.despedidaWords,...props.segments.map(x=>x.words)].filter(Boolean).length;
+console.log(`✓ props ${date}: ${props.segments.length} análisis · subtítulos reales ${synced}/${props.segments.length+2} · saludo ${props.saludo.video?'video':'voz'} · despedida ${props.despedida.video?'video':'voz'}`);
