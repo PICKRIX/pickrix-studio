@@ -10,6 +10,7 @@ import {existsSync} from 'node:fs';
 import {resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {execFileSync} from 'node:child_process';
+import {shortTeam} from './script.mjs';
 
 const here=dirname(fileURLToPath(import.meta.url)),root=resolve(here,'..');
 const date=process.argv[2];if(!date)throw Error('Uso: node daily/props.mjs AAAA-MM-DD [--sample]');
@@ -29,7 +30,7 @@ const clip=kind=>{
  if(existsSync(resolve(pub,video)))return {video,seconds:Math.round(seconds(resolve(pub,video))*100)/100};
  return {audio:rel(`voz/${kind==='SALUDO'?'saludo':'despedida'}.mp3`),seconds:Math.round((dur[kind==='SALUDO'?'saludo':'despedida']+0.4)*100)/100};
 };
-const matches=d.matches.map(m=>({...m,
+const matches=d.matches.map(m=>({...m,homeShort:shortTeam(m.home),awayShort:shortTeam(m.away),
  homeCrest:existsSync(resolve(src,'escudos',`${m.id}-home.png`))?rel(`escudos/${m.id}-home.png`):null,
  awayCrest:existsSync(resolve(src,'escudos',`${m.id}-away.png`))?rel(`escudos/${m.id}-away.png`):null}));
 const saludo=clip('SALUDO'),despedida=clip('DESPEDIDA');
@@ -51,7 +52,8 @@ if(hgWords){
   return {...s,audio:rel(out),seconds:Math.round((end-start)*100)/100,voice:'heygen',words:w.map(x=>({w:x.w,s:Math.round((x.s-start)*1000)/1000,e:Math.round((x.e-start)*1000)/1000}))};
  }));
 }
-const props={date,sample:process.argv.includes('--sample'),greeting:d.greeting,saludo,despedida,
+const coverImg=`presentador/PORTADA_${d.greeting}.jpg`;
+const props={date,cover:existsSync(resolve(pub,coverImg))?coverImg:null,sample:process.argv.includes('--sample'),greeting:d.greeting,saludo,despedida,
  saludoText:ps.text,saludoWords:ps.words,despedidaText:pd.text,despedidaWords:pd.words,matches,
  segments:segs,
  sfx:existsSync(resolve(pub,'sfx/whoosh.wav'))?'sfx/whoosh.wav':null,music:existsSync(resolve(pub,'musica/pista.mp3'))?'musica/pista.mp3':null};

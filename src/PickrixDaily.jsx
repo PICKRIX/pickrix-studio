@@ -145,29 +145,62 @@ const LogoTransition=()=>{
 const when=(iso,zone='America/Mexico_City')=>new Intl.DateTimeFormat('es-MX',{timeZone:zone,hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(iso));
 const longDate=d=>new Intl.DateTimeFormat('es-MX',{timeZone:'UTC',weekday:'long',day:'numeric',month:'long'}).format(new Date(d+'T12:00:00Z')).toUpperCase();
 
-const Lineup=({matches,date})=>{
+/** Portada / alineación del día (también se exporta como PORTADA.jpg). */
+const Lineup=({matches,date,cover})=>{
  const f=useCurrentFrame();
+ const head=spring({frame:f,fps:FPS,config:{damping:13}});
+ const fav=m=>{const p=m.oneXtwo||{},e=[[m.homeShort||m.home,p.home],['Empate',p.draw],[m.awayShort||m.away,p.away]].sort((x,y)=>y[1]-x[1]);
+  return e[0][1]-e[1][1]>=8?{label:e[0][0],p:e[0][1]}:{label:'Parejo',p:null};};
  return (
-  <AbsoluteFill style={{background:`radial-gradient(1200px 1000px at 50% 10%,#16300f,${C.black} 70%)`}}>
-   <Particles count={22}/>
-   <div style={{position:'absolute',top:110,left:0,right:0,display:'flex',flexDirection:'column',alignItems:'center',gap:18}}>
-    <Logo size={64}/>
-    <div style={{fontFamily:FONT,fontWeight:900,fontSize:76,color:C.white,textAlign:'center',lineHeight:1.02}}>LOS 5 <span style={{color:C.lime}}>PARTIDAZOS</span><br/>DEL DÍA</div>
-    <div style={{fontFamily:FONT,fontWeight:800,fontSize:32,color:C.muted,letterSpacing:2}}>{longDate(date)}</div>
+  <AbsoluteFill style={{background:C.black,overflow:'hidden'}}>
+   {/* Fondo de estadio: haces de luz, cancha y partículas */}
+   <AbsoluteFill style={{background:`radial-gradient(1100px 900px at 50% 0%,#1f4a12 0%,#0b1a08 45%,${C.black} 75%)`}}/>
+   {[-1,1].map(side=>(<div key={side} style={{position:'absolute',top:-200,left:side<0?-260:undefined,right:side>0?-260:undefined,width:700,height:1500,
+    background:'linear-gradient(180deg,rgba(220,255,170,.20),transparent 70%)',transform:`rotate(${side*(-24+Math.sin(f/40)*3)}deg)`,transformOrigin:'50% 0',filter:'blur(30px)'}}/>))}
+   <div style={{position:'absolute',left:-300,right:-300,top:380,height:1000,transform:'perspective(900px) rotateX(62deg)',transformOrigin:'50% 0',
+    backgroundImage:'linear-gradient(rgba(184,255,44,.10) 3px,transparent 3px),linear-gradient(90deg,rgba(184,255,44,.08) 3px,transparent 3px)',backgroundSize:'160px 160px',
+    maskImage:'linear-gradient(to bottom,transparent,#000 30%,transparent 90%)'}}/>
+   <Particles count={34}/>
+   {/* Presentador al pie */}
+   {cover&&<div style={{position:'absolute',left:0,right:0,bottom:0,height:900,overflow:'hidden'}}>
+    <Img src={staticFile(cover)} style={{position:'absolute',left:90,width:900,top:-110,transform:`scale(${1.02+f*0.0006})`,transformOrigin:'50% 40%'}}/>
+    <AbsoluteFill style={{background:`linear-gradient(90deg,${C.black} 8%,transparent 22%,transparent 78%,${C.black} 92%)`}}/>
+    <AbsoluteFill style={{background:`linear-gradient(180deg,${C.black} 0%,rgba(3,5,4,.55) 22%,transparent 45%,transparent 80%,rgba(3,5,4,.8) 100%)`}}/>
+   </div>}
+   {/* Encabezado */}
+   <div style={{position:'absolute',top:96,left:0,right:0,display:'flex',flexDirection:'column',alignItems:'center',gap:14,opacity:head,transform:`scale(${.9+.1*head})`}}>
+    <Logo size={60} glow/>
+    <div style={{fontFamily:FONT,fontWeight:900,fontSize:92,color:C.white,textAlign:'center',lineHeight:.98,textShadow:'0 8px 0 rgba(0,0,0,.6)'}}>
+     LOS <span style={{color:C.lime,textShadow:`0 0 40px rgba(184,255,44,.6)`}}>5 PARTIDAZOS</span><br/>DEL DÍA</div>
+    <div style={{fontFamily:FONT,fontWeight:900,fontSize:30,color:C.black,background:C.lime,letterSpacing:2,padding:'8px 26px',borderRadius:40,marginTop:6}}>{longDate(date)}</div>
    </div>
-   <div style={{position:'absolute',top:520,left:56,right:56,display:'grid',gap:22}}>
-    {matches.map((m,i)=>{const s=spring({frame:f-6-i*5,fps:FPS,config:{damping:14}});return (
-     <div key={i} style={{opacity:s,transform:`translateX(${(1-s)*(i%2?120:-120)}px)`,display:'flex',alignItems:'center',gap:18,background:'rgba(13,22,16,.9)',
-      border:`2px solid ${theme(m).accent}66`,borderLeft:`8px solid ${C.lime}`,borderRadius:24,padding:'18px 22px'}}>
-      <Crest name={m.home} file={m.homeCrest} size={78}/>
+   {/* Partidos */}
+   <div style={{position:'absolute',top:470,left:44,right:44,display:'grid',gap:16}}>
+    {matches.map((m,i)=>{const s=spring({frame:f-8-i*5,fps:FPS,config:{damping:14}}),th=theme(m),fv=fav(m);return (
+     <div key={i} style={{opacity:s,transform:`translateX(${(1-s)*(i%2?140:-140)}px)`,position:'relative',display:'flex',alignItems:'center',gap:16,
+      background:`linear-gradient(90deg,${th.accent}2e,rgba(10,18,12,.94) 30%,rgba(10,18,12,.94) 70%,${th.accent}2e)`,
+      border:`2px solid ${th.accent}88`,borderRadius:26,padding:'16px 20px 16px 62px',boxShadow:'0 14px 40px rgba(0,0,0,.55)'}}>
+      <div style={{position:'absolute',left:-6,top:'50%',transform:'translateY(-50%)',width:54,height:54,borderRadius:16,background:C.lime,color:C.black,
+       display:'grid',placeItems:'center',fontFamily:FONT,fontWeight:900,fontSize:32,boxShadow:'0 0 24px rgba(184,255,44,.6)'}}>{i+1}</div>
+      <Crest name={m.home} file={m.homeCrest} size={84}/>
       <div style={{flex:1,minWidth:0,textAlign:'center'}}>
-       <div style={{fontFamily:FONT,fontWeight:900,fontSize:34,color:C.white,whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>{m.home} <span style={{color:C.muted}}>vs</span> {m.away}</div>
-       <div style={{fontFamily:FONT,fontWeight:700,fontSize:24,color:C.muted,marginTop:4}}>{theme(m).name} · <span style={{color:C.lime}}>{when(m.date)} h</span></div>
+       <div style={{fontFamily:FONT,fontWeight:900,fontSize:38,color:C.white,whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis',textTransform:'uppercase'}}>
+        {m.homeShort||m.home} <span style={{color:C.lime}}>vs</span> {m.awayShort||m.away}</div>
+       <div style={{display:'flex',justifyContent:'center',gap:10,marginTop:8,fontFamily:FONT,fontWeight:800,fontSize:22}}>
+        <span style={{color:th.accent===C.lime?C.lime:C.white,background:`${th.accent}44`,padding:'3px 12px',borderRadius:12}}>{th.name}</span>
+        <span style={{color:C.white,background:'rgba(255,255,255,.1)',padding:'3px 12px',borderRadius:12}}>🕒 {when(m.date)} h</span>
+        <span style={{color:C.black,background:C.lime,padding:'3px 12px',borderRadius:12}}>{fv.p?`${String(fv.label).toUpperCase()} ${Math.round(fv.p)}%`:'DUELO PAREJO'}</span>
+       </div>
       </div>
-      <Crest name={m.away} file={m.awayCrest} size={78}/>
+      <Crest name={m.away} file={m.awayCrest} size={84}/>
      </div>);})}
    </div>
-   <div style={{position:'absolute',bottom:60,left:0,right:0,textAlign:'center',fontFamily:FONT,fontWeight:700,fontSize:24,color:C.muted}}>Horario del centro de México</div>
+   {/* Cierre de portada */}
+   <div style={{position:'absolute',bottom:70,left:0,right:0,display:'flex',flexDirection:'column',alignItems:'center',gap:10}}>
+    <div style={{fontFamily:FONT,fontWeight:900,fontSize:58,color:C.white,textShadow:'0 6px 0 rgba(0,0,0,.8),0 0 30px rgba(0,0,0,.9)',WebkitTextStroke:'2px #000'}}>
+     NO ADIVINES. <span style={{color:C.lime}}>ANALIZA.</span></div>
+    <div style={{fontFamily:FONT,fontWeight:700,fontSize:22,color:C.muted,textShadow:'0 2px 8px #000'}}>Horario del centro de México</div>
+   </div>
   </AbsoluteFill>
  );
 };
@@ -285,7 +318,7 @@ export const PickrixDaily=(p)=>{
    <Sequence from={at.transition[0]} durationInFrames={at.transition[1]} name="transicion">
     <LogoTransition/>{p.sfx&&<Audio src={staticFile(p.sfx)} volume={0.6}/>}
    </Sequence>
-   <Sequence from={at.lineup[0]} durationInFrames={at.lineup[1]} name="partidos"><Lineup matches={p.matches} date={p.date}/></Sequence>
+   <Sequence from={at.lineup[0]} durationInFrames={at.lineup[1]} name="partidos"><Lineup matches={p.matches} date={p.date} cover={p.cover}/></Sequence>
    {p.segments.map((s,i)=>(
     <Sequence key={s.id} from={at.segments[i][0]} durationInFrames={at.segments[i][1]} name={s.id}>
      <Analysis m={p.matches[s.matchIndex]} seg={s} index={i} total={p.segments.length}/>
