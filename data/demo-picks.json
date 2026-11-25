@@ -1,0 +1,10 @@
+{
+ "notice": "DEMO — datos ficticios para probar el formato. NUNCA publicar como pronósticos reales.",
+ "picks": [
+  {"fixtureId":"demo-1","home":"Equipo A","away":"Equipo B","league":"Liga Demo","kickoffIso":"2099-01-01T19:00:00.000Z","kickoffLocal":"jue., 13:00","market":"1X2","label":"Gana Equipo A","probability":58,"oddsDecimal":1.95,"oddsAmerican":"-105"},
+  {"fixtureId":"demo-2","home":"Equipo C","away":"Equipo D","league":"Liga Demo","kickoffIso":"2099-01-01T21:00:00.000Z","kickoffLocal":"jue., 15:00","market":"Goles","label":"Over 1.5 goles","probability":77,"oddsDecimal":1.3,"oddsAmerican":"-333"},
+  {"fixtureId":"demo-3","home":"Equipo E","away":"Equipo F","league":"Liga Demo","kickoffIso":"2099-01-01T23:00:00.000Z","kickoffLocal":"jue., 17:00","market":"Ambos marcan","label":"Ambos marcan: Sí","probability":61,"oddsDecimal":1.8,"oddsAmerican":"-125"},
+  {"fixtureId":"demo-4","home":"Equipo G","away":"Equipo H","league":"Liga Demo","kickoffIso":"2099-01-02T01:00:00.000Z","kickoffLocal":"jue., 19:00","market":"Doble oportunidad","label":"Equipo G o Empate (1/X)","probability":70,"oddsDecimal":1.4,"oddsAmerican":"-250"},
+  {"fixtureId":"demo-5","home":"Equipo I","away":"Equipo J","league":"Liga Demo","kickoffIso":"2099-01-02T03:00:00.000Z","kickoffLocal":"jue., 21:00","market":"Goles","label":"Under 3.5 goles","probability":66,"oddsDecimal":1.45,"oddsAmerican":"-222"}
+ ]
+}

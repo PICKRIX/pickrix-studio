@@ -1,0 +1,27 @@
+{
+  "name": "pickrix-mr-pickrix-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "MR. PICKRIX Studio: video diario 9:16 con los HOT PICKS gratuitos de PICKRIX (revisión manual obligatoria, nunca publica en redes).",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "picks": "node scripts/fetch-picks.mjs",
+    "script": "node scripts/write-script.mjs",
+    "voice": "node scripts/voice.mjs",
+    "lipsync": "node scripts/lipsync.mjs",
+    "props": "node scripts/build-props.mjs",
+    "prepare-video": "npm run picks && npm run script && npm run voice && npm run lipsync && npm run props",
+    "render": "remotion render src/index.jsx MrPickrixDaily out/mr-pickrix.mp4 --props=out/props.json --codec=h264 --concurrency=2",
+    "studio": "remotion studio src/index.jsx --props=out/props.json",
+    "daily": "npm run prepare-video && npm run render",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.7.0",
+    "@remotion/cli": "4.0.542",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.542"
+  }
+}

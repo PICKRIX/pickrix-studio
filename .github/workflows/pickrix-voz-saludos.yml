@@ -1,0 +1,43 @@
+name: PICKRIX voz saludos y despedidas (una vez)
+
+# Genera con la voz gratuita Piper (es_MX) los 6 audios de saludos y despedidas
+# para subirlos a CapCut Lip Sync y guarda los MP3 en tools/voz-saludos/audios. No publica nada ni toca producción.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['tools/voz-saludos/dialogos.tsv', '.github/workflows/pickrix-voz-saludos.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  voz:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Piper (voz gratuita, español de México)
+        run: |
+          python3 -m venv "$RUNNER_TEMP/pv"
+          "$RUNNER_TEMP/pv/bin/pip" install -q piper-tts==1.8.0
+          "$RUNNER_TEMP/pv/bin/python" -m piper.download_voices es_MX-ald-medium --data-dir "$RUNNER_TEMP/piper"
+      - name: Generar los 6 audios
+        run: |
+          sudo apt-get install -y -qq ffmpeg >/dev/null
+          mkdir -p tools/voz-saludos/audios
+          while IFS=$'\t' read -r name text; do
+            [ -z "$name" ] && continue
+            printf '%s\n' "$text" | "$RUNNER_TEMP/pv/bin/piper" --model "$RUNNER_TEMP/piper/es_MX-ald-medium.onnx" \
+              --output_file "$RUNNER_TEMP/$name.wav" --length_scale 0.85 --sentence_silence 0.12
+            ffmpeg -v error -y -i "$RUNNER_TEMP/$name.wav" -af "loudnorm=I=-16:TP=-1.5" -ar 44100 -b:a 192k "tools/voz-saludos/audios/$name.mp3"
+            echo "✓ $name $(ffprobe -v error -show_entries format=duration -of csv=p=0 tools/voz-saludos/audios/$name.mp3) s"
+          done < tools/voz-saludos/dialogos.tsv
+          curl -fsSL https://huggingface.co/rhasspy/piper-voices/resolve/main/es/es_MX/ald/medium/MODEL_CARD -o tools/voz-saludos/audios/LICENCIA_VOZ_es_MX-ald.txt || echo "sin ficha" > tools/voz-saludos/audios/LICENCIA_VOZ_es_MX-ald.txt
+      - name: Guardar audios en la rama
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/voz-saludos/audios
+          git commit -m "Audios de saludos y despedidas (Piper es_MX)" || exit 0
+          git push

@@ -1,0 +1,120 @@
+name: MR. PICKRIX Studio (video diario para revisión)
+
+# Genera el video diario de MR. PICKRIX con los HOT PICKS GRATUITOS y lo deja como
+# artifact para REVISIÓN MANUAL. Nunca publica en redes sociales ni toca producción:
+# solo lee endpoints públicos de pickrixapp.com y llama a Claude / ElevenLabs / Kling
+# si sus secretos existen (sin ellos: guion por plantilla, sin voz, imagen animada).
+
+on:
+  schedule:
+    - cron: '0 15 * * *' # 9:00 en Ciudad de México (UTC-6, sin horario de verano)
+  workflow_dispatch:
+    inputs:
+      league:
+        description: 'Liga (código PICKRIX). Vacío = todas. 2 = Champions, 3 = Europa League, 262 = Liga MX'
+        required: false
+        default: ''
+      day:
+        description: 'Día: 0 = hoy, 1 = mañana. Vacío = hoy y mañana'
+        required: false
+        default: ''
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mr-pickrix-studio-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Pruebas de lógica (sin dependencias ni claves)
+        run: node --test tests/*.test.mjs
+
+  video:
+    needs: tests
+    # En PR solo se prueban la lógica y el render DEMO sin claves; los secretos se usan
+    # únicamente en la ejecución programada o manual desde la rama principal.
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PICKRIX_BASE_URL: https://pickrixapp.com
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Instalar (versiones fijas del package-lock)
+        run: npm ci --no-audit --no-fund
+      - name: Dependencias del navegador de Remotion
+        run: npx remotion browser ensure
+      - name: 1 · Picks gratuitos (liga y día opcionales)
+        env:
+          PICKRIX_LEAGUE: ${{ github.event.inputs.league || '' }}
+          PICKRIX_DAY: ${{ github.event.inputs.day || '' }}
+        run: node scripts/fetch-picks.mjs
+      - name: 2 · Guion (Claude o plantilla)
+        env:
+          ANTHROPIC_API_KEY: ${{ github.event_name != 'pull_request' && secrets.ANTHROPIC_API_KEY || '' }}
+        run: node scripts/write-script.mjs
+      - name: 3a · Voz gratuita Piper (español de México, sin cuenta ni clave)
+        id: piper
+        continue-on-error: true
+        working-directory: ${{ runner.temp }}
+        run: |
+          python3 -m venv pv
+          pv/bin/pip install -q piper-tts==1.8.0
+          pv/bin/python -m piper.download_voices es_MX-ald-medium --data-dir piper
+          echo "model=$RUNNER_TEMP/piper/es_MX-ald-medium.onnx" >> "$GITHUB_OUTPUT"
+          echo "bin=$RUNNER_TEMP/pv/bin/piper" >> "$GITHUB_OUTPUT"
+          {
+            echo "### Licencia de la voz Piper (ficha oficial)"
+            echo '```'
+            curl -fsSL https://huggingface.co/rhasspy/piper-voices/resolve/main/es/es_MX/ald/medium/MODEL_CARD | head -30 || echo "No se pudo leer la ficha."
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: 3 · Voz (ElevenLabs si hay clave; si no, Piper gratis)
+        env:
+          PIPER_MODEL: ${{ steps.piper.outputs.model }}
+          PIPER_BIN: ${{ steps.piper.outputs.bin }}
+          ELEVENLABS_API_KEY: ${{ github.event_name != 'pull_request' && secrets.ELEVENLABS_API_KEY || '' }}
+          ELEVENLABS_VOICE_ID: ${{ github.event_name != 'pull_request' && secrets.ELEVENLABS_VOICE_ID || '' }}
+        run: node scripts/voice.mjs
+      - name: 4 · Labios sincronizados intro/cierre (Kling, opcional)
+        env:
+          KLING_API_KEY: ${{ github.event_name != 'pull_request' && secrets.KLING_API_KEY || '' }}
+          KLING_BASE_VIDEO_URL: ${{ vars.KLING_BASE_VIDEO_URL }}
+          KLING_LIPSYNC_MODEL: ${{ vars.KLING_LIPSYNC_MODEL }}
+        run: node scripts/lipsync.mjs
+      - name: 5 · Props y hoja de revisión
+        run: node scripts/build-props.mjs
+      - name: 6 · Render 1080×1920
+        run: npx remotion render src/index.jsx MrPickrixDaily out/mr-pickrix.mp4 --props=out/props.json --codec=h264 --concurrency=2
+      - name: Nombre del artifact (DEMO si los datos son ficticios)
+        id: meta
+        run: |
+          DEMO=$(node -e "console.log(require('./out/props.json').demo?'DEMO-NO-PUBLICAR-':'')")
+          echo "name=${DEMO}mr-pickrix-$(TZ=America/Mexico_City date +%F)" >> "$GITHUB_OUTPUT"
+          cat out/REVISION.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Subir video y guion para revisión manual
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.meta.outputs.name }}
+          retention-days: 14
+          path: |
+            out/mr-pickrix.mp4
+            out/guion.txt
+            out/REVISION.md
+            out/CAPCUT.md
+            out/picks.json
+            out/script.json
