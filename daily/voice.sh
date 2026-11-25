@@ -10,7 +10,7 @@ for(const [id,t] of rows)console.log(id+"\t"+t.replace(/\s+/g," "));
 ' "$(realpath "$dir/daily.json")" > "$dir/voz/textos.tsv"
 echo "{" > "$dir/voz/duraciones.json"; first=1
 while IFS=$'\t' read -r id text; do
-  printf '%s\n' "$text" | "$piper" --model "$model" --output_file "$dir/voz/$id.wav" --length_scale 0.82 --sentence_silence 0.1
+  printf '%s\n' "$text" | "$piper" --model "$model" --output_file "$dir/voz/$id.wav" --length_scale 0.72 --sentence_silence 0.08
   ffmpeg -v error -y -i "$dir/voz/$id.wav" -af "loudnorm=I=-16:TP=-1.5" -ar 44100 -b:a 160k "$dir/voz/$id.mp3"
   dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$dir/voz/$id.mp3"); rm "$dir/voz/$id.wav"
   [ $first -eq 1 ] && first=0 || echo "," >> "$dir/voz/duraciones.json"
