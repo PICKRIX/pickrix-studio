@@ -64,12 +64,18 @@ def main():
     for arg in sys.argv[2:]:
         ident, rest = arg.split('=', 1)
         audio, text = rest.split('::', 1)
-        segs, _ = model.transcribe(decode(audio), language='es', word_timestamps=True, initial_prompt=text, vad_filter=False)
-        rec = [{'w': w.word.strip(), 's': w.start, 'e': w.end} for s in segs for w in (s.words or []) if w.word.strip()]
+        exp = [norm(t) for t in tokens(text)]
+        def run(prompt):
+            segs, _ = model.transcribe(decode(audio), language='es', word_timestamps=True, initial_prompt=prompt, vad_filter=False)
+            rec = [{'w': w.word.strip(), 's': w.start, 'e': w.end} for s in segs for w in (s.words or []) if w.word.strip()]
+            hits = sum(b.size for b in SequenceMatcher(a=exp, b=[norm(w['w']) for w in rec], autojunk=False).get_matching_blocks())
+            return rec, hits / max(1, len(exp))
+        rec, ratio = run(text)
+        if ratio < 0.9:
+            # A veces la pista del guion hace que Whisper se salte el inicio: se repite sin pista y gana la mejor.
+            rec2, ratio2 = run(None)
+            if ratio2 > ratio: rec, ratio = rec2, ratio2
         words = align(text, rec)
-        rn = [norm(w['w']) for w in rec]
-        hits = sum(b.size for b in SequenceMatcher(a=[norm(t) for t in tokens(text)], b=rn, autojunk=False).get_matching_blocks())
-        ratio = hits / max(1, len(words))
         if ratio < 0.8:
             # El audio NO dice el texto esperado: los subtítulos usan lo que realmente se oye.
             print(f'⚠ {ident}: el audio no coincide con el guion ({ratio:.0%}); se usa la transcripción real')
