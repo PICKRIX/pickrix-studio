@@ -10,6 +10,7 @@ const here=dirname(fileURLToPath(import.meta.url));
 const date=process.env.PICKRIX_DATE||dayString(Number(process.env.PICKRIX_DAY||0));
 const out=resolve(here,'../muestras',date);await mkdir(out,{recursive:true});
 const matches=await selectTop({date});
+await writeFile(resolve(here,'../muestras/ULTIMA.txt'),date);
 const daily=buildDaily({date,matches});
 const check=validateDaily(daily);
 await writeFile(resolve(out,'daily.json'),JSON.stringify({...daily,matches,check},null,1));

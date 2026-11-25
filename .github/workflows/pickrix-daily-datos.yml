@@ -7,8 +7,11 @@ on:
   workflow_dispatch:
     inputs:
       day:
-        description: '0 = hoy, 1 = mañana'
+        description: '0 = hoy, 1 = mañana, 2 = pasado mañana'
         default: '0'
+      date:
+        description: 'Fecha exacta AAAA-MM-DD (opcional, tiene prioridad sobre day)'
+        default: ''
   push:
     branches: [main]
     paths: ['daily/**', '.github/workflows/pickrix-daily-datos.yml']
@@ -33,9 +36,10 @@ jobs:
         id: prep
         env:
           PICKRIX_DAY: ${{ github.event.inputs.day || '1' }}
+          PICKRIX_DATE: ${{ github.event.inputs.date || '' }}
         run: |
           node daily/prepare.mjs | tee prep.log
-          echo "dir=$(ls -d muestras/*/ | sort | tail -1)" >> "$GITHUB_OUTPUT"
+          echo "dir=muestras/$(cat muestras/ULTIMA.txt)" >> "$GITHUB_OUTPUT"
       - name: Voz gratuita (Piper es_MX)
         run: |
           sudo apt-get install -y -qq ffmpeg >/dev/null
@@ -43,6 +47,14 @@ jobs:
           "$RUNNER_TEMP/pv/bin/pip" install -q piper-tts==1.8.0
           "$RUNNER_TEMP/pv/bin/python" -m piper.download_voices es_MX-ald-medium --data-dir "$RUNNER_TEMP/piper"
           bash daily/voice.sh "${{ steps.prep.outputs.dir }}" "$RUNNER_TEMP/pv/bin/piper" "$RUNNER_TEMP/piper/es_MX-ald-medium.onnx"
+      - name: Tiempos reales de cada palabra (subtítulos §18, faster-whisper)
+        run: |
+          "$RUNNER_TEMP/pv/bin/pip" install -q faster-whisper==1.1.1
+          D="${{ steps.prep.outputs.dir }}"
+          args=()
+          while IFS=$'\t' read -r id text; do args+=("$id=$D/voz/$id.mp3::$text"); done < "$D/voz/textos.tsv"
+          for f in presentador_audio/*.mp3; do k=$(basename "$f" .mp3); t=$(node -e "const g=require('./daily/dialogos.json');console.log(g['$k']||'')"); [ -n "$t" ] && args+=("$k=$f::$t"); done
+          "$RUNNER_TEMP/pv/bin/python" daily/align.py "$D/voz/palabras.json" "${args[@]}"
       - name: Guardar
         run: |
           git config user.name "github-actions[bot]"
