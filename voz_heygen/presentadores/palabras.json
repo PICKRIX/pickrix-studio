@@ -1,0 +1,893 @@
+{
+ "DESPEDIDA_AMANTES_DEL_DEPORTE": {
+  "words": [
+   {
+    "w": "¡Hasta",
+    "s": 0.0,
+    "e": 0.54
+   },
+   {
+    "w": "aquí",
+    "s": 0.54,
+    "e": 0.78
+   },
+   {
+    "w": "nuestro",
+    "s": 0.78,
+    "e": 0.94
+   },
+   {
+    "w": "radar",
+    "s": 0.94,
+    "e": 1.38
+   },
+   {
+    "w": "deportivo",
+    "s": 1.38,
+    "e": 2.02
+   },
+   {
+    "w": "de",
+    "s": 2.02,
+    "e": 2.16
+   },
+   {
+    "w": "hoy,",
+    "s": 2.16,
+    "e": 2.36
+   },
+   {
+    "w": "porque",
+    "s": 2.64,
+    "e": 2.86
+   },
+   {
+    "w": "disfrutar",
+    "s": 2.86,
+    "e": 3.4
+   },
+   {
+    "w": "del",
+    "s": 3.4,
+    "e": 3.58
+   },
+   {
+    "w": "deporte",
+    "s": 3.58,
+    "e": 3.96
+   },
+   {
+    "w": "también",
+    "s": 3.96,
+    "e": 4.44
+   },
+   {
+    "w": "es",
+    "s": 4.44,
+    "e": 4.62
+   },
+   {
+    "w": "entenderlo!",
+    "s": 4.62,
+    "e": 5.18
+   },
+   {
+    "w": "Encuentren",
+    "s": 5.64,
+    "e": 6.08
+   },
+   {
+    "w": "más",
+    "s": 6.08,
+    "e": 6.32
+   },
+   {
+    "w": "estadísticas",
+    "s": 6.32,
+    "e": 7.0
+   },
+   {
+    "w": "y",
+    "s": 7.0,
+    "e": 7.14
+   },
+   {
+    "w": "análisis",
+    "s": 7.14,
+    "e": 7.62
+   },
+   {
+    "w": "en",
+    "s": 7.62,
+    "e": 7.92
+   },
+   {
+    "w": "pickrixapp",
+    "s": 7.92,
+    "e": 8.66
+   },
+   {
+    "w": ".com.",
+    "s": 8.66,
+    "e": 9.2
+   },
+   {
+    "w": "¡Nos",
+    "s": 9.8,
+    "e": 10.12
+   },
+   {
+    "w": "vemos",
+    "s": 10.12,
+    "e": 10.3
+   },
+   {
+    "w": "en",
+    "s": 10.3,
+    "e": 10.5
+   },
+   {
+    "w": "la",
+    "s": 10.5,
+    "e": 10.58
+   },
+   {
+    "w": "próxima",
+    "s": 10.58,
+    "e": 10.82
+   },
+   {
+    "w": "jornada!",
+    "s": 10.82,
+    "e": 11.36
+   },
+   {
+    "w": "¡No",
+    "s": 11.68,
+    "e": 11.76
+   },
+   {
+    "w": "adivines!",
+    "s": 11.76,
+    "e": 12.16
+   },
+   {
+    "w": "¡Analiza!",
+    "s": 12.5,
+    "e": 12.96
+   }
+  ],
+  "match": 0.5,
+  "recognized": "¡Hasta aquí nuestro radar deportivo de hoy, porque disfrutar del deporte también es entenderlo! Encuentren más estadísticas y análisis en pickrixapp .com. ¡Nos vemos en la próxima jornada! ¡No adivines! ¡Analiza!"
+ },
+ "DESPEDIDA_CRACKS": {
+  "words": [
+   {
+    "w": "¡Y",
+    "s": 0.0,
+    "e": 0.48
+   },
+   {
+    "w": "listo,",
+    "s": 0.48,
+    "e": 0.78
+   },
+   {
+    "w": "cracks!",
+    "s": 0.8,
+    "e": 0.92
+   },
+   {
+    "w": "Ya",
+    "s": 1.34,
+    "e": 1.46
+   },
+   {
+    "w": "tienen",
+    "s": 1.46,
+    "e": 1.72
+   },
+   {
+    "w": "los",
+    "s": 1.72,
+    "e": 1.84
+   },
+   {
+    "w": "pronósticos,",
+    "s": 1.84,
+    "e": 2.4
+   },
+   {
+    "w": "ahora",
+    "s": 2.72,
+    "e": 2.9
+   },
+   {
+    "w": "toca",
+    "s": 2.9,
+    "e": 3.16
+   },
+   {
+    "w": "disfrutar",
+    "s": 3.16,
+    "e": 3.7
+   },
+   {
+    "w": "los",
+    "s": 3.7,
+    "e": 3.84
+   },
+   {
+    "w": "partidazos.",
+    "s": 3.84,
+    "e": 4.82
+   },
+   {
+    "w": "Recuerden,",
+    "s": 4.88,
+    "e": 5.44
+   },
+   {
+    "w": "el",
+    "s": 5.72,
+    "e": 5.82
+   },
+   {
+    "w": "azar",
+    "s": 5.82,
+    "e": 6.12
+   },
+   {
+    "w": "no",
+    "s": 6.12,
+    "e": 6.26
+   },
+   {
+    "w": "tiene",
+    "s": 6.26,
+    "e": 6.44
+   },
+   {
+    "w": "memoria,",
+    "s": 6.44,
+    "e": 6.88
+   },
+   {
+    "w": "los",
+    "s": 7.16,
+    "e": 7.26
+   },
+   {
+    "w": "datos",
+    "s": 7.26,
+    "e": 7.52
+   },
+   {
+    "w": "sí.",
+    "s": 7.52,
+    "e": 7.82
+   },
+   {
+    "w": "Menos",
+    "s": 8.24,
+    "e": 8.54
+   },
+   {
+    "w": "corazónadas,",
+    "s": 8.54,
+    "e": 9.12
+   },
+   {
+    "w": "más",
+    "s": 9.4,
+    "e": 9.6
+   },
+   {
+    "w": "estadísticas.",
+    "s": 9.6,
+    "e": 10.3
+   },
+   {
+    "w": "Esto",
+    "s": 10.78,
+    "e": 11.06
+   },
+   {
+    "w": "es",
+    "s": 11.06,
+    "e": 11.28
+   },
+   {
+    "w": "Pickrix.",
+    "s": 11.28,
+    "e": 11.68
+   }
+  ],
+  "match": 0.25,
+  "recognized": "¡Y listo, cracks! Ya tienen los pronósticos, ahora toca disfrutar los partidazos. Recuerden, el azar no tiene memoria, los datos sí. Menos corazónadas, más estadísticas. Esto es Pickrix."
+ },
+ "DESPEDIDA_PICKXERS": {
+  "words": [
+   {
+    "w": "Eso",
+    "s": 0.0,
+    "e": 0.52
+   },
+   {
+    "w": "es",
+    "s": 0.52,
+    "e": 0.68
+   },
+   {
+    "w": "todo",
+    "s": 0.68,
+    "e": 0.84
+   },
+   {
+    "w": "por",
+    "s": 0.84,
+    "e": 1.08
+   },
+   {
+    "w": "hoy,",
+    "s": 1.08,
+    "e": 1.2
+   },
+   {
+    "w": "Pickxers.",
+    "s": 1.26,
+    "e": 1.6
+   },
+   {
+    "w": "La",
+    "s": 2.0,
+    "e": 2.1
+   },
+   {
+    "w": "acción",
+    "s": 2.1,
+    "e": 2.42
+   },
+   {
+    "w": "está",
+    "s": 2.42,
+    "e": 2.62
+   },
+   {
+    "w": "por",
+    "s": 2.62,
+    "e": 2.8
+   },
+   {
+    "w": "comenzar.",
+    "s": 2.8,
+    "e": 3.32
+   },
+   {
+    "w": "Pero",
+    "s": 3.66,
+    "e": 3.7
+   },
+   {
+    "w": "nuestro",
+    "s": 3.7,
+    "e": 3.92
+   },
+   {
+    "w": "análisis",
+    "s": 3.92,
+    "e": 4.44
+   },
+   {
+    "w": "no",
+    "s": 4.44,
+    "e": 4.66
+   },
+   {
+    "w": "se",
+    "s": 4.66,
+    "e": 4.8
+   },
+   {
+    "w": "detiene.",
+    "s": 4.8,
+    "e": 5.2
+   },
+   {
+    "w": "Descubran",
+    "s": 5.52,
+    "e": 5.98
+   },
+   {
+    "w": "mucho",
+    "s": 5.98,
+    "e": 6.26
+   },
+   {
+    "w": "más",
+    "s": 6.26,
+    "e": 6.5
+   },
+   {
+    "w": "en",
+    "s": 6.5,
+    "e": 6.7
+   },
+   {
+    "w": "Pickrixapp",
+    "s": 6.7,
+    "e": 7.32
+   },
+   {
+    "w": ".com.",
+    "s": 7.32,
+    "e": 7.96
+   },
+   {
+    "w": "Y",
+    "s": 8.16,
+    "e": 8.32
+   },
+   {
+    "w": "recuerden",
+    "s": 8.32,
+    "e": 8.74
+   },
+   {
+    "w": "nuestro",
+    "s": 8.74,
+    "e": 8.92
+   },
+   {
+    "w": "lema.",
+    "s": 8.92,
+    "e": 9.32
+   },
+   {
+    "w": "¡No",
+    "s": 9.7,
+    "e": 9.78
+   },
+   {
+    "w": "adivines,",
+    "s": 9.78,
+    "e": 10.2
+   },
+   {
+    "w": "analiza!",
+    "s": 10.5,
+    "e": 11.02
+   }
+  ],
+  "match": 0.615,
+  "recognized": "Eso es todo por hoy, Pickxers. La acción está por comenzar. Pero nuestro análisis no se detiene. Descubran mucho más en Pickrixapp .com. Y recuerden nuestro lema. ¡No adivines, analiza!"
+ },
+ "SALUDO_AMANTES_DEL_DEPORTE": {
+  "words": [
+   {
+    "w": "¡Qué",
+    "s": 0.0,
+    "e": 0.44
+   },
+   {
+    "w": "tal,",
+    "s": 0.44,
+    "e": 0.66
+   },
+   {
+    "w": "amantes",
+    "s": 0.68,
+    "e": 1.0
+   },
+   {
+    "w": "del",
+    "s": 1.0,
+    "e": 1.16
+   },
+   {
+    "w": "deporte!",
+    "s": 1.16,
+    "e": 1.52
+   },
+   {
+    "w": "Antes",
+    "s": 2.0,
+    "e": 2.22
+   },
+   {
+    "w": "de",
+    "s": 2.22,
+    "e": 2.38
+   },
+   {
+    "w": "que",
+    "s": 2.38,
+    "e": 2.46
+   },
+   {
+    "w": "comience",
+    "s": 2.46,
+    "e": 2.82
+   },
+   {
+    "w": "la",
+    "s": 2.82,
+    "e": 2.94
+   },
+   {
+    "w": "acción,",
+    "s": 2.94,
+    "e": 3.3
+   },
+   {
+    "w": "veamos",
+    "s": 3.54,
+    "e": 3.82
+   },
+   {
+    "w": "qué",
+    "s": 3.82,
+    "e": 4.0
+   },
+   {
+    "w": "nos",
+    "s": 4.0,
+    "e": 4.16
+   },
+   {
+    "w": "cuentan",
+    "s": 4.16,
+    "e": 4.46
+   },
+   {
+    "w": "los",
+    "s": 4.46,
+    "e": 4.58
+   },
+   {
+    "w": "números.",
+    "s": 4.58,
+    "e": 4.88
+   },
+   {
+    "w": "Estos",
+    "s": 5.34,
+    "e": 5.62
+   },
+   {
+    "w": "son",
+    "s": 5.62,
+    "e": 5.76
+   },
+   {
+    "w": "los",
+    "s": 5.76,
+    "e": 5.9
+   },
+   {
+    "w": "cinco",
+    "s": 5.9,
+    "e": 6.16
+   },
+   {
+    "w": "encuentros",
+    "s": 6.16,
+    "e": 6.68
+   },
+   {
+    "w": "que",
+    "s": 6.68,
+    "e": 6.82
+   },
+   {
+    "w": "hoy",
+    "s": 6.82,
+    "e": 6.96
+   },
+   {
+    "w": "están",
+    "s": 6.96,
+    "e": 7.2
+   },
+   {
+    "w": "en",
+    "s": 7.2,
+    "e": 7.34
+   },
+   {
+    "w": "el",
+    "s": 7.34,
+    "e": 7.44
+   },
+   {
+    "w": "radar",
+    "s": 7.44,
+    "e": 7.66
+   },
+   {
+    "w": "de",
+    "s": 7.66,
+    "e": 7.88
+   },
+   {
+    "w": "Picrix.",
+    "s": 7.88,
+    "e": 8.32
+   },
+   {
+    "w": "¡Comenzamos!",
+    "s": 8.74,
+    "e": 9.22
+   }
+  ],
+  "match": 0.5,
+  "recognized": "¡Qué tal, amantes del deporte! Antes de que comience la acción, veamos qué nos cuentan los números. Estos son los cinco encuentros que hoy están en el radar de Picrix. ¡Comenzamos!"
+ },
+ "SALUDO_CRACKS": {
+  "words": [
+   {
+    "w": "¡Qué",
+    "s": 0.0,
+    "e": 0.42
+   },
+   {
+    "w": "onda,",
+    "s": 0.42,
+    "e": 0.62
+   },
+   {
+    "w": "cracks!",
+    "s": 0.7,
+    "e": 0.88
+   },
+   {
+    "w": "Ustedes",
+    "s": 1.26,
+    "e": 1.66
+   },
+   {
+    "w": "ponen",
+    "s": 1.66,
+    "e": 1.92
+   },
+   {
+    "w": "la",
+    "s": 1.92,
+    "e": 2.02
+   },
+   {
+    "w": "pasión,",
+    "s": 2.02,
+    "e": 2.38
+   },
+   {
+    "w": "nosotros",
+    "s": 2.64,
+    "e": 2.86
+   },
+   {
+    "w": "ponemos",
+    "s": 2.86,
+    "e": 3.38
+   },
+   {
+    "w": "los",
+    "s": 3.38,
+    "e": 3.52
+   },
+   {
+    "w": "números.",
+    "s": 3.52,
+    "e": 3.82
+   },
+   {
+    "w": "Hoy",
+    "s": 4.22,
+    "e": 4.34
+   },
+   {
+    "w": "tenemos",
+    "s": 4.34,
+    "e": 4.62
+   },
+   {
+    "w": "cinco",
+    "s": 4.62,
+    "e": 4.96
+   },
+   {
+    "w": "partidazos",
+    "s": 4.96,
+    "e": 5.62
+   },
+   {
+    "w": "bajo",
+    "s": 5.62,
+    "e": 5.76
+   },
+   {
+    "w": "la",
+    "s": 5.76,
+    "e": 5.94
+   },
+   {
+    "w": "lupa.",
+    "s": 5.94,
+    "e": 6.22
+   },
+   {
+    "w": "Esto",
+    "s": 6.54,
+    "e": 6.76
+   },
+   {
+    "w": "es",
+    "s": 6.76,
+    "e": 6.96
+   },
+   {
+    "w": "P",
+    "s": 6.96,
+    "e": 7.14
+   },
+   {
+    "w": "-CREAKS",
+    "s": 7.14,
+    "e": 7.54
+   },
+   {
+    "w": "y",
+    "s": 7.54,
+    "e": 7.7
+   },
+   {
+    "w": "arrancamos.",
+    "s": 7.7,
+    "e": 8.2
+   }
+  ],
+  "match": 0.278,
+  "recognized": "¡Qué onda, cracks! Ustedes ponen la pasión, nosotros ponemos los números. Hoy tenemos cinco partidazos bajo la lupa. Esto es P -CREAKS y arrancamos."
+ },
+ "SALUDO_PICKXERS": {
+  "words": [
+   {
+    "w": "¡Hey,",
+    "s": 0.0,
+    "e": 0.44
+   },
+   {
+    "w": "Pickxers!",
+    "s": 0.5,
+    "e": 0.92
+   },
+   {
+    "w": "Ya",
+    "s": 1.24,
+    "e": 1.34
+   },
+   {
+    "w": "saben",
+    "s": 1.34,
+    "e": 1.56
+   },
+   {
+    "w": "que",
+    "s": 1.56,
+    "e": 1.7
+   },
+   {
+    "w": "aquí",
+    "s": 1.7,
+    "e": 1.84
+   },
+   {
+    "w": "no",
+    "s": 1.84,
+    "e": 1.96
+   },
+   {
+    "w": "usamos",
+    "s": 1.96,
+    "e": 2.24
+   },
+   {
+    "w": "la",
+    "s": 2.24,
+    "e": 2.38
+   },
+   {
+    "w": "bola",
+    "s": 2.38,
+    "e": 2.52
+   },
+   {
+    "w": "de",
+    "s": 2.52,
+    "e": 2.66
+   },
+   {
+    "w": "cristal.",
+    "s": 2.66,
+    "e": 3.08
+   },
+   {
+    "w": "Usamos",
+    "s": 3.22,
+    "e": 3.54
+   },
+   {
+    "w": "las",
+    "s": 3.54,
+    "e": 3.7
+   },
+   {
+    "w": "estadísticas.",
+    "s": 3.7,
+    "e": 4.36
+   },
+   {
+    "w": "Tenemos",
+    "s": 4.62,
+    "e": 4.9
+   },
+   {
+    "w": "cinco",
+    "s": 4.9,
+    "e": 5.22
+   },
+   {
+    "w": "encuentros",
+    "s": 5.22,
+    "e": 5.76
+   },
+   {
+    "w": "que",
+    "s": 5.76,
+    "e": 5.86
+   },
+   {
+    "w": "no",
+    "s": 5.86,
+    "e": 5.98
+   },
+   {
+    "w": "se",
+    "s": 5.98,
+    "e": 6.12
+   },
+   {
+    "w": "pueden",
+    "s": 6.12,
+    "e": 6.32
+   },
+   {
+    "w": "perder.",
+    "s": 6.32,
+    "e": 6.62
+   },
+   {
+    "w": "¡Vamos",
+    "s": 7.0,
+    "e": 7.26
+   },
+   {
+    "w": "con",
+    "s": 7.26,
+    "e": 7.42
+   },
+   {
+    "w": "el",
+    "s": 7.42,
+    "e": 7.52
+   },
+   {
+    "w": "análisis!",
+    "s": 7.52,
+    "e": 7.96
+   }
+  ],
+  "match": 0.333,
+  "recognized": "¡Hey, Pickxers! Ya saben que aquí no usamos la bola de cristal. Usamos las estadísticas. Tenemos cinco encuentros que no se pueden perder. ¡Vamos con el análisis!"
+ }
+}
