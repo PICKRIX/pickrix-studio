@@ -1,0 +1,28 @@
+name: PICKRIX DAILY · tiempos de la voz HeyGen
+on:
+  push:
+    paths: ['voz_heygen/**/analisis.mp3']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  alinear:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tiempos reales de cada palabra (faster-whisper)
+        run: |
+          sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq ffmpeg >/dev/null
+          python3 -m venv "$RUNNER_TEMP/pv"
+          "$RUNNER_TEMP/pv/bin/pip" install -q faster-whisper==1.1.1 requests
+          for d in voz_heygen/*/; do
+            [ -f "$d/analisis.mp3" ] && [ ! -f "$d/palabras.json" ] || continue
+            "$RUNNER_TEMP/pv/bin/python" daily/align.py "$d/palabras.json" "analisis=$d/analisis.mp3::$(cat "$d/analisis.txt")"
+          done
+      - name: Guardar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add voz_heygen
+          git commit -m "PICKRIX DAILY: tiempos voz HeyGen" || exit 0
+          git pull --rebase -q && git push
