@@ -198,7 +198,8 @@ const Stadium=()=>{
   </AbsoluteFill>
  );
 };
-const Lineup=({matches,date})=>{
+const Lineup=({matches,date,title})=>{
+ const tl=title||['PARTIDAZOS','DEL DÍA'],two=Boolean(title),dy=two?118:0;
  const f=useCurrentFrame();
  const head=spring({frame:f,fps:FPS,config:{damping:13}}),rib=spring({frame:f-6,fps:FPS,config:{damping:14}});
  const dateTxt=new Intl.DateTimeFormat('es-MX',{timeZone:'UTC',weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(new Date(date+'T12:00:00Z')).replace(/,/g,'').toUpperCase();
@@ -210,17 +211,17 @@ const Lineup=({matches,date})=>{
    <div style={{position:'absolute',top:80,left:0,right:0,display:'flex',flexDirection:'column',alignItems:'center',opacity:head,transform:`translateY(${(1-head)*-40}px)`}}>
     <BrandMark size={128}/>
     <div style={{fontFamily:SPORT,fontStyle:'italic',fontWeight:600,fontSize:30,letterSpacing:10,color:C.white,marginTop:8}}>INTELIGENCIA DEPORTIVA</div>
-    <div style={{fontFamily:SPORT,fontStyle:'italic',fontWeight:900,fontSize:126,lineHeight:1,color:C.white,marginTop:26,textShadow:'0 8px 0 rgba(0,0,0,.55)'}}>
-     PARTIDAZOS <span style={{color:C.lime,textShadow:'0 0 36px rgba(184,255,44,.5)'}}>DEL DÍA</span></div>
+    <div style={{fontFamily:SPORT,fontStyle:'italic',fontWeight:900,fontSize:two?112:126,lineHeight:1,color:C.white,marginTop:26,textShadow:'0 8px 0 rgba(0,0,0,.55)',textAlign:'center'}}>
+     {tl[0]}{two?<br/>:' '}<span style={{color:C.lime,textShadow:'0 0 36px rgba(184,255,44,.5)'}}>{tl[1]}</span></div>
    </div>
-   <div style={{position:'absolute',top:428,left:0,right:0,display:'flex',justifyContent:'center'}}>
+   <div style={{position:'absolute',top:428+dy,left:0,right:0,display:'flex',justifyContent:'center'}}>
     <div style={{transform:`skewX(-14deg) scaleX(${rib})`,background:C.lime,padding:'12px 46px',boxShadow:'0 0 40px rgba(184,255,44,.55)'}}>
      <div style={{transform:'skewX(14deg)',display:'flex',alignItems:'center',gap:18,fontFamily:SPORT,fontStyle:'italic',fontWeight:900,fontSize:50,color:C.black}}>
       <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke={C.black} strokeWidth="2.4"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
       {dateTxt}</div>
     </div>
    </div>
-   <div style={{position:'absolute',top:580,left:40,right:40,display:'grid',gap:26}}>
+   <div style={{position:'absolute',top:580+dy,left:40,right:40,display:'grid',gap:two?20:26}}>
     {matches.map((m,i)=>{const s=spring({frame:f-10-i*5,fps:FPS,config:{damping:14}}),th=theme(m),
      crest=(file,name)=>file?<Img src={staticFile(file)} style={{width:150,height:150,objectFit:'contain',filter:'drop-shadow(0 0 10px rgba(255,255,255,.35)) drop-shadow(0 10px 14px rgba(0,0,0,.7))'}}/>:<Crest name={name} size={130}/>;
      return (
@@ -241,7 +242,7 @@ const Lineup=({matches,date})=>{
       <div style={{marginRight:-26}}>{crest(m.awayCrest,m.away)}</div>
      </div>);})}
    </div>
-   <div style={{position:'absolute',top:1520,left:0,right:0,display:'flex',flexDirection:'column',alignItems:'center',gap:8}}>
+   <div style={{position:'absolute',top:two?1640:1520,left:0,right:0,display:'flex',flexDirection:'column',alignItems:'center',gap:8}}>
     <div style={{fontFamily:SPORT,fontStyle:'italic',fontWeight:900,fontSize:84,color:C.white,textShadow:'0 6px 0 rgba(0,0,0,.7),0 0 30px rgba(0,0,0,.9)'}}>
      NO ADIVINES. <span style={{color:C.lime}}>ANALIZA.</span></div>
     <div style={{fontFamily:SPORT,fontStyle:'italic',fontWeight:800,fontSize:40,letterSpacing:4,color:C.white,background:'rgba(0,0,0,.55)',padding:'4px 22px',borderRadius:10}}>PICKRIXAPP.COM</div>
@@ -273,7 +274,8 @@ const Analysis=({m,seg,index,total})=>{
    <ThemeBg th={th}/>
    <div style={{position:'absolute',top:70,left:56,right:56,display:'flex',justifyContent:'space-between',alignItems:'center'}}>
     <Logo size={46}/>
-    <div style={{fontFamily:FONT,fontWeight:900,fontSize:26,color:C.black,background:C.lime,borderRadius:30,padding:'8px 20px'}}>PARTIDO {index+1}/{total}</div>
+    <div style={{display:'flex',alignItems:'center'}}>    <div style={{fontFamily:FONT,fontWeight:900,fontSize:26,color:C.black,background:C.lime,borderRadius:30,padding:'8px 20px'}}>PARTIDO {index+1}/{total}</div>
+    {seg.confidence&&<div style={{fontFamily:FONT,fontWeight:900,fontSize:22,color:C.lime,border:`2px solid ${C.lime}`,borderRadius:30,padding:'6px 16px',marginLeft:10}}>CONFIANZA {seg.confidence}</div>}</div>
    </div>
    <div style={{position:'absolute',top:160,left:0,right:0,textAlign:'center',fontFamily:FONT,fontWeight:900,fontSize:34,letterSpacing:3,color:th.accent}}>{th.name}</div>
    {/* Escudos enfrentados */}
@@ -364,7 +366,7 @@ export const PickrixDaily=(p)=>{
    <Sequence from={at.transition[0]} durationInFrames={at.transition[1]} name="transicion">
     <LogoTransition/>{p.sfx&&<Audio src={staticFile(p.sfx)} volume={0.6}/>}
    </Sequence>
-   <Sequence from={at.lineup[0]} durationInFrames={at.lineup[1]} name="partidos"><Lineup matches={p.matches} date={p.date}/></Sequence>
+   <Sequence from={at.lineup[0]} durationInFrames={at.lineup[1]} name="partidos"><Lineup matches={p.matches} date={p.date} title={p.title}/></Sequence>
    {p.segments.map((s,i)=>(
     <Sequence key={s.id} from={at.segments[i][0]} durationInFrames={at.segments[i][1]} name={s.id}>
      <Analysis m={p.matches[s.matchIndex]} seg={s} index={i} total={p.segments.length}/>

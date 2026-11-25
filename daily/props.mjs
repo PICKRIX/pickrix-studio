@@ -6,7 +6,7 @@
  * se usa la voz del diálogo sobre la imagen de MR. PICKRIX.
  */
 import {readFile,writeFile,cp,mkdir} from 'node:fs/promises';
-import {existsSync} from 'node:fs';
+import {existsSync,readFileSync} from 'node:fs';
 import {resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {execFileSync} from 'node:child_process';
@@ -21,12 +21,18 @@ const dur=JSON.parse(await readFile(resolve(src,'voz/duraciones.json'),'utf8'));
 const words=existsSync(resolve(src,'voz/palabras.json'))?JSON.parse(await readFile(resolve(src,'voz/palabras.json'),'utf8')):{};
 const dialogos=JSON.parse(await readFile(resolve(here,'dialogos.json'),'utf8'));
 const W=id=>words[id]?.words||null;
+const hgDir=resolve(root,'voz_heygen',date);
+const ed=existsSync(resolve(hgDir,'guion.json'))?JSON.parse(await readFile(resolve(hgDir,'guion.json'),'utf8')):null;
+const hgAll=existsSync(resolve(hgDir,'palabras.json'))?JSON.parse(await readFile(resolve(hgDir,'palabras.json'),'utf8')):{};
+const txt=f=>existsSync(resolve(hgDir,f))?readFileSync(resolve(hgDir,f),'utf8').trim():null;
+if(ed?.segmentos)d.segments=d.segments.map((s,i)=>({...s,text:ed.segmentos[i]??s.text,confidence:ed.confianza?.[i]||null}));
+const presKey=ed?.presentador||d.greeting;
 await mkdir(resolve(pub,'daily'),{recursive:true});
 await cp(src,resolve(pub,'daily',date),{recursive:true});
 const rel=p=>`daily/${date}/${p}`;
 const seconds=f=>Number(execFileSync('ffprobe',['-v','error','-show_entries','format=duration','-of','csv=p=0',f]).toString().trim());
 const clip=kind=>{
- const video=`presentador/${kind}_${d.greeting}.mp4`;
+ const video=`presentador/${kind}_${presKey}.mp4`;
  if(existsSync(resolve(pub,video)))return {video,seconds:Math.round(seconds(resolve(pub,video))*100)/100};
  return {audio:rel(`voz/${kind==='SALUDO'?'saludo':'despedida'}.mp3`),seconds:Math.round((dur[kind==='SALUDO'?'saludo':'despedida']+0.4)*100)/100};
 };
@@ -35,10 +41,10 @@ const matches=d.matches.map(m=>({...m,homeShort:shortTeam(m.home),awayShort:shor
  awayCrest:existsSync(resolve(src,'escudos',`${m.id}-away.png`))?rel(`escudos/${m.id}-away.png`):null}));
 const saludo=clip('SALUDO'),despedida=clip('DESPEDIDA');
 // Con video del presentador, el texto y los tiempos son los del diálogo oficial de ese video.
-const pres=(kind,c,fallbackId,fallbackText)=>c.video?{text:dialogos[`${kind}_${d.greeting}`]||fallbackText,words:W(`${kind}_${d.greeting}`)}:{text:fallbackText,words:W(fallbackId)};
+const pres=(kind,c,fallbackId,fallbackText)=>c.video&&hgAll[kind]?{text:txt(`${kind}.txt`),words:hgAll[kind].words}:c.video?{text:dialogos[`${kind}_${d.greeting}`]||fallbackText,words:W(`${kind}_${d.greeting}`)}:{text:fallbackText,words:W(fallbackId)};
 const ps=pres('SALUDO',saludo,'saludo',d.saludo),pd=pres('DESPEDIDA',despedida,'despedida',d.despedida);
 // Voz HeyGen de los análisis (un solo audio con los 5 bloques): se corta por bloque con los tiempos reales.
-const hgDir=resolve(root,'voz_heygen',date),hgWords=existsSync(resolve(hgDir,'palabras.json'))?JSON.parse(await readFile(resolve(hgDir,'palabras.json'),'utf8')).analisis?.words:null;
+const hgWords=hgAll.analisis?.words||null;
 let segs=d.segments.map(s=>({...s,words:W(s.id),audio:rel(`voz/${s.id}.mp3`),seconds:Math.round((dur[s.id]||12)*100)/100}));
 if(hgWords){
  const counts=d.segments.map(s=>s.text.trim().split(/\s+/).length);
@@ -53,7 +59,7 @@ if(hgWords){
  }));
 }
 const coverImg=`presentador/PORTADA_${d.greeting}.jpg`;
-const props={date,cover:existsSync(resolve(pub,coverImg))?coverImg:null,sample:process.argv.includes('--sample'),greeting:d.greeting,saludo,despedida,
+const props={date,title:ed?.edicion==='ESTELARES'?['LOS 5 PARTIDOS','ESTELARES DEL DÍA']:null,cover:existsSync(resolve(pub,coverImg))?coverImg:null,sample:process.argv.includes('--sample'),greeting:d.greeting,saludo,despedida,
  saludoText:ps.text,saludoWords:ps.words,despedidaText:pd.text,despedidaWords:pd.words,matches,
  segments:segs,
  sfx:existsSync(resolve(pub,'sfx/whoosh.wav'))?'sfx/whoosh.wav':null,music:existsSync(resolve(pub,'musica/pista.mp3'))?'musica/pista.mp3':null};
