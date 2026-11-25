@@ -21,7 +21,12 @@ const dur=JSON.parse(await readFile(resolve(src,'voz/duraciones.json'),'utf8'));
 const words=existsSync(resolve(src,'voz/palabras.json'))?JSON.parse(await readFile(resolve(src,'voz/palabras.json'),'utf8')):{};
 const dialogos=JSON.parse(await readFile(resolve(here,'dialogos.json'),'utf8'));
 const W=id=>words[id]?.words||null;
-const hgDir=resolve(root,'voz_heygen',date);
+// Edición: --edicion=estelares usa voz_heygen/<fecha>-estelares/; sin bandera, PICKRIX DAILY (voz_heygen/<fecha>/).
+const edArg=(process.argv.find(a=>a.startsWith('--edicion='))||'').split('=')[1]||'';
+const hgDir=resolve(root,'voz_heygen',edArg?`${date}-${edArg}`:date);
+const presDir=resolve(root,'voz_heygen','presentadores');
+const presWords=existsSync(resolve(presDir,'palabras.json'))?JSON.parse(await readFile(resolve(presDir,'palabras.json'),'utf8')):{};
+const presText=k=>existsSync(resolve(presDir,k+'.txt'))?readFileSync(resolve(presDir,k+'.txt'),'utf8').trim():null;
 const ed=existsSync(resolve(hgDir,'guion.json'))?JSON.parse(await readFile(resolve(hgDir,'guion.json'),'utf8')):null;
 const hgAll=existsSync(resolve(hgDir,'palabras.json'))?JSON.parse(await readFile(resolve(hgDir,'palabras.json'),'utf8')):{};
 const txt=f=>existsSync(resolve(hgDir,f))?readFileSync(resolve(hgDir,f),'utf8').trim():null;
@@ -41,7 +46,7 @@ const matches=d.matches.map(m=>({...m,homeShort:shortTeam(m.home),awayShort:shor
  awayCrest:existsSync(resolve(src,'escudos',`${m.id}-away.png`))?rel(`escudos/${m.id}-away.png`):null}));
 const saludo=clip('SALUDO'),despedida=clip('DESPEDIDA');
 // Con video del presentador, el texto y los tiempos son los del diálogo oficial de ese video.
-const pres=(kind,c,fallbackId,fallbackText)=>c.video&&hgAll[kind]?{text:txt(`${kind}.txt`),words:hgAll[kind].words}:c.video?{text:dialogos[`${kind}_${d.greeting}`]||fallbackText,words:W(`${kind}_${d.greeting}`)}:{text:fallbackText,words:W(fallbackId)};
+const pres=(kind,c,fallbackId,fallbackText)=>c.video&&presWords[`${kind}_${presKey}`]?{text:presText(`${kind}_${presKey}`),words:presWords[`${kind}_${presKey}`].words}:c.video&&hgAll[kind]?{text:txt(`${kind}.txt`),words:hgAll[kind].words}:c.video?{text:dialogos[`${kind}_${d.greeting}`]||fallbackText,words:W(`${kind}_${d.greeting}`)}:{text:fallbackText,words:W(fallbackId)};
 const ps=pres('SALUDO',saludo,'saludo',d.saludo),pd=pres('DESPEDIDA',despedida,'despedida',d.despedida);
 // Voz HeyGen de los análisis (un solo audio con los 5 bloques): se corta por bloque con los tiempos reales.
 const hgWords=hgAll.analisis?.words||null;
@@ -59,7 +64,7 @@ if(hgWords){
  }));
 }
 const coverImg=`presentador/PORTADA_${d.greeting}.jpg`;
-const props={date,title:ed?.edicion==='ESTELARES'?['LOS 5 PARTIDOS','ESTELARES DEL DÍA']:null,cover:existsSync(resolve(pub,coverImg))?coverImg:null,sample:process.argv.includes('--sample'),greeting:d.greeting,saludo,despedida,
+const props={date,edition:edArg||'daily',title:ed?.edicion==='ESTELARES'?['LOS 5 PARTIDOS','ESTELARES DEL DÍA']:null,cover:existsSync(resolve(pub,coverImg))?coverImg:null,sample:process.argv.includes('--sample'),greeting:d.greeting,saludo,despedida,
  saludoText:ps.text,saludoWords:ps.words,despedidaText:pd.text,despedidaWords:pd.words,matches,
  segments:segs,
  sfx:existsSync(resolve(pub,'sfx/whoosh.wav'))?'sfx/whoosh.wav':null,music:existsSync(resolve(pub,'musica/pista.mp3'))?'musica/pista.mp3':null};
