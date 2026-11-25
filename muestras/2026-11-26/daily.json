@@ -7,26 +7,26 @@
   {
    "id": "match-1",
    "matchIndex": 0,
-   "text": "Arrancamos con un partidazo en la Europa: Olympiakos Piraeus contra Milan. PICKRIX ve favorito a Olympiakos Piraeus, con 54 %. Dato clave: entre los dos suman 24 goles en sus últimos cinco. Y ojo: el Over 2.5 sale con 66 %.",
+   "text": "Arrancamos con un partidazo en la Europa League: Olympiakos contra Milan. PICKRIX ve favorito a Olympiakos, con 54 %. Dato clave: entre los dos suman 24 goles en sus últimos cinco. Y ojo: el Over 2.5 sale con 66 %.",
    "highlights": [
-    "Olympiakos Piraeus",
+    "Olympiakos",
     "Milan",
     "54 %",
     "Over 2.5"
    ],
    "analysis": {
     "facts": [
-     "PICKRIX ve favorito a Olympiakos Piraeus, con 54 %.",
+     "PICKRIX ve favorito a Olympiakos, con 54 %.",
      "Dato clave: entre los dos suman 24 goles en sus últimos cinco.",
      "Y ojo: el Over 2.5 sale con 66 %."
     ],
     "highlights": [
-     "Olympiakos Piraeus",
+     "Olympiakos",
      "Milan",
      "54 %",
      "Over 2.5"
     ],
-    "favorite": "Olympiakos Piraeus",
+    "favorite": "Olympiakos",
     "top": {
      "key": "home",
      "p": 54
@@ -37,7 +37,7 @@
   {
    "id": "match-2",
    "matchIndex": 1,
-   "text": "Seguimos en la Europa: Plzen contra Benfica. Duelo parejo: 37 % para Plzen, 23 % de empate y 41 % para Benfica. Dato clave: entre los dos suman 28 goles en sus últimos cinco. Y ojo: el Over 2.5 sale con 67 %.",
+   "text": "Seguimos en la Europa League: Plzen contra Benfica. Duelo parejo: 37 % para Plzen, 23 % de empate y 41 % para Benfica. Dato clave: entre los dos suman 28 goles en sus últimos cinco. Y ojo: el Over 2.5 sale con 67 %.",
    "highlights": [
     "Plzen",
     "Benfica",
@@ -69,10 +69,10 @@
   {
    "id": "match-3",
    "matchIndex": 2,
-   "text": "Ojo con este duelo en la Europa: Juventus contra Omonia Nicosia. PICKRIX ve favorito a Juventus, con 48 %. Dato clave: entre los dos suman 16 goles en sus últimos cinco. Y ojo: el Over 2.5 sale con 58 %.",
+   "text": "Ojo con este duelo en la Europa League: Juventus contra Omonia. PICKRIX ve favorito a Juventus, con 48 %. Dato clave: entre los dos suman 16 goles en sus últimos cinco. Y ojo: el Over 2.5 sale con 58 %.",
    "highlights": [
     "Juventus",
-    "Omonia Nicosia",
+    "Omonia",
     "48 %",
     "Over 2.5"
    ],
@@ -84,7 +84,7 @@
     ],
     "highlights": [
      "Juventus",
-     "Omonia Nicosia",
+     "Omonia",
      "48 %",
      "Over 2.5"
     ],
@@ -99,10 +99,10 @@
   {
    "id": "match-4",
    "matchIndex": 3,
-   "text": "Aquí los números se ponen interesantes en la Liga MX: Pachuca contra Guadalajara Chivas. PICKRIX ve favorito a Pachuca, con 48 %. Dato clave: entre los dos suman 20 goles en sus últimos cinco.",
+   "text": "Aquí los números se ponen interesantes en la Liga MX: Pachuca contra Chivas. PICKRIX ve favorito a Pachuca, con 48 %. Dato clave: entre los dos suman 20 goles en sus últimos cinco.",
    "highlights": [
     "Pachuca",
-    "Guadalajara Chivas",
+    "Chivas",
     "48 %"
    ],
    "analysis": {
@@ -112,7 +112,7 @@
     ],
     "highlights": [
      "Pachuca",
-     "Guadalajara Chivas",
+     "Chivas",
      "48 %"
     ],
     "favorite": "Pachuca",
@@ -126,9 +126,9 @@
   {
    "id": "match-5",
    "matchIndex": 4,
-   "text": "Y cerramos con todo en la Liga MX: Leon contra Cruz Azul. Duelo parejo: 38 % para Leon, 24 % de empate y 39 % para Cruz Azul. La clave: Cruz Azul ganó cuatro de sus últimos cinco; Leon, dos. Y ojo: el Over 2.5 sale con 60 %.",
+   "text": "Y cerramos con todo en la Liga MX: León contra Cruz Azul. Duelo parejo: 38 % para León, 24 % de empate y 39 % para Cruz Azul. La clave: Cruz Azul ganó cuatro de sus últimos cinco; León, dos. Y ojo: el Over 2.5 sale con 60 %.",
    "highlights": [
-    "Leon",
+    "León",
     "Cruz Azul",
     "38 %",
     "39 %",
@@ -136,12 +136,12 @@
    ],
    "analysis": {
     "facts": [
-     "Duelo parejo: 38 % para Leon, 24 % de empate y 39 % para Cruz Azul.",
-     "La clave: Cruz Azul ganó cuatro de sus últimos cinco; Leon, dos.",
+     "Duelo parejo: 38 % para León, 24 % de empate y 39 % para Cruz Azul.",
+     "La clave: Cruz Azul ganó cuatro de sus últimos cinco; León, dos.",
      "Y ojo: el Over 2.5 sale con 60 %."
     ],
     "highlights": [
-     "Leon",
+     "León",
      "Cruz Azul",
      "38 %",
      "39 %",
@@ -806,7 +806,6 @@
  "check": {
   "ok": false,
   "problems": [
-   "long:match-1",
    "long:match-2",
    "long:match-5"
   ]
