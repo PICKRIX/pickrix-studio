@@ -7,7 +7,7 @@
   {
    "id": "match-1",
    "matchIndex": 0,
-   "text": "Arrancamos con un partidazo de Champions: Sabah FA contra Barcelona. Según PICKRIX, Barcelona es favorito con 43 % de probabilidad. La clave: Barcelona ganó cuatro de sus últimos cinco; Sabah FA, uno. Y se esperan goles: el Over 2.5 sale con 74 %.",
+   "text": "Arrancamos con un partidazo en la Champions: Sabah FA contra Barcelona. PICKRIX ve favorito a Barcelona, con 43 %. La clave: Barcelona ganó cuatro de sus últimos cinco; Sabah FA, uno. Y ojo: el Over 2.5 sale con 74 %.",
    "highlights": [
     "Sabah FA",
     "Barcelona",
@@ -16,9 +16,9 @@
    ],
    "analysis": {
     "facts": [
-     "Según PICKRIX, Barcelona es favorito con 43 % de probabilidad.",
+     "PICKRIX ve favorito a Barcelona, con 43 %.",
      "La clave: Barcelona ganó cuatro de sus últimos cinco; Sabah FA, uno.",
-     "Y se esperan goles: el Over 2.5 sale con 74 %."
+     "Y ojo: el Over 2.5 sale con 74 %."
     ],
     "highlights": [
      "Sabah FA",
@@ -37,26 +37,26 @@
   {
    "id": "match-2",
    "matchIndex": 1,
-   "text": "Vamos con el siguiente de Champions: Brugge KV contra Liverpool. Según PICKRIX, Brugge KV es favorito con 50 % de probabilidad. La clave: Brugge KV ganó cuatro de sus últimos cinco; Liverpool, dos. Y se esperan goles: el Over 2.5 sale con 74 %.",
+   "text": "Seguimos en la Champions: Brujas contra Liverpool. PICKRIX ve favorito a Brujas, con 50 %. La clave: Brujas ganó cuatro de sus últimos cinco; Liverpool, dos. Y ojo: el Over 2.5 sale con 74 %.",
    "highlights": [
-    "Brugge KV",
+    "Brujas",
     "Liverpool",
     "50 %",
     "Over 2.5"
    ],
    "analysis": {
     "facts": [
-     "Según PICKRIX, Brugge KV es favorito con 50 % de probabilidad.",
-     "La clave: Brugge KV ganó cuatro de sus últimos cinco; Liverpool, dos.",
-     "Y se esperan goles: el Over 2.5 sale con 74 %."
+     "PICKRIX ve favorito a Brujas, con 50 %.",
+     "La clave: Brujas ganó cuatro de sus últimos cinco; Liverpool, dos.",
+     "Y ojo: el Over 2.5 sale con 74 %."
     ],
     "highlights": [
-     "Brugge KV",
+     "Brujas",
      "Liverpool",
      "50 %",
      "Over 2.5"
     ],
-    "favorite": "Brugge KV",
+    "favorite": "Brujas",
     "top": {
      "key": "home",
      "p": 50
@@ -67,20 +67,20 @@
   {
    "id": "match-3",
    "matchIndex": 2,
-   "text": "Ojo con este duelo de Champions: Inter contra VfB Stuttgart. Según PICKRIX, Inter es favorito con 49 % de probabilidad. Ojo: entre los dos suman 18 goles en sus últimos cinco.",
+   "text": "Ojo con este duelo en la Champions: Inter contra Stuttgart. PICKRIX ve favorito a Inter, con 49 %. Dato clave: entre los dos suman 18 goles en sus últimos cinco.",
    "highlights": [
     "Inter",
-    "VfB Stuttgart",
+    "Stuttgart",
     "49 %"
    ],
    "analysis": {
     "facts": [
-     "Según PICKRIX, Inter es favorito con 49 % de probabilidad.",
-     "Ojo: entre los dos suman 18 goles en sus últimos cinco."
+     "PICKRIX ve favorito a Inter, con 49 %.",
+     "Dato clave: entre los dos suman 18 goles en sus últimos cinco."
     ],
     "highlights": [
      "Inter",
-     "VfB Stuttgart",
+     "Stuttgart",
      "49 %"
     ],
     "favorite": "Inter",
@@ -94,23 +94,23 @@
   {
    "id": "match-4",
    "matchIndex": 3,
-   "text": "Aquí los números se ponen interesantes de Champions: Lille contra Bayern München. Según PICKRIX, Bayern München es favorito con 49 % de probabilidad. Ojo: entre los dos suman 17 goles en sus últimos cinco.",
+   "text": "Aquí los números se ponen interesantes en la Champions: Lille contra Bayern. PICKRIX ve favorito a Bayern, con 49 %. Dato clave: entre los dos suman 17 goles en sus últimos cinco.",
    "highlights": [
     "Lille",
-    "Bayern München",
+    "Bayern",
     "49 %"
    ],
    "analysis": {
     "facts": [
-     "Según PICKRIX, Bayern München es favorito con 49 % de probabilidad.",
-     "Ojo: entre los dos suman 17 goles en sus últimos cinco."
+     "PICKRIX ve favorito a Bayern, con 49 %.",
+     "Dato clave: entre los dos suman 17 goles en sus últimos cinco."
     ],
     "highlights": [
      "Lille",
-     "Bayern München",
+     "Bayern",
      "49 %"
     ],
-    "favorite": "Bayern München",
+    "favorite": "Bayern",
     "top": {
      "key": "away",
      "p": 49
@@ -121,22 +121,22 @@
   {
    "id": "match-5",
    "matchIndex": 4,
-   "text": "Y cerramos con de Liga MX: Monterrey contra America. Según PICKRIX, Monterrey es favorito con 45 % de probabilidad. La clave: Monterrey ganó dos de sus últimos cinco; America, ninguno. Y se esperan goles: el Over 2.5 sale con 61 %.",
+   "text": "Y cerramos con todo en la Liga MX: Monterrey contra América. PICKRIX ve favorito a Monterrey, con 45 %. La clave: Monterrey ganó dos de sus últimos cinco; América, ninguno. Y ojo: el Over 2.5 sale con 61 %.",
    "highlights": [
     "Monterrey",
-    "America",
+    "América",
     "45 %",
     "Over 2.5"
    ],
    "analysis": {
     "facts": [
-     "Según PICKRIX, Monterrey es favorito con 45 % de probabilidad.",
-     "La clave: Monterrey ganó dos de sus últimos cinco; America, ninguno.",
-     "Y se esperan goles: el Over 2.5 sale con 61 %."
+     "PICKRIX ve favorito a Monterrey, con 45 %.",
+     "La clave: Monterrey ganó dos de sus últimos cinco; América, ninguno.",
+     "Y ojo: el Over 2.5 sale con 61 %."
     ],
     "highlights": [
      "Monterrey",
-     "America",
+     "América",
      "45 %",
      "Over 2.5"
     ],
