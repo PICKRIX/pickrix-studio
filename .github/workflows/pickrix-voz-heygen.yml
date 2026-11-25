@@ -1,7 +1,7 @@
 name: PICKRIX DAILY · tiempos de la voz HeyGen
 on:
   push:
-    paths: ['voz_heygen/**/analisis.mp3']
+    paths: ['voz_heygen/**']
   workflow_dispatch:
 permissions:
   contents: write
@@ -16,8 +16,10 @@ jobs:
           python3 -m venv "$RUNNER_TEMP/pv"
           "$RUNNER_TEMP/pv/bin/pip" install -q faster-whisper==1.1.1 requests
           for d in voz_heygen/*/; do
-            [ -f "$d/analisis.mp3" ] && [ ! -f "$d/palabras.json" ] || continue
-            "$RUNNER_TEMP/pv/bin/python" daily/align.py "$d/palabras.json" "analisis=$d/analisis.mp3::$(cat "$d/analisis.txt")"
+            [ -f "$d/palabras.json" ] && continue
+            args=()
+            for a in "$d"*.mp3; do k=$(basename "$a" .mp3); [ -f "$d$k.txt" ] && args+=("$k=$a::$(cat "$d$k.txt")"); done
+            [ ${#args[@]} -gt 0 ] && "$RUNNER_TEMP/pv/bin/python" daily/align.py "$d/palabras.json" "${args[@]}"
           done
       - name: Guardar
         run: |
