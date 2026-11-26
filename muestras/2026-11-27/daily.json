@@ -7,23 +7,23 @@
   {
    "id": "match-1",
    "matchIndex": 0,
-   "text": "Arrancamos con un partidazo en la Ligue 1: Stade Brestois 29 contra Paris. PICKRIX ve favorito a Stade Brestois 29, con 42 %. Dato clave: entre los dos suman 20 goles en sus últimos cinco.",
+   "text": "Arrancamos con un partidazo en la Ligue 1: Brest contra París FC. PICKRIX ve favorito a Brest, con 42 %. Dato clave: entre los dos suman 20 goles en sus últimos cinco.",
    "highlights": [
-    "Stade Brestois 29",
-    "Paris",
+    "Brest",
+    "París FC",
     "42 %"
    ],
    "analysis": {
     "facts": [
-     "PICKRIX ve favorito a Stade Brestois 29, con 42 %.",
+     "PICKRIX ve favorito a Brest, con 42 %.",
      "Dato clave: entre los dos suman 20 goles en sus últimos cinco."
     ],
     "highlights": [
-     "Stade Brestois 29",
-     "Paris",
+     "Brest",
+     "París FC",
      "42 %"
     ],
-    "favorite": "Stade Brestois 29",
+    "favorite": "Brest",
     "top": {
      "key": "home",
      "p": 42
@@ -34,7 +34,7 @@
   {
    "id": "match-2",
    "matchIndex": 1,
-   "text": "Seguimos en la Champions: Southampton contra Middlesbrough. PICKRIX ve favorito a Southampton, con 43 %. Llegan con forma parecida: Southampton ganó dos de sus últimos cinco y Middlesbrough, tres.",
+   "text": "Seguimos en la Championship: Southampton contra Middlesbrough. PICKRIX ve favorito a Southampton, con 43 %. Llegan con forma parecida: Southampton ganó dos de sus últimos cinco y Middlesbrough, tres.",
    "highlights": [
     "Southampton",
     "Middlesbrough",
@@ -61,9 +61,9 @@
   {
    "id": "match-3",
    "matchIndex": 2,
-   "text": "Ojo con este duelo en Primeira Liga: Maritimo contra Nacional. Duelo parejo: 35 % para Maritimo, 29 % de empate y 36 % para Nacional. Llegan con forma parecida: Maritimo ganó uno de sus últimos cinco y Nacional, dos. Pinta cerrado: el Under 2.5 sale con 60 %.",
+   "text": "Ojo con este duelo en la Liga de Portugal: Marítimo contra Nacional. Duelo parejo: 35 % para Marítimo, 29 % de empate y 36 % para Nacional. Llegan con forma parecida: Marítimo ganó uno de sus últimos cinco y Nacional, dos. Pinta cerrado: el Under 2.5 sale con 60 %.",
    "highlights": [
-    "Maritimo",
+    "Marítimo",
     "Nacional",
     "35 %",
     "36 %",
@@ -71,12 +71,12 @@
    ],
    "analysis": {
     "facts": [
-     "Duelo parejo: 35 % para Maritimo, 29 % de empate y 36 % para Nacional.",
-     "Llegan con forma parecida: Maritimo ganó uno de sus últimos cinco y Nacional, dos.",
+     "Duelo parejo: 35 % para Marítimo, 29 % de empate y 36 % para Nacional.",
+     "Llegan con forma parecida: Marítimo ganó uno de sus últimos cinco y Nacional, dos.",
      "Pinta cerrado: el Under 2.5 sale con 60 %."
     ],
     "highlights": [
-     "Maritimo",
+     "Marítimo",
      "Nacional",
      "35 %",
      "36 %",
@@ -93,7 +93,7 @@
   {
    "id": "match-4",
    "matchIndex": 3,
-   "text": "Aquí los números se ponen interesantes en Brasileirão Série A: Fluminense contra Cruzeiro. Duelo parejo: 41 % para Fluminense, 25 % de empate y 34 % para Cruzeiro. Dato clave: entre los dos suman 17 goles en sus últimos cinco.",
+   "text": "Aquí los números se ponen interesantes en el Brasileirão: Fluminense contra Cruzeiro. Duelo parejo: 41 % para Fluminense, 25 % de empate y 34 % para Cruzeiro. Dato clave: entre los dos suman 17 goles en sus últimos cinco.",
    "highlights": [
     "Fluminense",
     "Cruzeiro",
@@ -122,21 +122,21 @@
   {
    "id": "match-5",
    "matchIndex": 4,
-   "text": "Y cerramos con todo en la MLS: Real Salt Lake contra Vancouver Whitecaps. Duelo parejo: 40 % para Real Salt Lake, 26 % de empate y 34 % para Vancouver Whitecaps. La clave: Vancouver Whitecaps ganó cuatro de sus últimos cinco; Real Salt Lake, dos.",
+   "text": "Y cerramos con todo en la MLS: Real Salt Lake contra Vancouver. Duelo parejo: 40 % para Real Salt Lake, 26 % de empate y 34 % para Vancouver. La clave: Vancouver ganó cuatro de sus últimos cinco; Real Salt Lake, dos.",
    "highlights": [
     "Real Salt Lake",
-    "Vancouver Whitecaps",
+    "Vancouver",
     "40 %",
     "34 %"
    ],
    "analysis": {
     "facts": [
-     "Duelo parejo: 40 % para Real Salt Lake, 26 % de empate y 34 % para Vancouver Whitecaps.",
-     "La clave: Vancouver Whitecaps ganó cuatro de sus últimos cinco; Real Salt Lake, dos."
+     "Duelo parejo: 40 % para Real Salt Lake, 26 % de empate y 34 % para Vancouver.",
+     "La clave: Vancouver ganó cuatro de sus últimos cinco; Real Salt Lake, dos."
     ],
     "highlights": [
      "Real Salt Lake",
-     "Vancouver Whitecaps",
+     "Vancouver",
      "40 %",
      "34 %"
     ],

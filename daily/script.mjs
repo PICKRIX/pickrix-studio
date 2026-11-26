@@ -22,17 +22,17 @@ const gf=r=>r.reduce((n,x)=>n+x.goalsFor,0);
 /** Nombre corto de la competición para la narración. */
 export function shortLeague(l){
  const t=String(l||'');
- return /champions/i.test(t)?'Champions':/europa league/i.test(t)?'Europa League':/conference/i.test(t)?'Conference League':
+ return /championship/i.test(t)?'Championship':/primeira liga/i.test(t)?'Liga de Portugal':/brasileir/i.test(t)?'Brasileirão':/champions/i.test(t)?'Champions':/europa league/i.test(t)?'Europa League':/conference/i.test(t)?'Conference League':
   /premier/i.test(t)?'Premier League':/la ?liga/i.test(t)?'LaLiga':/liga mx/i.test(t)?'Liga MX':/serie a/i.test(t)?'Serie A':
   /bundesliga/i.test(t)?'Bundesliga':/ligue 1/i.test(t)?'Ligue 1':/major league soccer|^mls$|·\s*mls/i.test(t)?'MLS':t.replace(/^[^·]*·\s*/,'');
 }
-const leagueSpoken=l=>{const n=shortLeague(l);return /^(Champions|Europa League|Conference League|Premier League|Liga MX|Serie A|Bundesliga|Ligue 1)$/.test(n)||n==='MLS'?'la '+(n==='Champions'||n==='Premier League'?n.replace(' League',''):n):n;};
+const leagueSpoken=l=>{const n=shortLeague(l);if(n==='Brasileirão')return 'el Brasileirão';if(n==='Championship'||n==='Liga de Portugal')return 'la '+n;return /^(Champions|Europa League|Conference League|Premier League|Liga MX|Serie A|Bundesliga|Ligue 1)$/.test(n)||n==='MLS'?'la '+(n==='Champions'||n==='Premier League'?n.replace(' League',''):n):n;};
 /** Nombre corto del equipo para decirlo (la tarjeta muestra el nombre completo). */
 /** Cómo se DICEN los equipos en México (la tarjeta muestra el nombre oficial). */
 const SPOKEN={'club brugge kv':'Brujas','club brugge':'Brujas','bayern münchen':'Bayern','bayern munich':'Bayern','club america':'América','america':'América',
  'vfb stuttgart':'Stuttgart','paris saint germain':'PSG','manchester united':'Manchester United','manchester city':'Manchester City',
  'borussia dortmund':'Dortmund','atletico madrid':'Atlético de Madrid','inter':'Inter','ac milan':'Milan','guadalajara':'Chivas',
- 'u.n.a.m. - pumas':'Pumas','pumas unam':'Pumas','tigres uanl':'Tigres','cruz azul':'Cruz Azul','sporting cp':'Sporting de Lisboa','fc porto':'Porto','borussia mönchengladbach':'Gladbach','borussia monchengladbach':'Gladbach','racing santander':'Racing de Santander','columbus crew':'Columbus','nottingham forest':'Nottingham Forest','werder bremen':'Werder Bremen',
+ 'u.n.a.m. - pumas':'Pumas','pumas unam':'Pumas','tigres uanl':'Tigres','cruz azul':'Cruz Azul','sporting cp':'Sporting de Lisboa','fc porto':'Porto','stade brestois 29':'Brest','paris fc':'París FC','maritimo':'Marítimo','vancouver whitecaps':'Vancouver','real salt lake':'Real Salt Lake','borussia mönchengladbach':'Gladbach','borussia monchengladbach':'Gladbach','racing santander':'Racing de Santander','columbus crew':'Columbus','nottingham forest':'Nottingham Forest','werder bremen':'Werder Bremen',
  'olympiakos piraeus':'Olympiakos','guadalajara chivas':'Chivas','cf pachuca':'Pachuca','leon':'León','club leon':'León','club queretaro':'Querétaro',
  'atletico san luis':'Atlético de San Luis','santos laguna':'Santos','fc juarez':'Juárez','mazatlán':'Mazatlán','plzen':'Plzen','omonia nicosia':'Omonia'};
 export const shortTeam=t=>SPOKEN[String(t).toLowerCase()]||String(t).replace(/^(FC|CF|AC|AS|SS|SC|CD|Club|Real Club)\s+/i,'').replace(/\s+(FC|CF|SC|KV)$/i,'');
