@@ -20,7 +20,7 @@ export function paraVoz(t){
  return String(t)
   .replace(/(\d+)\.(\d)\b/g,(_,a,b)=>`${numero(a)} punto ${numero(b)}`)
   .replace(/(\d+)\s?%/g,(_,a)=>`${numero(a)} por ciento`)
-  .replace(/\b(\d+)\b/g,(_,a)=>numero(a))
+  .replace(/\b(?<!Ligue )(\d+)\b/g,(_,a)=>numero(a))
   .replace(/pickrixapp\.com/gi,'pickrixapp punto com');
 }
 if(process.argv[2]){
