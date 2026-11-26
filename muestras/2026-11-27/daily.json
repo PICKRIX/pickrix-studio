@@ -7,22 +7,22 @@
   {
    "id": "match-1",
    "matchIndex": 0,
-   "text": "Arrancamos con un partidazo en la Bundesliga: Werder Bremen contra Borussia Mönchengladbach. PICKRIX ve favorito a Werder Bremen, con 52 %. Llegan con forma parecida: tres victorias de Werder Bremen y dos de Borussia Mönchengladbach en cinco. Y ojo: el Over 2.5 sale con 62 %.",
+   "text": "Arrancamos con un partidazo en la Bundesliga: Werder Bremen contra Gladbach. PICKRIX ve favorito a Werder Bremen, con 52 %. Llegan con forma parecida: Werder Bremen ganó tres de sus últimos cinco y Gladbach, dos. Y ojo: el Over 2.5 sale con 62 %.",
    "highlights": [
     "Werder Bremen",
-    "Borussia Mönchengladbach",
+    "Gladbach",
     "52 %",
     "Over 2.5"
    ],
    "analysis": {
     "facts": [
      "PICKRIX ve favorito a Werder Bremen, con 52 %.",
-     "Llegan con forma parecida: tres victorias de Werder Bremen y dos de Borussia Mönchengladbach en cinco.",
+     "Llegan con forma parecida: Werder Bremen ganó tres de sus últimos cinco y Gladbach, dos.",
      "Y ojo: el Over 2.5 sale con 62 %."
     ],
     "highlights": [
      "Werder Bremen",
-     "Borussia Mönchengladbach",
+     "Gladbach",
      "52 %",
      "Over 2.5"
     ],
@@ -64,7 +64,7 @@
   {
    "id": "match-3",
    "matchIndex": 2,
-   "text": "Ojo con este duelo en la Premier: Nottingham Forest contra Chelsea. Duelo parejo: 40 % para Nottingham Forest, 27 % de empate y 34 % para Chelsea. Llegan con forma parecida: uno victorias de Nottingham Forest y uno de Chelsea en cinco.",
+   "text": "Ojo con este duelo en la Premier: Nottingham Forest contra Chelsea. Duelo parejo: 40 % para Nottingham Forest, 27 % de empate y 34 % para Chelsea. Llegan con forma parecida: Nottingham Forest ganó uno de sus últimos cinco y Chelsea, uno.",
    "highlights": [
     "Nottingham Forest",
     "Chelsea",
@@ -74,7 +74,7 @@
    "analysis": {
     "facts": [
      "Duelo parejo: 40 % para Nottingham Forest, 27 % de empate y 34 % para Chelsea.",
-     "Llegan con forma parecida: uno victorias de Nottingham Forest y uno de Chelsea en cinco."
+     "Llegan con forma parecida: Nottingham Forest ganó uno de sus últimos cinco y Chelsea, uno."
     ],
     "highlights": [
      "Nottingham Forest",
@@ -93,22 +93,22 @@
   {
    "id": "match-4",
    "matchIndex": 3,
-   "text": "Aquí los números se ponen interesantes en LaLiga: Levante contra Racing Santander. PICKRIX ve favorito a Levante, con 48 %. La clave: Racing Santander ganó cuatro de sus últimos cinco; Levante, uno. Y ojo: el Over 2.5 sale con 65 %.",
+   "text": "Aquí los números se ponen interesantes en LaLiga: Levante contra Racing de Santander. PICKRIX ve favorito a Levante, con 48 %. La clave: Racing de Santander ganó cuatro de sus últimos cinco; Levante, uno. Y ojo: el Over 2.5 sale con 65 %.",
    "highlights": [
     "Levante",
-    "Racing Santander",
+    "Racing de Santander",
     "48 %",
     "Over 2.5"
    ],
    "analysis": {
     "facts": [
      "PICKRIX ve favorito a Levante, con 48 %.",
-     "La clave: Racing Santander ganó cuatro de sus últimos cinco; Levante, uno.",
+     "La clave: Racing de Santander ganó cuatro de sus últimos cinco; Levante, uno.",
      "Y ojo: el Over 2.5 sale con 65 %."
     ],
     "highlights": [
      "Levante",
-     "Racing Santander",
+     "Racing de Santander",
      "48 %",
      "Over 2.5"
     ],
@@ -123,26 +123,26 @@
   {
    "id": "match-5",
    "matchIndex": 4,
-   "text": "Y cerramos con todo en MLS: Columbus Crew contra Inter Miami. PICKRIX ve favorito a Columbus Crew, con 59 %. La clave: Columbus Crew ganó cinco de sus últimos cinco; Inter Miami, uno. Y ojo: el Over 2.5 sale con 66 %.",
+   "text": "Y cerramos con todo en la MLS: Columbus contra Inter Miami. PICKRIX ve favorito a Columbus, con 59 %. La clave: Columbus ganó sus últimos cinco; Inter Miami, uno. Y ojo: el Over 2.5 sale con 66 %.",
    "highlights": [
-    "Columbus Crew",
+    "Columbus",
     "Inter Miami",
     "59 %",
     "Over 2.5"
    ],
    "analysis": {
     "facts": [
-     "PICKRIX ve favorito a Columbus Crew, con 59 %.",
-     "La clave: Columbus Crew ganó cinco de sus últimos cinco; Inter Miami, uno.",
+     "PICKRIX ve favorito a Columbus, con 59 %.",
+     "La clave: Columbus ganó sus últimos cinco; Inter Miami, uno.",
      "Y ojo: el Over 2.5 sale con 66 %."
     ],
     "highlights": [
-     "Columbus Crew",
+     "Columbus",
      "Inter Miami",
      "59 %",
      "Over 2.5"
     ],
-    "favorite": "Columbus Crew",
+    "favorite": "Columbus",
     "top": {
      "key": "home",
      "p": 59
