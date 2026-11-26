@@ -15,7 +15,9 @@ import {shortTeam} from './script.mjs';
 const here=dirname(fileURLToPath(import.meta.url)),root=resolve(here,'..');
 const date=process.argv[2];if(!date)throw Error('Uso: node daily/props.mjs AAAA-MM-DD [--sample]');
 const src=resolve(root,'muestras',date),pub=resolve(root,'public');
-const d=JSON.parse(await readFile(resolve(src,'daily.json'),'utf8'));
+const edFlag=(process.argv.find(a=>a.startsWith('--edicion='))||'').split('=')[1]||'';
+// ESTELARES usa sus propios partidos (estelares.json) si existen; si no, los del diario.
+const d=JSON.parse(await readFile(resolve(src,edFlag&&existsSync(resolve(src,edFlag+'.json'))?edFlag+'.json':'daily.json'),'utf8'));
 const dur=JSON.parse(await readFile(resolve(src,'voz/duraciones.json'),'utf8'));
 // §18: tiempos reales de cada palabra (faster-whisper). Sin ellos, el render estima.
 const words=existsSync(resolve(src,'voz/palabras.json'))?JSON.parse(await readFile(resolve(src,'voz/palabras.json'),'utf8')):{};

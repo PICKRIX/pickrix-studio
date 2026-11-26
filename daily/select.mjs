@@ -44,5 +44,6 @@ export async function selectTop({date,fetcher=fetch,now=Date.now(),count=5}={}){
    oneXtwo:a.oneXtwo,markets:a.markets||{},expectedGoals:a.expectedGoals||null,
    homeRecent:(a.homeRecent||[]).slice(0,5),awayRecent:(a.awayRecent||[]).slice(0,5),quality:a.probabilityQuality||null});
  }
- return picked.sort((a,b)=>Date.parse(a.date)-Date.parse(b.date));
+ // Orden de importancia (para repartir entre ediciones); cada edición se ordena por hora después.
+ return picked;
 }
