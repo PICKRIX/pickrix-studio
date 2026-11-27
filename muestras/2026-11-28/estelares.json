@@ -7,7 +7,7 @@
   {
    "id": "match-1",
    "matchIndex": 0,
-   "text": "Arrancamos con un partidazo en la Bundesliga: Hamburgo contra Bayern. PICKRIX ve favorito a Bayern, con 45 %. Llegan con forma parecida: Hamburgo ganó uno de sus últimos cinco y Bayern, dos. Y ojo: el Over 2.5 sale con 62 %.",
+   "text": "Arrancamos con un partidazo en la Bundesliga: Hamburgo contra Bayern. El pronóstico de PICKRIX favorece a Bayern, con 45 %. Llegan con forma parecida: Hamburgo ganó uno de sus últimos cinco y Bayern, dos. Y ojo: el Over 2.5 sale con 62 %.",
    "highlights": [
     "Hamburgo",
     "Bayern",
@@ -16,7 +16,7 @@
    ],
    "analysis": {
     "facts": [
-     "PICKRIX ve favorito a Bayern, con 45 %.",
+     "El pronóstico de PICKRIX favorece a Bayern, con 45 %.",
      "Llegan con forma parecida: Hamburgo ganó uno de sus últimos cinco y Bayern, dos.",
      "Y ojo: el Over 2.5 sale con 62 %."
     ],
@@ -37,7 +37,7 @@
   {
    "id": "match-2",
    "matchIndex": 1,
-   "text": "Seguimos en la Premier: Manchester United contra Brentford. PICKRIX ve favorito a Brentford, con 46 %. Dato clave: entre los dos suman 18 goles en sus últimos cinco. Y ojo: el Over 2.5 sale con 71 %.",
+   "text": "Seguimos en la Premier: Manchester United contra Brentford. El pronóstico de PICKRIX favorece a Brentford, con 46 %. Dato clave: entre los dos suman 18 goles en sus últimos cinco. Y ojo: el Over 2.5 sale con 71 %.",
    "highlights": [
     "Manchester United",
     "Brentford",
@@ -46,7 +46,7 @@
    ],
    "analysis": {
     "facts": [
-     "PICKRIX ve favorito a Brentford, con 46 %.",
+     "El pronóstico de PICKRIX favorece a Brentford, con 46 %.",
      "Dato clave: entre los dos suman 18 goles en sus últimos cinco.",
      "Y ojo: el Over 2.5 sale con 71 %."
     ],
@@ -67,7 +67,7 @@
   {
    "id": "match-3",
    "matchIndex": 2,
-   "text": "Ojo con este duelo en LaLiga: Real Madrid contra Alavés. PICKRIX ve favorito a Real Madrid, con 65 %. La clave: Real Madrid ganó sus últimos cinco; Alavés, dos. Y ojo: el Over 2.5 sale con 73 %.",
+   "text": "Ojo con este duelo en LaLiga: Real Madrid contra Alavés. El pronóstico de PICKRIX favorece a Real Madrid, con 65 %. La clave: Real Madrid ganó sus últimos cinco; Alavés, dos. Y ojo: el Over 2.5 sale con 73 %.",
    "highlights": [
     "Real Madrid",
     "Alavés",
@@ -76,7 +76,7 @@
    ],
    "analysis": {
     "facts": [
-     "PICKRIX ve favorito a Real Madrid, con 65 %.",
+     "El pronóstico de PICKRIX favorece a Real Madrid, con 65 %.",
      "La clave: Real Madrid ganó sus últimos cinco; Alavés, dos.",
      "Y ojo: el Over 2.5 sale con 73 %."
     ],
@@ -97,7 +97,7 @@
   {
    "id": "match-4",
    "matchIndex": 3,
-   "text": "Aquí los números se ponen interesantes en la Liga MX: Atlas contra Toluca. Duelo parejo: 37 % para Atlas, 22 % de empate y 41 % para Toluca. Dato clave: entre los dos suman 18 goles en sus últimos cinco. Y ojo: el Over 2.5 sale con 71 %.",
+   "text": "Aquí los números se ponen interesantes en la Liga MX: Atlas contra Toluca. El pronóstico de PICKRIX: duelo parejo, 37 % para Atlas, 22 % de empate y 41 % para Toluca. Dato clave: entre los dos suman 18 goles en sus últimos cinco. Y ojo: el Over 2.5 sale con 71 %.",
    "highlights": [
     "Atlas",
     "Toluca",
@@ -107,7 +107,7 @@
    ],
    "analysis": {
     "facts": [
-     "Duelo parejo: 37 % para Atlas, 22 % de empate y 41 % para Toluca.",
+     "El pronóstico de PICKRIX: duelo parejo, 37 % para Atlas, 22 % de empate y 41 % para Toluca.",
      "Dato clave: entre los dos suman 18 goles en sus últimos cinco.",
      "Y ojo: el Over 2.5 sale con 71 %."
     ],
@@ -129,7 +129,7 @@
   {
    "id": "match-5",
    "matchIndex": 4,
-   "text": "Y cerramos con todo en la Liga MX: América contra Monterrey. Duelo parejo: 37 % para América, 26 % de empate y 37 % para Monterrey. La clave: Monterrey ganó dos de sus últimos cinco; América, ninguno.",
+   "text": "Y cerramos con todo en la Liga MX: América contra Monterrey. El pronóstico de PICKRIX: duelo parejo, 37 % para América, 26 % de empate y 37 % para Monterrey. La clave: Monterrey ganó dos de sus últimos cinco; América, ninguno.",
    "highlights": [
     "América",
     "Monterrey",
@@ -138,7 +138,7 @@
    ],
    "analysis": {
     "facts": [
-     "Duelo parejo: 37 % para América, 26 % de empate y 37 % para Monterrey.",
+     "El pronóstico de PICKRIX: duelo parejo, 37 % para América, 26 % de empate y 37 % para Monterrey.",
      "La clave: Monterrey ganó dos de sus últimos cinco; América, ninguno."
     ],
     "highlights": [
@@ -807,7 +807,8 @@
   "ok": false,
   "problems": [
    "long:match-1",
-   "long:match-4"
+   "long:match-4",
+   "long:match-5"
   ]
  }
 }
