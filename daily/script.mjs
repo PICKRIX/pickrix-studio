@@ -52,7 +52,7 @@ export function analyze(m){
   const wh=wins(hr),wa=wins(ar);
   if(Math.abs(wh-wa)>=2){const [t,w,o,wo]=wh>wa?[H,wh,A,wa]:[A,wa,H,wh];facts.push(w===5?`La clave: ${t} ganó sus últimos cinco; ${o}, ${nWord(wo)}.`:`La clave: ${t} ganó ${nWord(w)} de sus últimos cinco; ${o}, ${nWord(wo)}.`);}
   else if(gf(hr)+gf(ar)>=16)facts.push(`Dato clave: entre los dos suman ${gf(hr)+gf(ar)} goles en sus últimos cinco.`);
-  else facts.push(wh===0&&wa===0?`Ojo: ninguno de los dos ganó en sus últimos cinco.`:`Llegan con forma parecida: ${H} ganó ${nWord(wh)} de sus últimos cinco y ${A}, ${nWord(wa)}.`);
+  else facts.push(wh===0&&wa===0?`Dato curioso: ninguno de los dos ganó en sus últimos cinco.`:`Llegan con forma parecida: ${H} ganó ${nWord(wh)} de sus últimos cinco y ${A}, ${nWord(wa)}.`);
  }
  const mk=m.markets||{},xg=m.expectedGoals;
  const total=xg&&Number.isFinite(xg.home)&&Number.isFinite(xg.away)?Math.round((xg.home+xg.away)*10)/10:null;

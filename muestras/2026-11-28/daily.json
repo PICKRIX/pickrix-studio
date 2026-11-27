@@ -91,7 +91,7 @@
   {
    "id": "match-4",
    "matchIndex": 3,
-   "text": "Aquí los números se ponen interesantes en la Premier: Ipswich contra Aston Villa. Duelo parejo: 40 % para Ipswich, 24 % de empate y 36 % para Aston Villa. Ojo: ninguno de los dos ganó en sus últimos cinco. Y ojo: el Over 2.5 sale con 59 %.",
+   "text": "Aquí los números se ponen interesantes en la Premier: Ipswich contra Aston Villa. Duelo parejo: 40 % para Ipswich, 24 % de empate y 36 % para Aston Villa. Dato curioso: ninguno de los dos ganó en sus últimos cinco. Y ojo: el Over 2.5 sale con 59 %.",
    "highlights": [
     "Ipswich",
     "Aston Villa",
@@ -102,7 +102,7 @@
    "analysis": {
     "facts": [
      "Duelo parejo: 40 % para Ipswich, 24 % de empate y 36 % para Aston Villa.",
-     "Ojo: ninguno de los dos ganó en sus últimos cinco.",
+     "Dato curioso: ninguno de los dos ganó en sus últimos cinco.",
      "Y ojo: el Over 2.5 sale con 59 %."
     ],
     "highlights": [
