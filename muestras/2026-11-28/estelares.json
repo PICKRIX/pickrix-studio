@@ -1,0 +1,813 @@
+{
+ "date": "2026-11-28",
+ "greeting": "AMANTES_DEL_DEPORTE",
+ "saludo": "¡Qué tal, amantes del deporte! Antes de que comience la acción, veamos qué nos cuentan los números. Estos son los cinco encuentros que hoy están en el radar de PICKRIX. ¡Comenzamos!",
+ "despedida": "¡Hasta aquí nuestro radar deportivo de hoy! Porque disfrutar del deporte también es entenderlo. Encuentren más estadísticas y análisis en pickrixapp punto com. Nos vemos en la próxima jornada. ¡No adivines, analiza!",
+ "segments": [
+  {
+   "id": "match-1",
+   "matchIndex": 0,
+   "text": "Arrancamos con un partidazo en la Bundesliga: Hamburger SV contra Bayern. PICKRIX ve favorito a Bayern, con 45 %. Llegan con forma parecida: Hamburger SV ganó uno de sus últimos cinco y Bayern, dos. Y ojo: el Over 2.5 sale con 62 %.",
+   "highlights": [
+    "Hamburger SV",
+    "Bayern",
+    "45 %",
+    "Over 2.5"
+   ],
+   "analysis": {
+    "facts": [
+     "PICKRIX ve favorito a Bayern, con 45 %.",
+     "Llegan con forma parecida: Hamburger SV ganó uno de sus últimos cinco y Bayern, dos.",
+     "Y ojo: el Over 2.5 sale con 62 %."
+    ],
+    "highlights": [
+     "Hamburger SV",
+     "Bayern",
+     "45 %",
+     "Over 2.5"
+    ],
+    "favorite": "Bayern",
+    "top": {
+     "key": "away",
+     "p": 45
+    },
+    "xgTotal": 3.2
+   }
+  },
+  {
+   "id": "match-2",
+   "matchIndex": 1,
+   "text": "Seguimos en la Premier: Manchester United contra Brentford. PICKRIX ve favorito a Brentford, con 46 %. Dato clave: entre los dos suman 18 goles en sus últimos cinco. Y ojo: el Over 2.5 sale con 71 %.",
+   "highlights": [
+    "Manchester United",
+    "Brentford",
+    "46 %",
+    "Over 2.5"
+   ],
+   "analysis": {
+    "facts": [
+     "PICKRIX ve favorito a Brentford, con 46 %.",
+     "Dato clave: entre los dos suman 18 goles en sus últimos cinco.",
+     "Y ojo: el Over 2.5 sale con 71 %."
+    ],
+    "highlights": [
+     "Manchester United",
+     "Brentford",
+     "46 %",
+     "Over 2.5"
+    ],
+    "favorite": "Brentford",
+    "top": {
+     "key": "away",
+     "p": 46
+    },
+    "xgTotal": 3.7
+   }
+  },
+  {
+   "id": "match-3",
+   "matchIndex": 2,
+   "text": "Ojo con este duelo en LaLiga: Real Madrid contra Alaves. PICKRIX ve favorito a Real Madrid, con 65 %. La clave: Real Madrid ganó sus últimos cinco; Alaves, dos. Y ojo: el Over 2.5 sale con 73 %.",
+   "highlights": [
+    "Real Madrid",
+    "Alaves",
+    "65 %",
+    "Over 2.5"
+   ],
+   "analysis": {
+    "facts": [
+     "PICKRIX ve favorito a Real Madrid, con 65 %.",
+     "La clave: Real Madrid ganó sus últimos cinco; Alaves, dos.",
+     "Y ojo: el Over 2.5 sale con 73 %."
+    ],
+    "highlights": [
+     "Real Madrid",
+     "Alaves",
+     "65 %",
+     "Over 2.5"
+    ],
+    "favorite": "Real Madrid",
+    "top": {
+     "key": "home",
+     "p": 65
+    },
+    "xgTotal": 3.8
+   }
+  },
+  {
+   "id": "match-4",
+   "matchIndex": 3,
+   "text": "Aquí los números se ponen interesantes en la Liga MX: Atlas contra Toluca. Duelo parejo: 37 % para Atlas, 22 % de empate y 41 % para Toluca. Dato clave: entre los dos suman 18 goles en sus últimos cinco. Y ojo: el Over 2.5 sale con 71 %.",
+   "highlights": [
+    "Atlas",
+    "Toluca",
+    "37 %",
+    "41 %",
+    "Over 2.5"
+   ],
+   "analysis": {
+    "facts": [
+     "Duelo parejo: 37 % para Atlas, 22 % de empate y 41 % para Toluca.",
+     "Dato clave: entre los dos suman 18 goles en sus últimos cinco.",
+     "Y ojo: el Over 2.5 sale con 71 %."
+    ],
+    "highlights": [
+     "Atlas",
+     "Toluca",
+     "37 %",
+     "41 %",
+     "Over 2.5"
+    ],
+    "favorite": "Toluca",
+    "top": {
+     "key": "away",
+     "p": 41
+    },
+    "xgTotal": 3.7
+   }
+  },
+  {
+   "id": "match-5",
+   "matchIndex": 4,
+   "text": "Y cerramos con todo en la Liga MX: América contra Monterrey. Duelo parejo: 37 % para América, 26 % de empate y 37 % para Monterrey. La clave: Monterrey ganó dos de sus últimos cinco; América, ninguno.",
+   "highlights": [
+    "América",
+    "Monterrey",
+    "37 %",
+    "37 %"
+   ],
+   "analysis": {
+    "facts": [
+     "Duelo parejo: 37 % para América, 26 % de empate y 37 % para Monterrey.",
+     "La clave: Monterrey ganó dos de sus últimos cinco; América, ninguno."
+    ],
+    "highlights": [
+     "América",
+     "Monterrey",
+     "37 %",
+     "37 %"
+    ],
+    "favorite": "América",
+    "top": {
+     "key": "home",
+     "p": 37
+    },
+    "xgTotal": 2.7
+   }
+  }
+ ],
+ "matches": [
+  {
+   "id": "1575235",
+   "date": "2026-11-28T08:30:00-06:00",
+   "league": "Bundesliga",
+   "code": "78",
+   "home": "Hamburger SV",
+   "away": "Bayern München",
+   "homeLogo": "https://media.api-sports.io/football/teams/175.png",
+   "awayLogo": "https://media.api-sports.io/football/teams/157.png",
+   "importance": 90,
+   "oneXtwo": {
+    "home": 32.09,
+    "draw": 23.07,
+    "away": 44.84
+   },
+   "markets": {
+    "over15": 83.15,
+    "under15": 16.85,
+    "over25": 62.45,
+    "under25": 37.55,
+    "over35": 40.21,
+    "under35": 59.79,
+    "btts_yes": 63.58,
+    "btts_no": 36.42,
+    "bo_yes_over": 53.32,
+    "bo_no_under": 27.29,
+    "bo_no_over": 9.13,
+    "bo_yes_under": 10.26
+   },
+   "expectedGoals": {
+    "home": 1.46,
+    "away": 1.76
+   },
+   "homeRecent": [
+    {
+     "date": "2026-11-22T16:30:00+00:00",
+     "opponent": "Werder Bremen",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 4,
+     "outcome": "P",
+     "score": "4–0"
+    },
+    {
+     "date": "2026-11-15T14:00:00+00:00",
+     "opponent": "HNK Hajduk Split",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 1,
+     "outcome": "E",
+     "score": "1–1"
+    },
+    {
+     "date": "2026-11-06T19:30:00+00:00",
+     "opponent": "Borussia Mönchengladbach",
+     "atHome": true,
+     "goalsFor": 3,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "3–1"
+    },
+    {
+     "date": "2026-11-01T16:30:00+00:00",
+     "opponent": "Eintracht Frankfurt",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 3,
+     "outcome": "P",
+     "score": "3–1"
+    },
+    {
+     "date": "2026-10-27T17:00:00+00:00",
+     "opponent": "Eintracht Frankfurt",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 3,
+     "outcome": "P",
+     "score": "1–3"
+    }
+   ],
+   "awayRecent": [
+    {
+     "date": "2026-11-25T20:00:00+00:00",
+     "opponent": "Lille",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 2,
+     "outcome": "P",
+     "score": "2–1"
+    },
+    {
+     "date": "2026-11-20T19:30:00+00:00",
+     "opponent": "1. FC Köln",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 1,
+     "outcome": "E",
+     "score": "1–1"
+    },
+    {
+     "date": "2026-11-07T14:30:00+00:00",
+     "opponent": "FSV Mainz 05",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "1–2"
+    },
+    {
+     "date": "2026-11-03T20:00:00+00:00",
+     "opponent": "Atletico Madrid",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "0–2"
+    },
+    {
+     "date": "2026-10-31T17:30:00+00:00",
+     "opponent": "Borussia Dortmund",
+     "atHome": true,
+     "goalsFor": 2,
+     "goalsAgainst": 2,
+     "outcome": "E",
+     "score": "2–2"
+    }
+   ],
+   "quality": "exploratory"
+  },
+  {
+   "id": "1557484",
+   "date": "2026-11-28T09:00:00-06:00",
+   "league": "Premier League",
+   "code": "39",
+   "home": "Manchester United",
+   "away": "Brentford",
+   "homeLogo": "https://media.api-sports.io/football/teams/33.png",
+   "awayLogo": "https://media.api-sports.io/football/teams/55.png",
+   "importance": 102,
+   "oneXtwo": {
+    "home": 32.96,
+    "draw": 21.53,
+    "away": 45.51
+   },
+   "markets": {
+    "over15": 87.88,
+    "under15": 12.12,
+    "over25": 70.55,
+    "under25": 29.45,
+    "over35": 49.47,
+    "under35": 50.53,
+    "btts_yes": 69.92,
+    "btts_no": 30.08,
+    "bo_yes_over": 61.31,
+    "bo_no_under": 20.85,
+    "bo_no_over": 9.23,
+    "bo_yes_under": 8.61
+   },
+   "expectedGoals": {
+    "home": 1.67,
+    "away": 1.98
+   },
+   "homeRecent": [
+    {
+     "date": "2026-11-25T20:00:00+00:00",
+     "opponent": "Sporting CP",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 2,
+     "outcome": "E",
+     "score": "2–2"
+    },
+    {
+     "date": "2026-11-22T16:30:00+00:00",
+     "opponent": "Liverpool",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 4,
+     "outcome": "P",
+     "score": "4–0"
+    },
+    {
+     "date": "2026-11-08T16:30:00+00:00",
+     "opponent": "Aston Villa",
+     "atHome": true,
+     "goalsFor": 4,
+     "goalsAgainst": 4,
+     "outcome": "E",
+     "score": "4–4"
+    },
+    {
+     "date": "2026-11-03T20:00:00+00:00",
+     "opponent": "AS Roma",
+     "atHome": true,
+     "goalsFor": 3,
+     "goalsAgainst": 2,
+     "outcome": "G",
+     "score": "3–2"
+    },
+    {
+     "date": "2026-10-31T12:30:00+00:00",
+     "opponent": "Chelsea",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 2,
+     "outcome": "P",
+     "score": "2–0"
+    }
+   ],
+   "awayRecent": [
+    {
+     "date": "2026-11-23T20:00:00+00:00",
+     "opponent": "Everton",
+     "atHome": true,
+     "goalsFor": 4,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "4–0"
+    },
+    {
+     "date": "2026-11-08T14:00:00+00:00",
+     "opponent": "Brighton",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 2,
+     "outcome": "P",
+     "score": "2–0"
+    },
+    {
+     "date": "2026-10-31T15:00:00+00:00",
+     "opponent": "Nottingham Forest",
+     "atHome": true,
+     "goalsFor": 2,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "2–0"
+    },
+    {
+     "date": "2026-10-28T19:45:00+00:00",
+     "opponent": "Sunderland",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 3,
+     "outcome": "P",
+     "score": "3–2"
+    },
+    {
+     "date": "2026-10-25T14:00:00+00:00",
+     "opponent": "Hull City",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 1,
+     "outcome": "E",
+     "score": "1–1"
+    }
+   ],
+   "quality": "exploratory"
+  },
+  {
+   "id": "1570470",
+   "date": "2026-11-28T14:00:00-06:00",
+   "league": "LaLiga",
+   "code": "140",
+   "home": "Real Madrid",
+   "away": "Alaves",
+   "homeLogo": "https://media.api-sports.io/football/teams/541.png",
+   "awayLogo": "https://media.api-sports.io/football/teams/542.png",
+   "importance": 100,
+   "oneXtwo": {
+    "home": 64.7,
+    "draw": 17.76,
+    "away": 17.54
+   },
+   "markets": {
+    "over15": 89.21,
+    "under15": 10.79,
+    "over25": 73,
+    "under25": 27,
+    "over35": 52.52,
+    "under35": 47.48,
+    "btts_yes": 66.12,
+    "btts_no": 33.88,
+    "bo_yes_over": 58.9,
+    "bo_no_under": 19.78,
+    "bo_no_over": 14.1,
+    "bo_yes_under": 7.21
+   },
+   "expectedGoals": {
+    "home": 2.53,
+    "away": 1.27
+   },
+   "homeRecent": [
+    {
+     "date": "2026-11-24T20:00:00+00:00",
+     "opponent": "PSV Eindhoven",
+     "atHome": true,
+     "goalsFor": 5,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "5–1"
+    },
+    {
+     "date": "2026-11-21T20:00:00+00:00",
+     "opponent": "Celta Vigo",
+     "atHome": true,
+     "goalsFor": 2,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "2–1"
+    },
+    {
+     "date": "2026-11-07T20:00:00+00:00",
+     "opponent": "Valencia",
+     "atHome": false,
+     "goalsFor": 3,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "0–3"
+    },
+    {
+     "date": "2026-11-04T17:45:00+00:00",
+     "opponent": "AEK Athens FC",
+     "atHome": false,
+     "goalsFor": 3,
+     "goalsAgainst": 2,
+     "outcome": "G",
+     "score": "2–3"
+    },
+    {
+     "date": "2026-11-01T15:15:00+00:00",
+     "opponent": "Racing Santander",
+     "atHome": false,
+     "goalsFor": 3,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "0–3"
+    }
+   ],
+   "awayRecent": [
+    {
+     "date": "2026-11-21T13:00:00+00:00",
+     "opponent": "Deportivo La Coruna",
+     "atHome": true,
+     "goalsFor": 3,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "3–1"
+    },
+    {
+     "date": "2026-11-10T18:00:00+00:00",
+     "opponent": "Anaitasuna",
+     "atHome": false,
+     "goalsFor": 6,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "1–6"
+    },
+    {
+     "date": "2026-11-06T20:00:00+00:00",
+     "opponent": "Sevilla",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 0,
+     "outcome": "E",
+     "score": "0–0"
+    },
+    {
+     "date": "2026-10-31T20:00:00+00:00",
+     "opponent": "Barcelona",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 6,
+     "outcome": "P",
+     "score": "6–1"
+    },
+    {
+     "date": "2026-10-23T19:00:00+00:00",
+     "opponent": "Malaga",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 1,
+     "outcome": "E",
+     "score": "1–1"
+    }
+   ],
+   "quality": "exploratory"
+  },
+  {
+   "id": "1651506",
+   "date": "2026-11-28T19:00:00-06:00",
+   "league": "Liga MX",
+   "code": "262",
+   "home": "Atlas",
+   "away": "Toluca",
+   "homeLogo": "https://media.api-sports.io/football/teams/2283.png",
+   "awayLogo": "https://media.api-sports.io/football/teams/2281.png",
+   "importance": 106,
+   "oneXtwo": {
+    "home": 37.19,
+    "draw": 21.68,
+    "away": 41.13
+   },
+   "markets": {
+    "over15": 88.09,
+    "under15": 11.91,
+    "over25": 70.92,
+    "under25": 29.08,
+    "over35": 49.92,
+    "under35": 50.08,
+    "btts_yes": 70.57,
+    "btts_no": 29.43,
+    "bo_yes_over": 61.99,
+    "bo_no_under": 20.5,
+    "bo_no_over": 8.93,
+    "bo_yes_under": 8.58
+   },
+   "expectedGoals": {
+    "home": 1.79,
+    "away": 1.88
+   },
+   "homeRecent": [
+    {
+     "date": "2026-11-26T01:00:00+00:00",
+     "opponent": "Toluca",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 2,
+     "outcome": "P",
+     "score": "2–0"
+    },
+    {
+     "date": "2026-11-21T03:00:00+00:00",
+     "opponent": "FC Juarez",
+     "atHome": false,
+     "goalsFor": 3,
+     "goalsAgainst": 3,
+     "outcome": "E",
+     "score": "3–3"
+    },
+    {
+     "date": "2026-11-07T23:00:00+00:00",
+     "opponent": "CF Pachuca",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 4,
+     "outcome": "P",
+     "score": "1–4"
+    },
+    {
+     "date": "2026-10-31T01:00:00+00:00",
+     "opponent": "Atletico San Luis",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "0–1"
+    },
+    {
+     "date": "2026-10-25T23:00:00+00:00",
+     "opponent": "Puebla",
+     "atHome": true,
+     "goalsFor": 4,
+     "goalsAgainst": 3,
+     "outcome": "G",
+     "score": "4–3"
+    }
+   ],
+   "awayRecent": [
+    {
+     "date": "2026-11-26T01:00:00+00:00",
+     "opponent": "Atlas",
+     "atHome": true,
+     "goalsFor": 2,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "2–0"
+    },
+    {
+     "date": "2026-11-21T22:50:00+00:00",
+     "opponent": "CF Pachuca",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 2,
+     "outcome": "P",
+     "score": "2–0"
+    },
+    {
+     "date": "2026-11-08T01:00:00+00:00",
+     "opponent": "Monterrey",
+     "atHome": true,
+     "goalsFor": 4,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "4–0"
+    },
+    {
+     "date": "2026-11-01T03:10:00+00:00",
+     "opponent": "Club America",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 2,
+     "outcome": "E",
+     "score": "2–2"
+    },
+    {
+     "date": "2026-10-24T23:00:00+00:00",
+     "opponent": "Leon",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 1,
+     "outcome": "E",
+     "score": "1–1"
+    }
+   ],
+   "quality": "exploratory"
+  },
+  {
+   "id": "1651507",
+   "date": "2026-11-28T21:10:00-06:00",
+   "league": "Liga MX",
+   "code": "262",
+   "home": "Club America",
+   "away": "Monterrey",
+   "homeLogo": "https://media.api-sports.io/football/teams/2287.png",
+   "awayLogo": "https://media.api-sports.io/football/teams/2282.png",
+   "importance": 130,
+   "oneXtwo": {
+    "home": 37.1,
+    "draw": 26.06,
+    "away": 36.84
+   },
+   "markets": {
+    "over15": 74.33,
+    "under15": 25.67,
+    "over25": 49.57,
+    "under25": 50.43,
+    "over35": 27.64,
+    "under35": 72.36,
+    "btts_yes": 54.03,
+    "btts_no": 45.97,
+    "bo_yes_over": 41.65,
+    "bo_no_under": 38.05,
+    "bo_no_over": 7.92,
+    "bo_yes_under": 12.38
+   },
+   "expectedGoals": {
+    "home": 1.33,
+    "away": 1.33
+   },
+   "homeRecent": [
+    {
+     "date": "2026-11-26T03:10:00+00:00",
+     "opponent": "Monterrey",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 0,
+     "outcome": "E",
+     "score": "0–0"
+    },
+    {
+     "date": "2026-11-22T03:00:00+00:00",
+     "opponent": "Tigres UANL",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 1,
+     "outcome": "P",
+     "score": "1–0"
+    },
+    {
+     "date": "2026-11-15T00:30:00+00:00",
+     "opponent": "New York Red Bulls",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 1,
+     "outcome": "P",
+     "score": "1–0"
+    },
+    {
+     "date": "2026-11-08T03:10:00+00:00",
+     "opponent": "U.N.A.M. - Pumas",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 2,
+     "outcome": "E",
+     "score": "2–2"
+    },
+    {
+     "date": "2026-11-01T03:10:00+00:00",
+     "opponent": "Toluca",
+     "atHome": true,
+     "goalsFor": 2,
+     "goalsAgainst": 2,
+     "outcome": "E",
+     "score": "2–2"
+    }
+   ],
+   "awayRecent": [
+    {
+     "date": "2026-11-26T03:10:00+00:00",
+     "opponent": "Club America",
+     "atHome": true,
+     "goalsFor": 0,
+     "goalsAgainst": 0,
+     "outcome": "E",
+     "score": "0–0"
+    },
+    {
+     "date": "2026-11-22T01:00:00+00:00",
+     "opponent": "U.N.A.M. - Pumas",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "0–2"
+    },
+    {
+     "date": "2026-11-14T23:00:00+00:00",
+     "opponent": "Club Queretaro",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "0–1"
+    },
+    {
+     "date": "2026-11-08T01:00:00+00:00",
+     "opponent": "Toluca",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 4,
+     "outcome": "P",
+     "score": "4–0"
+    },
+    {
+     "date": "2026-11-01T01:05:00+00:00",
+     "opponent": "Club Tijuana",
+     "atHome": true,
+     "goalsFor": 3,
+     "goalsAgainst": 3,
+     "outcome": "E",
+     "score": "3–3"
+    }
+   ],
+   "quality": "exploratory"
+  }
+ ],
+ "check": {
+  "ok": false,
+  "problems": [
+   "long:match-1",
+   "long:match-4"
+  ]
+ }
+}

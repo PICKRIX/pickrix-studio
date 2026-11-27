@@ -1,0 +1,805 @@
+{
+ "date": "2026-11-28",
+ "greeting": "AMANTES_DEL_DEPORTE",
+ "saludo": "¡Qué tal, amantes del deporte! Antes de que comience la acción, veamos qué nos cuentan los números. Estos son los cinco encuentros que hoy están en el radar de PICKRIX. ¡Comenzamos!",
+ "despedida": "¡Hasta aquí nuestro radar deportivo de hoy! Porque disfrutar del deporte también es entenderlo. Encuentren más estadísticas y análisis en pickrixapp punto com. Nos vemos en la próxima jornada. ¡No adivines, analiza!",
+ "segments": [
+  {
+   "id": "match-1",
+   "matchIndex": 0,
+   "text": "Arrancamos con un partidazo en LaLiga: Real Betis contra Rayo Vallecano. PICKRIX ve favorito a Real Betis, con 49 %. Llegan con forma parecida: Real Betis ganó tres de sus últimos cinco y Rayo Vallecano, dos. Y que anoten ambos sale con 58 %.",
+   "highlights": [
+    "Real Betis",
+    "Rayo Vallecano",
+    "49 %",
+    "ambos"
+   ],
+   "analysis": {
+    "facts": [
+     "PICKRIX ve favorito a Real Betis, con 49 %.",
+     "Llegan con forma parecida: Real Betis ganó tres de sus últimos cinco y Rayo Vallecano, dos.",
+     "Y que anoten ambos sale con 58 %."
+    ],
+    "highlights": [
+     "Real Betis",
+     "Rayo Vallecano",
+     "49 %",
+     "ambos"
+    ],
+    "favorite": "Real Betis",
+    "top": {
+     "key": "home",
+     "p": 49
+    },
+    "xgTotal": 3
+   }
+  },
+  {
+   "id": "match-2",
+   "matchIndex": 1,
+   "text": "Seguimos en la Premier: Leeds contra Coventry. PICKRIX ve favorito a Leeds, con 54 %. Llegan con forma parecida: Leeds ganó dos de sus últimos cinco y Coventry, dos.",
+   "highlights": [
+    "Leeds",
+    "Coventry",
+    "54 %"
+   ],
+   "analysis": {
+    "facts": [
+     "PICKRIX ve favorito a Leeds, con 54 %.",
+     "Llegan con forma parecida: Leeds ganó dos de sus últimos cinco y Coventry, dos."
+    ],
+    "highlights": [
+     "Leeds",
+     "Coventry",
+     "54 %"
+    ],
+    "favorite": "Leeds",
+    "top": {
+     "key": "home",
+     "p": 54
+    },
+    "xgTotal": 2.9
+   }
+  },
+  {
+   "id": "match-3",
+   "matchIndex": 2,
+   "text": "Ojo con este duelo en LaLiga: Malaga contra Athletic Club. PICKRIX ve favorito a Athletic Club, con 51 %. La clave: Athletic Club ganó tres de sus últimos cinco; Malaga, uno.",
+   "highlights": [
+    "Malaga",
+    "Athletic Club",
+    "51 %"
+   ],
+   "analysis": {
+    "facts": [
+     "PICKRIX ve favorito a Athletic Club, con 51 %.",
+     "La clave: Athletic Club ganó tres de sus últimos cinco; Malaga, uno."
+    ],
+    "highlights": [
+     "Malaga",
+     "Athletic Club",
+     "51 %"
+    ],
+    "favorite": "Athletic Club",
+    "top": {
+     "key": "away",
+     "p": 51
+    },
+    "xgTotal": 2.9
+   }
+  },
+  {
+   "id": "match-4",
+   "matchIndex": 3,
+   "text": "Aquí los números se ponen interesantes en la Premier: Ipswich contra Aston Villa. Duelo parejo: 40 % para Ipswich, 24 % de empate y 36 % para Aston Villa. Llegan con forma parecida: Ipswich ganó ninguno de sus últimos cinco y Aston Villa, ninguno. Y ojo: el Over 2.5 sale con 59 %.",
+   "highlights": [
+    "Ipswich",
+    "Aston Villa",
+    "40 %",
+    "36 %",
+    "Over 2.5"
+   ],
+   "analysis": {
+    "facts": [
+     "Duelo parejo: 40 % para Ipswich, 24 % de empate y 36 % para Aston Villa.",
+     "Llegan con forma parecida: Ipswich ganó ninguno de sus últimos cinco y Aston Villa, ninguno.",
+     "Y ojo: el Over 2.5 sale con 59 %."
+    ],
+    "highlights": [
+     "Ipswich",
+     "Aston Villa",
+     "40 %",
+     "36 %",
+     "Over 2.5"
+    ],
+    "favorite": "Ipswich",
+    "top": {
+     "key": "home",
+     "p": 40
+    },
+    "xgTotal": 3.1
+   }
+  },
+  {
+   "id": "match-5",
+   "matchIndex": 4,
+   "text": "Y cerramos con todo en la Serie A: Inter contra Genoa. PICKRIX ve favorito a Inter, con 51 %. Dato clave: entre los dos suman 20 goles en sus últimos cinco.",
+   "highlights": [
+    "Inter",
+    "Genoa",
+    "51 %"
+   ],
+   "analysis": {
+    "facts": [
+     "PICKRIX ve favorito a Inter, con 51 %.",
+     "Dato clave: entre los dos suman 20 goles en sus últimos cinco."
+    ],
+    "highlights": [
+     "Inter",
+     "Genoa",
+     "51 %"
+    ],
+    "favorite": "Inter",
+    "top": {
+     "key": "home",
+     "p": 51
+    },
+    "xgTotal": 2.8
+   }
+  }
+ ],
+ "matches": [
+  {
+   "id": "1570463",
+   "date": "2026-11-28T07:00:00-06:00",
+   "league": "LaLiga",
+   "code": "140",
+   "home": "Real Betis",
+   "away": "Rayo Vallecano",
+   "homeLogo": "https://media.api-sports.io/football/teams/543.png",
+   "awayLogo": "https://media.api-sports.io/football/teams/728.png",
+   "importance": 86,
+   "oneXtwo": {
+    "home": 49.11,
+    "draw": 23.61,
+    "away": 27.28
+   },
+   "markets": {
+    "over15": 79.69,
+    "under15": 20.31,
+    "over25": 57.08,
+    "under25": 42.92,
+    "over35": 34.68,
+    "under35": 65.32,
+    "btts_yes": 58.47,
+    "btts_no": 41.53,
+    "bo_yes_over": 47.49,
+    "bo_no_under": 31.93,
+    "bo_no_over": 9.59,
+    "bo_yes_under": 10.98
+   },
+   "expectedGoals": {
+    "home": 1.74,
+    "away": 1.24
+   },
+   "homeRecent": [
+    {
+     "date": "2026-11-24T20:00:00+00:00",
+     "opponent": "Slovan Bratislava",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "0–2"
+    },
+    {
+     "date": "2026-11-21T17:30:00+00:00",
+     "opponent": "Sevilla",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 1,
+     "outcome": "E",
+     "score": "1–1"
+    },
+    {
+     "date": "2026-11-12T18:00:00+00:00",
+     "opponent": "Navalcarnero",
+     "atHome": false,
+     "goalsFor": 3,
+     "goalsAgainst": 2,
+     "outcome": "G",
+     "score": "2–3"
+    },
+    {
+     "date": "2026-11-08T13:00:00+00:00",
+     "opponent": "Elche",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "0–2"
+    },
+    {
+     "date": "2026-11-04T20:00:00+00:00",
+     "opponent": "Borussia Dortmund",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 2,
+     "outcome": "P",
+     "score": "2–1"
+    }
+   ],
+   "awayRecent": [
+    {
+     "date": "2026-11-21T15:15:00+00:00",
+     "opponent": "Valencia",
+     "atHome": true,
+     "goalsFor": 0,
+     "goalsAgainst": 1,
+     "outcome": "P",
+     "score": "0–1"
+    },
+    {
+     "date": "2026-11-08T15:15:00+00:00",
+     "opponent": "Real Sociedad",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 1,
+     "outcome": "P",
+     "score": "1–0"
+    },
+    {
+     "date": "2026-10-31T15:15:00+00:00",
+     "opponent": "Celta Vigo",
+     "atHome": true,
+     "goalsFor": 3,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "3–0"
+    },
+    {
+     "date": "2026-10-27T20:00:00+00:00",
+     "opponent": "Recreativo Huelva",
+     "atHome": false,
+     "goalsFor": 3,
+     "goalsAgainst": 2,
+     "outcome": "G",
+     "score": "2–3"
+    },
+    {
+     "date": "2026-10-24T12:00:00+00:00",
+     "opponent": "Elche",
+     "atHome": true,
+     "goalsFor": 0,
+     "goalsAgainst": 3,
+     "outcome": "P",
+     "score": "0–3"
+    }
+   ],
+   "quality": "exploratory"
+  },
+  {
+   "id": "1557483",
+   "date": "2026-11-28T09:00:00-06:00",
+   "league": "Premier League",
+   "code": "39",
+   "home": "Leeds",
+   "away": "Coventry",
+   "homeLogo": "https://media.api-sports.io/football/teams/63.png",
+   "awayLogo": "https://media.api-sports.io/football/teams/1346.png",
+   "importance": 88,
+   "oneXtwo": {
+    "home": 54,
+    "draw": 23.15,
+    "away": 22.85
+   },
+   "markets": {
+    "over15": 78.32,
+    "under15": 21.68,
+    "over25": 55.09,
+    "under25": 44.91,
+    "over35": 32.74,
+    "under35": 67.26,
+    "btts_yes": 55.34,
+    "btts_no": 44.66,
+    "bo_yes_over": 44.42,
+    "bo_no_under": 34,
+    "bo_no_over": 10.67,
+    "bo_yes_under": 10.91
+   },
+   "expectedGoals": {
+    "home": 1.8,
+    "away": 1.09
+   },
+   "homeRecent": [
+    {
+     "date": "2026-11-21T15:00:00+00:00",
+     "opponent": "Chelsea",
+     "atHome": false,
+     "goalsFor": 4,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "1–4"
+    },
+    {
+     "date": "2026-11-07T12:30:00+00:00",
+     "opponent": "Tottenham",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "1–0"
+    },
+    {
+     "date": "2026-10-31T15:00:00+00:00",
+     "opponent": "Bournemouth",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 2,
+     "outcome": "P",
+     "score": "2–0"
+    },
+    {
+     "date": "2026-10-25T16:30:00+00:00",
+     "opponent": "Sunderland",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 0,
+     "outcome": "E",
+     "score": "0–0"
+    },
+    {
+     "date": "2026-10-18T13:00:00+00:00",
+     "opponent": "Manchester United",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 1,
+     "outcome": "E",
+     "score": "1–1"
+    }
+   ],
+   "awayRecent": [
+    {
+     "date": "2026-11-21T15:00:00+00:00",
+     "opponent": "Crystal Palace",
+     "atHome": true,
+     "goalsFor": 3,
+     "goalsAgainst": 2,
+     "outcome": "G",
+     "score": "3–2"
+    },
+    {
+     "date": "2026-11-06T20:00:00+00:00",
+     "opponent": "Everton",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 3,
+     "outcome": "P",
+     "score": "3–1"
+    },
+    {
+     "date": "2026-10-31T15:00:00+00:00",
+     "opponent": "Sunderland",
+     "atHome": true,
+     "goalsFor": 3,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "3–1"
+    },
+    {
+     "date": "2026-10-24T14:00:00+00:00",
+     "opponent": "Fulham",
+     "atHome": true,
+     "goalsFor": 0,
+     "goalsAgainst": 1,
+     "outcome": "P",
+     "score": "0–1"
+    },
+    {
+     "date": "2026-10-19T19:00:00+00:00",
+     "opponent": "Tottenham",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 3,
+     "outcome": "P",
+     "score": "3–1"
+    }
+   ],
+   "quality": "exploratory"
+  },
+  {
+   "id": "1570469",
+   "date": "2026-11-28T09:15:00-06:00",
+   "league": "LaLiga",
+   "code": "140",
+   "home": "Malaga",
+   "away": "Athletic Club",
+   "homeLogo": "https://media.api-sports.io/football/teams/535.png",
+   "awayLogo": "https://media.api-sports.io/football/teams/531.png",
+   "importance": 86,
+   "oneXtwo": {
+    "home": 25.09,
+    "draw": 23.73,
+    "away": 51.18
+   },
+   "markets": {
+    "over15": 78.07,
+    "under15": 21.93,
+    "over25": 54.72,
+    "under25": 45.28,
+    "over35": 32.38,
+    "under35": 67.62,
+    "btts_yes": 55.97,
+    "btts_no": 44.03,
+    "bo_yes_over": 44.79,
+    "bo_no_under": 34.1,
+    "bo_no_over": 9.93,
+    "bo_yes_under": 11.18
+   },
+   "expectedGoals": {
+    "home": 1.14,
+    "away": 1.73
+   },
+   "homeRecent": [
+    {
+     "date": "2026-11-22T17:30:00+00:00",
+     "opponent": "Osasuna",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 1,
+     "outcome": "P",
+     "score": "1–0"
+    },
+    {
+     "date": "2026-11-07T13:00:00+00:00",
+     "opponent": "Racing Santander",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 2,
+     "outcome": "P",
+     "score": "1–2"
+    },
+    {
+     "date": "2026-10-31T17:30:00+00:00",
+     "opponent": "Real Betis",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 2,
+     "outcome": "P",
+     "score": "2–1"
+    },
+    {
+     "date": "2026-10-27T20:00:00+00:00",
+     "opponent": "Alcazar",
+     "atHome": false,
+     "goalsFor": 3,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "0–3"
+    },
+    {
+     "date": "2026-10-23T19:00:00+00:00",
+     "opponent": "Alaves",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 1,
+     "outcome": "E",
+     "score": "1–1"
+    }
+   ],
+   "awayRecent": [
+    {
+     "date": "2026-11-20T20:00:00+00:00",
+     "opponent": "Espanyol",
+     "atHome": true,
+     "goalsFor": 0,
+     "goalsAgainst": 1,
+     "outcome": "P",
+     "score": "0–1"
+    },
+    {
+     "date": "2026-11-07T17:30:00+00:00",
+     "opponent": "Osasuna",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 1,
+     "outcome": "E",
+     "score": "1–1"
+    },
+    {
+     "date": "2026-11-01T20:00:00+00:00",
+     "opponent": "Real Sociedad",
+     "atHome": true,
+     "goalsFor": 2,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "2–1"
+    },
+    {
+     "date": "2026-10-29T20:00:00+00:00",
+     "opponent": "Prat",
+     "atHome": false,
+     "goalsFor": 6,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "1–6"
+    },
+    {
+     "date": "2026-10-25T13:00:00+00:00",
+     "opponent": "Getafe",
+     "atHome": true,
+     "goalsFor": 4,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "4–0"
+    }
+   ],
+   "quality": "exploratory"
+  },
+  {
+   "id": "1557482",
+   "date": "2026-11-28T11:30:00-06:00",
+   "league": "Premier League",
+   "code": "39",
+   "home": "Ipswich",
+   "away": "Aston Villa",
+   "homeLogo": "https://media.api-sports.io/football/teams/57.png",
+   "awayLogo": "https://media.api-sports.io/football/teams/66.png",
+   "importance": 88,
+   "oneXtwo": {
+    "home": 40.48,
+    "draw": 23.9,
+    "away": 35.62
+   },
+   "markets": {
+    "over15": 81.26,
+    "under15": 18.74,
+    "over25": 59.46,
+    "under25": 40.54,
+    "over35": 37.08,
+    "under35": 62.92,
+    "btts_yes": 61.66,
+    "btts_no": 38.34,
+    "bo_yes_over": 50.78,
+    "bo_no_under": 29.66,
+    "bo_no_over": 8.68,
+    "bo_yes_under": 10.88
+   },
+   "expectedGoals": {
+    "home": 1.6,
+    "away": 1.48
+   },
+   "homeRecent": [
+    {
+     "date": "2026-11-21T15:00:00+00:00",
+     "opponent": "Tottenham",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 2,
+     "outcome": "P",
+     "score": "2–0"
+    },
+    {
+     "date": "2026-11-08T14:00:00+00:00",
+     "opponent": "Bournemouth",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 2,
+     "outcome": "P",
+     "score": "1–2"
+    },
+    {
+     "date": "2026-10-31T15:00:00+00:00",
+     "opponent": "Hull City",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 2,
+     "outcome": "E",
+     "score": "2–2"
+    },
+    {
+     "date": "2026-10-23T19:00:00+00:00",
+     "opponent": "Nottingham Forest",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 1,
+     "outcome": "E",
+     "score": "1–1"
+    },
+    {
+     "date": "2026-10-17T14:00:00+00:00",
+     "opponent": "Manchester City",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 3,
+     "outcome": "P",
+     "score": "3–2"
+    }
+   ],
+   "awayRecent": [
+    {
+     "date": "2026-11-24T17:45:00+00:00",
+     "opponent": "Galatasaray",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 1,
+     "outcome": "P",
+     "score": "1–0"
+    },
+    {
+     "date": "2026-11-21T15:00:00+00:00",
+     "opponent": "Sunderland",
+     "atHome": true,
+     "goalsFor": 0,
+     "goalsAgainst": 0,
+     "outcome": "E",
+     "score": "0–0"
+    },
+    {
+     "date": "2026-11-08T16:30:00+00:00",
+     "opponent": "Manchester United",
+     "atHome": false,
+     "goalsFor": 4,
+     "goalsAgainst": 4,
+     "outcome": "E",
+     "score": "4–4"
+    },
+    {
+     "date": "2026-11-03T20:00:00+00:00",
+     "opponent": "Barcelona",
+     "atHome": false,
+     "goalsFor": 0,
+     "goalsAgainst": 3,
+     "outcome": "P",
+     "score": "3–0"
+    },
+    {
+     "date": "2026-10-31T20:00:00+00:00",
+     "opponent": "Fulham",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 1,
+     "outcome": "E",
+     "score": "1–1"
+    }
+   ],
+   "quality": "exploratory"
+  },
+  {
+   "id": "1550211",
+   "date": "2026-11-28T13:45:00-06:00",
+   "league": "Serie A",
+   "code": "135",
+   "home": "Inter",
+   "away": "Genoa",
+   "homeLogo": "https://media.api-sports.io/football/teams/505.png",
+   "awayLogo": "https://media.api-sports.io/football/teams/495.png",
+   "importance": 90,
+   "oneXtwo": {
+    "home": 51.24,
+    "draw": 24.03,
+    "away": 24.73
+   },
+   "markets": {
+    "over15": 76.94,
+    "under15": 23.06,
+    "over25": 53.12,
+    "under25": 46.88,
+    "over35": 30.87,
+    "under35": 69.13,
+    "btts_yes": 54.63,
+    "btts_no": 45.37,
+    "bo_yes_over": 43.25,
+    "bo_no_under": 35.51,
+    "bo_no_over": 9.87,
+    "bo_yes_under": 11.38
+   },
+   "expectedGoals": {
+    "home": 1.7,
+    "away": 1.1
+   },
+   "homeRecent": [
+    {
+     "date": "2026-11-25T20:00:00+00:00",
+     "opponent": "VfB Stuttgart",
+     "atHome": true,
+     "goalsFor": 2,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "2–0"
+    },
+    {
+     "date": "2026-11-22T19:45:00+00:00",
+     "opponent": "Atalanta",
+     "atHome": false,
+     "goalsFor": 4,
+     "goalsAgainst": 4,
+     "outcome": "E",
+     "score": "4–4"
+    },
+    {
+     "date": "2026-11-08T17:00:00+00:00",
+     "opponent": "Como",
+     "atHome": true,
+     "goalsFor": 2,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "2–0"
+    },
+    {
+     "date": "2026-11-03T20:00:00+00:00",
+     "opponent": "Feyenoord",
+     "atHome": false,
+     "goalsFor": 3,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "0–3"
+    },
+    {
+     "date": "2026-10-31T19:45:00+00:00",
+     "opponent": "AC Milan",
+     "atHome": false,
+     "goalsFor": 1,
+     "goalsAgainst": 3,
+     "outcome": "P",
+     "score": "3–1"
+    }
+   ],
+   "awayRecent": [
+    {
+     "date": "2026-11-22T14:00:00+00:00",
+     "opponent": "Sassuolo",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "0–2"
+    },
+    {
+     "date": "2026-11-08T14:00:00+00:00",
+     "opponent": "AC Milan",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 2,
+     "outcome": "P",
+     "score": "1–2"
+    },
+    {
+     "date": "2026-11-01T17:00:00+00:00",
+     "opponent": "Lecce",
+     "atHome": false,
+     "goalsFor": 2,
+     "goalsAgainst": 1,
+     "outcome": "G",
+     "score": "1–2"
+    },
+    {
+     "date": "2026-10-28T19:45:00+00:00",
+     "opponent": "Juventus",
+     "atHome": true,
+     "goalsFor": 2,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "2–0"
+    },
+    {
+     "date": "2026-10-25T14:00:00+00:00",
+     "opponent": "Venezia",
+     "atHome": true,
+     "goalsFor": 1,
+     "goalsAgainst": 0,
+     "outcome": "G",
+     "score": "1–0"
+    }
+   ],
+   "quality": "exploratory"
+  }
+ ],
+ "check": {
+  "ok": false,
+  "problems": [
+   "long:match-1",
+   "long:match-4"
+  ]
+ }
+}
