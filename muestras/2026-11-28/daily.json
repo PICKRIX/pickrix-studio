@@ -7,26 +7,26 @@
   {
    "id": "match-1",
    "matchIndex": 0,
-   "text": "Arrancamos con un partidazo en LaLiga: Real Betis contra Rayo Vallecano. PICKRIX ve favorito a Real Betis, con 49 %. Llegan con forma parecida: Real Betis ganó tres de sus últimos cinco y Rayo Vallecano, dos. Y que anoten ambos sale con 58 %.",
+   "text": "Arrancamos con un partidazo en LaLiga: Betis contra Rayo Vallecano. PICKRIX ve favorito a Betis, con 49 %. Llegan con forma parecida: Betis ganó tres de sus últimos cinco y Rayo Vallecano, dos. Y que anoten ambos sale con 58 %.",
    "highlights": [
-    "Real Betis",
+    "Betis",
     "Rayo Vallecano",
     "49 %",
     "ambos"
    ],
    "analysis": {
     "facts": [
-     "PICKRIX ve favorito a Real Betis, con 49 %.",
-     "Llegan con forma parecida: Real Betis ganó tres de sus últimos cinco y Rayo Vallecano, dos.",
+     "PICKRIX ve favorito a Betis, con 49 %.",
+     "Llegan con forma parecida: Betis ganó tres de sus últimos cinco y Rayo Vallecano, dos.",
      "Y que anoten ambos sale con 58 %."
     ],
     "highlights": [
-     "Real Betis",
+     "Betis",
      "Rayo Vallecano",
      "49 %",
      "ambos"
     ],
-    "favorite": "Real Betis",
+    "favorite": "Betis",
     "top": {
      "key": "home",
      "p": 49
@@ -64,23 +64,23 @@
   {
    "id": "match-3",
    "matchIndex": 2,
-   "text": "Ojo con este duelo en LaLiga: Malaga contra Athletic Club. PICKRIX ve favorito a Athletic Club, con 51 %. La clave: Athletic Club ganó tres de sus últimos cinco; Malaga, uno.",
+   "text": "Ojo con este duelo en LaLiga: Málaga contra Athletic. PICKRIX ve favorito a Athletic, con 51 %. La clave: Athletic ganó tres de sus últimos cinco; Málaga, uno.",
    "highlights": [
-    "Malaga",
-    "Athletic Club",
+    "Málaga",
+    "Athletic",
     "51 %"
    ],
    "analysis": {
     "facts": [
-     "PICKRIX ve favorito a Athletic Club, con 51 %.",
-     "La clave: Athletic Club ganó tres de sus últimos cinco; Malaga, uno."
+     "PICKRIX ve favorito a Athletic, con 51 %.",
+     "La clave: Athletic ganó tres de sus últimos cinco; Málaga, uno."
     ],
     "highlights": [
-     "Malaga",
-     "Athletic Club",
+     "Málaga",
+     "Athletic",
      "51 %"
     ],
-    "favorite": "Athletic Club",
+    "favorite": "Athletic",
     "top": {
      "key": "away",
      "p": 51
@@ -91,7 +91,7 @@
   {
    "id": "match-4",
    "matchIndex": 3,
-   "text": "Aquí los números se ponen interesantes en la Premier: Ipswich contra Aston Villa. Duelo parejo: 40 % para Ipswich, 24 % de empate y 36 % para Aston Villa. Llegan con forma parecida: Ipswich ganó ninguno de sus últimos cinco y Aston Villa, ninguno. Y ojo: el Over 2.5 sale con 59 %.",
+   "text": "Aquí los números se ponen interesantes en la Premier: Ipswich contra Aston Villa. Duelo parejo: 40 % para Ipswich, 24 % de empate y 36 % para Aston Villa. Ojo: ninguno de los dos ganó en sus últimos cinco. Y ojo: el Over 2.5 sale con 59 %.",
    "highlights": [
     "Ipswich",
     "Aston Villa",
@@ -102,7 +102,7 @@
    "analysis": {
     "facts": [
      "Duelo parejo: 40 % para Ipswich, 24 % de empate y 36 % para Aston Villa.",
-     "Llegan con forma parecida: Ipswich ganó ninguno de sus últimos cinco y Aston Villa, ninguno.",
+     "Ojo: ninguno de los dos ganó en sus últimos cinco.",
      "Y ojo: el Over 2.5 sale con 59 %."
     ],
     "highlights": [

@@ -32,7 +32,7 @@ const leagueSpoken=l=>{const n=shortLeague(l);if(n==='Brasileirão')return 'el B
 const SPOKEN={'club brugge kv':'Brujas','club brugge':'Brujas','bayern münchen':'Bayern','bayern munich':'Bayern','club america':'América','america':'América',
  'vfb stuttgart':'Stuttgart','paris saint germain':'PSG','manchester united':'Manchester United','manchester city':'Manchester City',
  'borussia dortmund':'Dortmund','atletico madrid':'Atlético de Madrid','inter':'Inter','ac milan':'Milan','guadalajara':'Chivas',
- 'u.n.a.m. - pumas':'Pumas','pumas unam':'Pumas','tigres uanl':'Tigres','cruz azul':'Cruz Azul','sporting cp':'Sporting de Lisboa','fc porto':'Porto','stade brestois 29':'Brest','paris fc':'París FC','maritimo':'Marítimo','vancouver whitecaps':'Vancouver','real salt lake':'Real Salt Lake','borussia mönchengladbach':'Gladbach','borussia monchengladbach':'Gladbach','racing santander':'Racing de Santander','columbus crew':'Columbus','nottingham forest':'Nottingham Forest','werder bremen':'Werder Bremen',
+ 'u.n.a.m. - pumas':'Pumas','pumas unam':'Pumas','tigres uanl':'Tigres','cruz azul':'Cruz Azul','sporting cp':'Sporting de Lisboa','fc porto':'Porto','malaga':'Málaga','athletic club':'Athletic','alaves':'Alavés','hamburger sv':'Hamburgo','real betis':'Betis','stade brestois 29':'Brest','paris fc':'París FC','maritimo':'Marítimo','vancouver whitecaps':'Vancouver','real salt lake':'Real Salt Lake','borussia mönchengladbach':'Gladbach','borussia monchengladbach':'Gladbach','racing santander':'Racing de Santander','columbus crew':'Columbus','nottingham forest':'Nottingham Forest','werder bremen':'Werder Bremen',
  'olympiakos piraeus':'Olympiakos','guadalajara chivas':'Chivas','cf pachuca':'Pachuca','leon':'León','club leon':'León','club queretaro':'Querétaro',
  'atletico san luis':'Atlético de San Luis','santos laguna':'Santos','fc juarez':'Juárez','mazatlán':'Mazatlán','plzen':'Plzen','omonia nicosia':'Omonia'};
 export const shortTeam=t=>SPOKEN[String(t).toLowerCase()]||String(t).replace(/^(FC|CF|AC|AS|SS|SC|CD|Club|Real Club)\s+/i,'').replace(/\s+(FC|CF|SC|KV)$/i,'');
@@ -52,7 +52,7 @@ export function analyze(m){
   const wh=wins(hr),wa=wins(ar);
   if(Math.abs(wh-wa)>=2){const [t,w,o,wo]=wh>wa?[H,wh,A,wa]:[A,wa,H,wh];facts.push(w===5?`La clave: ${t} ganó sus últimos cinco; ${o}, ${nWord(wo)}.`:`La clave: ${t} ganó ${nWord(w)} de sus últimos cinco; ${o}, ${nWord(wo)}.`);}
   else if(gf(hr)+gf(ar)>=16)facts.push(`Dato clave: entre los dos suman ${gf(hr)+gf(ar)} goles en sus últimos cinco.`);
-  else facts.push(`Llegan con forma parecida: ${H} ganó ${nWord(wh)} de sus últimos cinco y ${A}, ${nWord(wa)}.`);
+  else facts.push(wh===0&&wa===0?`Ojo: ninguno de los dos ganó en sus últimos cinco.`:`Llegan con forma parecida: ${H} ganó ${nWord(wh)} de sus últimos cinco y ${A}, ${nWord(wa)}.`);
  }
  const mk=m.markets||{},xg=m.expectedGoals;
  const total=xg&&Number.isFinite(xg.home)&&Number.isFinite(xg.away)?Math.round((xg.home+xg.away)*10)/10:null;
