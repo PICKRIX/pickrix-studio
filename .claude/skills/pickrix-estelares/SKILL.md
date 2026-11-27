@@ -22,7 +22,7 @@ la genera la usuaria en HeyGen y envía el audio. Repo: `PICKRIX/pickrix-studio`
    presentación de equipos → 2 datos reales de PICKRIX → explicación → conclusión → incertidumbre.
    Varía el arranque («Ojo con este partidazo», «Aquí los números se ponen interesantes», «Hay un dato que no
    podemos ignorar», «Este duelo está más equilibrado de lo que parece», «Y cerramos con…»).
-   Favorito solo si la diferencia ≥ 8 puntos; si no, «no hay favorito claro». Nombres como se dicen en México
+   Atribuye las cifras como «El pronóstico de PICKRIX…» (no «PICKRIX ve favorito»). Favorito solo si la diferencia ≥ 8 puntos; si no, «no hay favorito claro». Nombres como se dicen en México
    (`shortTeam` de `daily/script.mjs`). Prohibido: apuesta segura, garantizado, momios, casas de apuestas.
    Confianza: «MEDIA» mientras no se contrasten fuentes externas ni lesiones; nunca «ALTA» sin esa verificación.
 5. `node daily/heygen_texto.mjs voz_heygen/F-estelares/guion.json` → `GUION_HEYGEN.txt` (cifras en letra).
