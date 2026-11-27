@@ -46,8 +46,8 @@ export function analyze(m){
  const fav=topKey==='home'?H:topKey==='away'?A:null;
  const hr=m.homeRecent||[],ar=m.awayRecent||[];
  const facts=[],highlights=[H,A];
- if(fav&&gap>=8){facts.push(`PICKRIX ve favorito a ${fav}, con ${pct(topP)} %.`);highlights.push(`${pct(topP)} %`);}
- else{facts.push(`Duelo parejo: ${pct(p.home)} % para ${H}, ${pct(p.draw)} % de empate y ${pct(p.away)} % para ${A}.`);highlights.push(`${pct(p.home)} %`,`${pct(p.away)} %`);}
+ if(fav&&gap>=8){facts.push(`El pronóstico de PICKRIX favorece a ${fav}, con ${pct(topP)} %.`);highlights.push(`${pct(topP)} %`);}
+ else{facts.push(`El pronóstico de PICKRIX: duelo parejo, ${pct(p.home)} % para ${H}, ${pct(p.draw)} % de empate y ${pct(p.away)} % para ${A}.`);highlights.push(`${pct(p.home)} %`,`${pct(p.away)} %`);}
  if(hr.length>=4&&ar.length>=4){
   const wh=wins(hr),wa=wins(ar);
   if(Math.abs(wh-wa)>=2){const [t,w,o,wo]=wh>wa?[H,wh,A,wa]:[A,wa,H,wh];facts.push(w===5?`La clave: ${t} ganó sus últimos cinco; ${o}, ${nWord(wo)}.`:`La clave: ${t} ganó ${nWord(w)} de sus últimos cinco; ${o}, ${nWord(wo)}.`);}
